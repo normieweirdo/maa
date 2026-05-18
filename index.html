@@ -9,20 +9,23 @@
   <meta name="theme-color" content="#dc2626">
   <title>Maa by Rigel | Menstrual Health Awareness & Support</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
   <!-- Testing Mode Banner -->
-  <div id="testing-mode-banner" style="display: none; background: #fbbf24; color: #78350f; text-align: center; padding: 0.5rem; font-weight: bold; position: fixed; top: 0; left: 0; width: 100%; z-index: 2000; font-family: var(--font-sans); font-size: 0.9rem;">
-    ⚠️ This website is currently in TESTING MODE. Features may be incomplete or unstable. ⚠️
+  <div id="testing-mode-banner"
+    style="display: none; background: #fbbf24; color: #78350f; text-align: center; padding: 0.25rem; font-weight: bold; position: fixed; top: 0; left: 0; width: 100%; z-index: 2000; font-family: var(--font-sans); font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+    <i data-lucide="alert-triangle"></i> This website is currently in TESTING MODE. Features may be incomplete or unstable. <i data-lucide="alert-triangle"></i>
   </div>
 
   <!-- Header -->
   <header id="site-header">
     <div class="header-container">
       <a href="#" class="logo">
-        <img src="media/Rigel%20Logo.png" alt="Rigel Logo" style="height: 64px; width: auto; object-fit: contain;">
+        <img src="media/rigel%20circle%20logo.png" alt="Rigel Logo"
+          style="height: 50px; width: auto; object-fit: contain;">
       </a>
       <nav id="desktop-nav">
         <ul>
@@ -33,36 +36,36 @@
           <li><a href="#qa" data-i18n="nav.qa">Q&amp;A</a></li>
           <li><a href="#schemes" data-i18n="nav.schemes">Schemes</a></li>
           <li><a href="#impact" data-i18n="nav.impact">Impact</a></li>
-          <li><a href="#research" class="nav-highlight">Data &amp; Reports</a></li>
+          <li><a href="#research" data-i18n="nav.research">Data &amp; Reports</a></li>
           <li><a href="#team" data-i18n="nav.team">Team</a></li>
-          <li><a href="donate.html" style="color: var(--color-crimson); font-weight: 800;">❤️ Donate</a></li>
+          <li style="display: flex; align-items: center; margin-left: 1rem;"><a href="donate.html" class="btn btn-primary pulse" style="padding: 0.5rem 1.2rem; font-size: 1rem; font-weight: 800; white-space: nowrap;"><i data-lucide="heart" style="width:18px; height:18px;"></i> Donate</a></li>
         </ul>
       </nav>
       <div class="header-controls">
         <select id="lang-selector" aria-label="Select Language">
           <option value="en">English</option>
-          <option value="as">অসমীয়া (Assamese)</option>
-          <option value="bn">বাংলা (Bengali)</option>
-          <option value="brx">बड़ो (Bodo)</option>
-          <option value="doi">डोगरी (Dogri)</option>
-          <option value="gu">ગુજરાતી (Gujarati)</option>
-          <option value="hi">हिन्दी (Hindi)</option>
-          <option value="kn">ಕನ್ನಡ (Kannada)</option>
-          <option value="ks">کأشُر (Kashmiri)</option>
-          <option value="gom">कोंकणी (Konkani)</option>
-          <option value="mai">मैथिली (Maithili)</option>
-          <option value="ml">മലയാളം (Malayalam)</option>
-          <option value="mni">মৈতৈলোন্ (Manipuri)</option>
-          <option value="mr">मराठी (Marathi)</option>
-          <option value="ne">नेपाली (Nepali)</option>
-          <option value="or">ଓଡ଼ିଆ (Odia)</option>
-          <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
-          <option value="sa">संस्कृत (Sanskrit)</option>
-          <option value="sat">ᱥᱟᱱᱛᱟᱲᱤ (Santali)</option>
-          <option value="sd">سنڌي (Sindhi)</option>
-          <option value="ta">தமிழ் (Tamil)</option>
-          <option value="te">తెలుగు (Telugu)</option>
-          <option value="ur">اردو (Urdu)</option>
+          <option value="as">Assamese</option>
+          <option value="bn">Bengali</option>
+          <option value="brx">Bodo</option>
+          <option value="doi">Dogri</option>
+          <option value="gu">Gujarati</option>
+          <option value="hi">Hindi</option>
+          <option value="kn">Kannada</option>
+          <option value="ks">Kashmiri</option>
+          <option value="gom">Konkani</option>
+          <option value="mai">Maithili</option>
+          <option value="ml">Malayalam</option>
+          <option value="mni">Manipuri</option>
+          <option value="mr">Marathi</option>
+          <option value="ne">Nepali</option>
+          <option value="or">Odia</option>
+          <option value="pa">Punjabi</option>
+          <option value="sa">Sanskrit</option>
+          <option value="sat">Santali</option>
+          <option value="sd">Sindhi</option>
+          <option value="ta">Tamil</option>
+          <option value="te">Telugu</option>
+          <option value="ur">Urdu</option>
         </select>
         <button id="menu-toggle" aria-expanded="false" aria-label="Toggle Menu">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -80,7 +83,8 @@
         <li><a href="#impact" class="mobile-link">Impact</a></li>
         <li><a href="#research" class="mobile-link">Data &amp; Reports</a></li>
         <li><a href="#team" class="mobile-link">Team</a></li>
-        <li><a href="donate.html" class="mobile-link" style="color: var(--color-crimson); font-weight: 800;">❤️ Donate</a></li>
+        <li style="margin-top: 1rem;"><a href="donate.html" class="btn btn-primary pulse" style="display: flex; justify-content: center; font-weight: 800; text-align: center;"><i data-lucide="heart"></i>
+            Donate</a></li>
       </ul>
     </div>
   </header>
@@ -95,18 +99,22 @@
       </div>
       <div class="hero__content">
         <div class="hero__badge" data-i18n="hero.badge">🌸 Safe · Private · Empowering</div>
-        <h1 data-i18n="hero.headline">Empowering Women Through Awareness &amp; Care</h1>
+        <h1 style="font-size: clamp(4rem, 10vw, 7rem); margin-bottom: 0; line-height: 1.1;"><span class="text-gradient"
+            style="font-weight: 900;">MAA</span></h1>
+        <h2 data-i18n="hero.headline"
+          style="font-family: var(--font-display); font-size: clamp(1rem, 2.8vw, 1.8rem); color: var(--red-800); margin-top: 0.5rem; margin-bottom: var(--space-4); white-space: nowrap;">
+          "Empowering Women Through Awareness &amp; Care"</h2>
         <p class="hero__subtext" data-i18n="hero.subtext">A safe, private space to learn, track, and connect — backed by
           WHO guidelines and Government of India resources.</p>
         <div class="hero__cta">
-          <a href="#tracker" class="btn btn-primary pulse">🩸 Track Period</a>
-          <a href="#qa" class="btn btn-secondary">💬 Ask Anonymously</a>
-          <a href="#insights-pdf" class="btn btn-ghost">📊 View Research</a>
+          <a href="#tracker" class="btn btn-primary pulse"><i data-lucide="droplet"></i> Track Period</a>
+          <a href="#qa" class="btn btn-secondary"><i data-lucide="message-circle"></i> Ask Anonymously</a>
+          <a href="#insights-pdf" class="btn btn-ghost"><i data-lucide="bar-chart-2"></i> View Research</a>
         </div>
-        <p class="hero__tagline">❤️ You're not alone. Millions of women stand with you.</p>
+        <p class="hero__tagline"><i data-lucide="heart"></i> You're not alone. Millions of women stand with you.</p>
         <div class="hero-image-placeholder">
           <img src="media/Hero.png" alt="Women supporting women"
-            style="width: 100%; height: 400px; object-fit: cover; object-position: center 20%; border-radius: 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.1); margin-top: 2rem;">
+            style="width: 100%; height: auto; max-height: 500px; object-fit: cover; object-position: center 20%; border-radius: 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.1); margin-top: 2rem;">
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
@@ -129,7 +137,9 @@
       </div>
       <div class="custom-shape-divider-bottom">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"></path>
         </svg>
       </div>
     </section>
@@ -140,20 +150,181 @@
         <h2 class="section-title" data-i18n="learn.title">Menstrual Health Education</h2>
         <p class="section-subtitle" data-i18n="learn.subtitle">According to the World Health Organization (WHO),
           menstrual health is an integral part of sexual and reproductive health and rights.</p>
-        <a href="https://www.who.int/health-topics/menstrual-health" target="_blank" rel="noopener"
-          class="link-source">Source: WHO Fact Sheets ↗</a>
-        <div class="grid" id="learn-grid"></div>
-        
-        <!-- Awareness Posters -->
-        <h3 class="section-title text-center" style="margin-top: 4rem; font-size: 1.8rem;">Awareness Posters</h3>
-        <p class="section-subtitle text-center">Share these posters in your community or school.</p>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          <div class="card" style="padding: 0; overflow: hidden;">
-            <img src="post/poster 1.png" alt="Awareness Poster 1" style="width: 100%; height: auto; display: block;">
+        <a href="https://www.unicef.org/press-releases/fact-sheet-menstrual-health-and-hygiene-management-still-out-reach-many" target="_blank" rel="noopener"
+          class="link-source">Source: UNICEF Fact Sheets <i data-lucide="arrow-up-right"></i></a>
+        <div class="grid" id="learn-grid">
+          <div class="card learn-card">
+            <h3><i data-lucide="droplet"></i> The Basics of Menstruation</h3>
+            <p>Understand the science behind your period, the menstrual cycle timeline, and normal biological functions. Knowledge is your first step to health.</p>
           </div>
-          <div class="card" style="padding: 0; overflow: hidden;">
-            <img src="post/poster 2.png" alt="Awareness Poster 2" style="width: 100%; height: auto; display: block;">
+          <div class="card learn-card">
+            <h3><i data-lucide="package"></i> Hygiene & Product Choices</h3>
+            <p>Learn about different menstrual products—from pads and tampons to menstrual cups and cloth pads—and safe disposal practices.</p>
           </div>
+          <div class="card learn-card">
+            <h3>🥑 Nutrition & Self-Care</h3>
+            <p>Discover foods that help alleviate cramps (like iron and magnesium), the importance of hydration, and what to avoid during your cycle.</p>
+          </div>
+          <div class="card learn-card">
+            <h3>🛑 Myths vs. Facts</h3>
+            <p>Bust common cultural taboos and myths. Menstruation is a natural biological process, not a reason for isolation or restriction.</p>
+          </div>
+          <div class="card learn-card">
+            <h3><i data-lucide="stethoscope"></i> When to See a Doctor</h3>
+            <p>Recognize red flags such as severe pain, abnormally heavy bleeding, consistently missing periods, or other signs that need medical care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disorders Section -->
+    <section id="disorders" class="section bg-soft fade-in-up">
+      <div class="container">
+        <h2 class="section-title text-center">Menstrual Related Disorders</h2>
+        <p class="section-subtitle text-center" style="max-width: 700px; margin: 0 auto 3rem auto;">Awareness is the
+          first step to care. Understanding what's normal and what isn't can save years of silent suffering.</p>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+
+          <!-- 1. PCOS -->
+          <div class="card disorder-card" onclick="openDisorderModal('Polycystic Ovary Syndrome (PCOS/PCOD)', 'A hormonal disorder causing enlarged ovaries with small cysts on the outer edges, leading to irregular periods, excess hair growth, and sometimes fertility issues.')">
+            <span class="disorder-tag">Hormonal</span>
+            <h3>Polycystic Ovary Syndrome (PCOS/PCOD)</h3>
+            <ul>
+              <li>Irregular periods</li>
+              <li>Weight gain & Acne</li>
+              <li>Excess facial/body hair & Hair thinning</li>
+              <li>Difficulty conceiving</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> One of the most common hormonal disorders in
+              young women.</p>
+          </div>
+
+          <!-- 2. Endometriosis -->
+          <div class="card disorder-card" onclick="openDisorderModal('Endometriosis', 'A painful condition where tissue similar to the lining inside the uterus grows outside it, often on the ovaries or fallopian tubes, causing severe pelvic pain.')">
+            <span class="disorder-tag">Chronic Pain</span>
+            <h3>Endometriosis</h3>
+            <ul>
+              <li>Extremely painful periods</li>
+              <li>Pain during bowel movements</li>
+              <li>Chronic pelvic pain & Heavy bleeding</li>
+              <li>Infertility</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> Diagnosis often takes years because pain is
+              dismissed as “normal.”</p>
+          </div>
+
+          <!-- 3. Dysmenorrhea -->
+          <div class="card disorder-card" onclick="openDisorderModal('Dysmenorrhea (Severe Cramps)', 'Severe and frequent menstrual cramps and pelvic pain associated with menstruation that significantly interferes with daily activities.')">
+            <span class="disorder-tag">Pain Disorder</span>
+            <h3>Dysmenorrhea (Severe Cramps)</h3>
+            <ul>
+              <li>Severe cramps</li>
+              <li>Nausea & Vomiting</li>
+              <li>Fainting</li>
+              <li>Missing school/work</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> Many girls suffer silently thinking
+              debilitating pain is completely normal.</p>
+          </div>
+
+          <!-- 4. Menorrhagia -->
+          <div class="card disorder-card" onclick="openDisorderModal('Menorrhagia (Heavy Bleeding)', 'Menstrual periods with abnormally heavy or prolonged bleeding that can lead to fatigue, anemia, and disruption of normal life.')">
+            <span class="disorder-tag">Bleeding Disorder</span>
+            <h3>Menorrhagia (Heavy Bleeding)</h3>
+            <ul>
+              <li>Bleeding for more than 7 days</li>
+              <li>Soaking pads rapidly</li>
+              <li>Blood clots</li>
+              <li>Fatigue and anemia</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> Can severely affect daily life, productivity, and overall
+              physical health.</p>
+          </div>
+
+          <!-- 5. Amenorrhea -->
+          <div class="card disorder-card" onclick="openDisorderModal('Amenorrhea', 'The absence of menstruation. It can be primary (never starting periods by age 15) or secondary (missing three or more periods in a row).')">
+            <span class="disorder-tag">Cycle Absence</span>
+            <h3>Amenorrhea</h3>
+            <ul>
+              <li>Never getting periods</li>
+              <li>Periods suddenly stopping</li>
+              <li>Caused by stress, malnutrition, or hormonal imbalance</li>
+              <li>Can result from excessive exercise or PCOS</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> Absence of menstruation is a critical health indicator
+              that requires medical attention.</p>
+          </div>
+
+          <!-- 6. Adenomyosis -->
+          <div class="card disorder-card" onclick="openDisorderModal('Adenomyosis', 'A condition where the inner lining of the uterus breaks through the muscle wall of the uterus, causing menstrual cramps, lower abdominal pressure, and bloating.')">
+            <span class="disorder-tag">Uterine Disorder</span>
+            <h3>Adenomyosis</h3>
+            <ul>
+              <li>Heavy bleeding</li>
+              <li>Severe cramps</li>
+              <li>Enlarged uterus</li>
+              <li>Pelvic pressure</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> Often confused with normal period pain, leading to
+              delayed diagnosis.</p>
+          </div>
+
+          <!-- 7. PMS -->
+          <div class="card disorder-card" onclick="openDisorderModal('Premenstrual Syndrome (PMS)', 'A common combination of physical and emotional symptoms that occur 1 to 2 weeks before menstruation, including mood swings, tender breasts, food cravings, fatigue, irritability, and depression.')">
+            <span class="disorder-tag">Physical/Emotional</span>
+            <h3>Premenstrual Syndrome (PMS)</h3>
+            <ul>
+              <li>Mood swings & Irritability</li>
+              <li>Bloating & Fatigue</li>
+              <li>Breast tenderness</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> Very common but often misunderstood or trivialized by
+              society.</p>
+          </div>
+
+          <!-- 8. PMDD -->
+          <div class="card disorder-card" onclick="openDisorderModal('Premenstrual Dysphoric Disorder', 'A severe, sometimes disabling extension of premenstrual syndrome (PMS). It causes extreme mood shifts that can disrupt work and damage relationships.')">
+            <span class="disorder-tag">Mental Health</span>
+            <h3>Premenstrual Dysphoric Disorder</h3>
+            <ul>
+              <li>Severe depression</li>
+              <li>Extreme anxiety</li>
+              <li>Anger and irritability</li>
+              <li>Emotional instability</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> This is a serious condition that affects mental health
+              significantly and requires support.</p>
+          </div>
+
+          <!-- 9. Uterine Fibroids -->
+          <div class="card disorder-card" onclick="openDisorderModal('Uterine Fibroids', 'Noncancerous growths of the uterus that often appear during childbearing years. They aren\'t associated with an increased risk of uterine cancer and almost never develop into cancer.')">
+            <span class="disorder-tag">Growths</span>
+            <h3>Uterine Fibroids</h3>
+            <ul>
+              <li>Heavy bleeding</li>
+              <li>Pelvic pain</li>
+              <li>Frequent urination</li>
+              <li>Unusually long periods</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> Non-cancerous growths that are very common in adult
+              women.</p>
+          </div>
+
+          <!-- 10. Irregular Cycles -->
+          <div class="card disorder-card" onclick="openDisorderModal('Irregular Menstrual Cycles', 'Menstrual cycles where the length of the cycle varies significantly from month to month. Can be caused by various factors including stress, diet, extreme exercise, or underlying conditions like PCOS or thyroid issues.')">
+            <span class="disorder-tag">Symptom</span>
+            <h3>Irregular Menstrual Cycles</h3>
+            <ul>
+              <li>Often a sign of PCOS</li>
+              <li>Can indicate thyroid disorders</li>
+              <li>Triggered by stress or malnutrition</li>
+              <li>Hormonal imbalances</li>
+            </ul>
+            <p class="disorder-note"><strong>Why It Matters:</strong> A highly crucial awareness topic for teenagers
+              navigating puberty.</p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -162,14 +333,15 @@
     <section id="insights-pdf" class="section insights-pdf-section fade-in-up">
       <div class="container">
         <h2 class="section-title" data-i18n="research.title">Research Insights</h2>
-        <p class="section-subtitle" data-i18n="research.subtitle">Key findings from our three published public health reports on menstrual equity in
+        <p class="section-subtitle" data-i18n="research.subtitle">Key findings from our three published public health
+          reports on menstrual equity in
           India and globally.</p>
 
         <!-- Tabs -->
         <div class="insights-tabs">
-          <button class="tab-btn active" data-tab="stigma">🗣️ Stigma &amp; Silence</button>
-          <button class="tab-btn" data-tab="education">🎓 Education Gap</button>
-          <button class="tab-btn" data-tab="poverty">📦 Period Poverty</button>
+          <button class="tab-btn active" data-tab="stigma"><i data-lucide="megaphone"></i> Stigma &amp; Silence</button>
+          <button class="tab-btn" data-tab="education"><i data-lucide="graduation-cap"></i> Education Gap</button>
+          <button class="tab-btn" data-tab="poverty"><i data-lucide="package"></i> Period Poverty</button>
         </div>
 
         <!-- Tab 1: Stigma -->
@@ -204,32 +376,32 @@
           </div>
           <div class="insights-cards-grid">
             <div class="insight-card">
-              <h4>🏠 At Home</h4>
+              <h4><i data-lucide="home"></i> At Home</h4>
               <p>Mothers whisper warnings in private. Fathers are excluded entirely. Menstruation is framed as a secret
                 rather than a normal biological event, teaching girls their bodies require concealment.</p>
             </div>
             <div class="insight-card">
-              <h4>🏫 In Schools</h4>
+              <h4><i data-lucide="school"></i> In Schools</h4>
               <p>Teachers skip or rush through reproductive health units. Mixed-gender classrooms make frank discussion
                 feel impossible. The curriculum exists on paper but is rarely delivered with honesty.</p>
             </div>
             <div class="insight-card">
-              <h4>👥 Among Peers</h4>
+              <h4><i data-lucide="users"></i> Among Peers</h4>
               <p>Menstruation becomes a source of teasing and embarrassment. Girls who are visibly unprepared face
                 ridicule, deepening pressure to stay silent about anything period-related.</p>
             </div>
             <div class="insight-card">
-              <h4>🌍 In Communities</h4>
+              <h4><i data-lucide="globe"></i> In Communities</h4>
               <p>Religious, cultural, and traditional norms label menstruating women as impure or spiritually dangerous,
                 actively suppressing factual conversation at every level.</p>
             </div>
             <div class="insight-card">
-              <h4>📉 On Education</h4>
+              <h4><i data-lucide="trending-down"></i> On Education</h4>
               <p>Absenteeism during menstruation, withdrawal from sports, dropout in settings without WASH facilities,
                 and reduced classroom confidence are direct documented outcomes.</p>
             </div>
             <div class="insight-card">
-              <h4>🩺 On Health</h4>
+              <h4><i data-lucide="stethoscope"></i> On Health</h4>
               <p>Untreated dysmenorrhea, PCOS, endometriosis and poor menstrual hygiene increase infection risk. Girls
                 delay seeking reproductive care due to shame enforced by stigma.</p>
             </div>
@@ -273,32 +445,32 @@
           </div>
           <div class="insights-cards-grid">
             <div class="insight-card">
-              <h4>😰 Emotional Impact</h4>
+              <h4><i data-lucide="frown"></i> Emotional Impact</h4>
               <p>Studies across South Asia and Sub-Saharan Africa document girls believing they were bleeding to death
                 or had contracted a disease. Acute fears evolve into lasting anxiety and negative body image.</p>
             </div>
             <div class="insight-card">
-              <h4>📚 Educational Impact</h4>
+              <h4><i data-lucide="library"></i> Educational Impact</h4>
               <p>Unprepared girls are more likely to miss school, avoid communal activities, and in regions without
                 sanitation, permanently withdraw from formal education.</p>
             </div>
             <div class="insight-card">
-              <h4>🏥 Health Consequences</h4>
+              <h4><i data-lucide="hospital"></i> Health Consequences</h4>
               <p>Uninformed girls rarely recognise severe dysmenorrhea, PCOS, or endometriosis. They don't seek care and
                 don't practice adequate hygiene, increasing infection risk.</p>
             </div>
             <div class="insight-card">
-              <h4>🎯 What Works: Early Education</h4>
+              <h4><i data-lucide="target"></i> What Works: Early Education</h4>
               <p>Teaching menstrual health before age 10 normalises it and reduces fear. Education before menarche is
                 measurably more effective than remedial education after the fact.</p>
             </div>
             <div class="insight-card">
-              <h4>👨‍👩‍👧 Caregiver Training</h4>
+              <h4><i data-lucide="users"></i> Caregiver Training</h4>
               <p>Equipping parents and guardians with language and confidence to talk openly with girls at home
                 dramatically improves outcomes. Girls whose mothers spoke openly report far less fear.</p>
             </div>
             <div class="insight-card">
-              <h4>♂️ Including Boys Matters</h4>
+              <h4><i data-lucide="user"></i> Including Boys Matters</h4>
               <p>Including boys in menstrual health education reduces stigma at the community level and builds empathy
                 in shared spaces such as schools and homes.</p>
             </div>
@@ -349,38 +521,37 @@
           </div>
           <div class="insights-cards-grid">
             <div class="insight-card">
-              <h4>📚 The Education Penalty</h4>
+              <h4><i data-lucide="library"></i> The Education Penalty</h4>
               <p>Girls who cannot manage their periods miss 3–5 school days per cycle. Across a year, this means 36–60
                 missed school days, directly linked to lower exam performance and dropout.</p>
             </div>
             <div class="insight-card">
-              <h4>🔄 The Poverty Trap</h4>
+              <h4><i data-lucide="refresh-cw"></i> The Poverty Trap</h4>
               <p>Period poverty and economic poverty are mutually reinforcing. When a girl drops out due to menstrual
                 management failure, lifetime earnings decrease — and the cycle repeats for her daughters.</p>
             </div>
             <div class="insight-card">
-              <h4>⚠️ Unsafe Substitutes</h4>
+              <h4><i data-lucide="alert-triangle"></i> Unsafe Substitutes</h4>
               <p>Rags, newspaper, leaves, bark, and ash are used as substitutes globally — each carrying serious
                 bacterial and fungal infection risks. Overextended product use elevates toxic shock risk.</p>
             </div>
             <div class="insight-card">
-              <h4>🏛️ Policy Solutions</h4>
+              <h4><i data-lucide="landmark"></i> Policy Solutions</h4>
               <p>20+ countries have eliminated the tampon tax since 2024 (UK, Canada, Australia, Germany, Kenya),
                 reducing prices by 5–20%. Tax repeal paired with access programmes transforms outcomes.</p>
             </div>
             <div class="insight-card">
-              <h4>♻️ Reusable Products</h4>
+              <h4><i data-lucide="recycle"></i> Reusable Products</h4>
               <p>Reusable cloth pads and menstrual cups transform access where supply chains for disposables are
                 unreliable. A single cup can last 10 years, eliminating monthly product costs entirely.</p>
             </div>
             <div class="insight-card">
-              <h4>🧠 Mental Health Impact</h4>
+              <h4><i data-lucide="brain"></i> Mental Health Impact</h4>
               <p>Period poverty causes anxiety, humiliation, and social withdrawal. Repeated monthly deprivation creates
                 long-term psychological burden and erodes self-confidence in public settings.</p>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
 
@@ -392,11 +563,15 @@
           longitudinal research data.</p>
 
         <div class="insights-cards-grid" style="grid-template-columns: 1fr; margin-top: 2rem;">
-          <div class="insight-card card" style="background: var(--color-surface);">
+          <div class="insight-card card" style="background: var(--color-surface); position: relative;">
             <h4
-              style="text-align:center; font-family: var(--font-display); font-size: 1.5rem; color: var(--color-crimson);">
-              Cycle Phases & Physiological Changes</h4>
-            <div class="mermaid" style="display:flex; justify-content:center; padding: 2rem 0;">
+              style="text-align:center; font-family: var(--font-display); font-size: 1.5rem; color: var(--color-crimson); display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+              Cycle Phases & Physiological Changes <button class="info-btn" data-modal="cycle-modal"
+                aria-label="More Info"
+                style="background: none; border: none; cursor: pointer; font-size: 1.2rem; transition: transform 0.2s;"
+                title="Learn more about Cycle Phases"><i data-lucide="info"></i></button></h4>
+            <pre class="mermaid"
+              style="display:flex; justify-content:center; padding: 2rem 0; background: transparent; border: none;">
               graph TD
               A[Menstrual Phase] --> B[Follicular Phase]
               B --> C[Ovulation]
@@ -405,14 +580,23 @@
               B -->|Rising Estrogen| F(High Energy, Improved Mood)
               C -->|Estrogen Peak| G(Peak Energy, Slight BBT rise)
               D -->|Rising Progesterone| H(PMS Symptoms, Higher BBT, Shift in Metabolism)
-            </div>
+            </pre>
+            <p style="text-align: center; margin-top: 0.5rem;"><a
+                href="https://iris.who.int/server/api/core/bitstreams/c71c27c5-91c0-4412-bdf3-65a099f841ac/content" target="_blank" rel="noopener"
+                class="link-source" style="font-size: 0.9rem;">Source: World Health Organization (WHO) & Rigel
+                Foundation Research <i data-lucide="arrow-up-right"></i></a></p>
           </div>
 
-          <div class="insight-card card" style="background: var(--color-surface); margin-top: 2rem;">
+          <div class="insight-card card"
+            style="background: var(--color-surface); margin-top: 2rem; position: relative;">
             <h4
-              style="text-align:center; font-family: var(--font-display); font-size: 1.5rem; color: var(--color-crimson);">
-              Urbanization Impact on Menstrual Health</h4>
-            <div class="mermaid" style="display:flex; justify-content:center; padding: 2rem 0;">
+              style="text-align:center; font-family: var(--font-display); font-size: 1.5rem; color: var(--color-crimson); display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+              Urbanization Impact on Menstrual Health <button class="info-btn" data-modal="urban-modal"
+                aria-label="More Info"
+                style="background: none; border: none; cursor: pointer; font-size: 1.2rem; transition: transform 0.2s;"
+                title="Learn more about Urbanization Impacts"><i data-lucide="info"></i></button></h4>
+            <pre class="mermaid"
+              style="display:flex; justify-content:center; padding: 2rem 0; background: transparent; border: none;">
               flowchart LR
               U((Urbanization)) --> S[Higher Stress Levels]
               U --> D[Dietary Changes/Processed Foods]
@@ -420,7 +604,9 @@
               S --> I(Cycle Irregularity)
               D --> I
               A --> M(Improved Hygiene)
-            </div>
+            </pre>
+            <p style="text-align: center; margin-top: 0.5rem;"><a href="#insights-pdf" class="link-source"
+                style="font-size: 0.9rem;">Source: Rigel Foundation Field Data & Longitudinal Research <i data-lucide="arrow-up-right"></i></a></p>
           </div>
         </div>
       </div>
@@ -438,43 +624,79 @@
               <label for="last-period" data-i18n="tracker.last_period_label">First day of last period:</label>
               <input type="date" id="last-period" required>
             </div>
-            <div class="form-group">
-              <label for="cycle-length" data-i18n="tracker.cycle_length_label">Average cycle length (days):</label>
-              <input type="number" id="cycle-length" value="28" min="21" max="45" required>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label for="cycle-length" data-i18n="tracker.cycle_length_label">Cycle length (days):</label>
+                <input type="number" id="cycle-length" value="28" min="21" max="45" required>
+              </div>
+              <div class="form-group">
+                <label for="period-duration">Period duration (days):</label>
+                <input type="number" id="period-duration" value="5" min="1" max="10" required>
+              </div>
+            </div>
+
+            <h4 style="margin-top: 0.5rem; margin-bottom: 0.8rem; color: var(--color-crimson); font-family: var(--font-display); font-size: 1.1rem;">Health Profile (Optional)</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="user-age">Age:</label>
+                <input type="number" id="user-age" placeholder="e.g. 24" min="10" max="80">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="user-height">Height (cm):</label>
+                <input type="number" id="user-height" placeholder="e.g. 165" min="100" max="250">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="user-weight">Weight (kg):</label>
+                <input type="number" id="user-weight" placeholder="e.g. 60" min="30" max="200">
+              </div>
             </div>
             <button type="submit" class="btn btn-primary" data-i18n="tracker.calculate_btn">Calculate</button>
           </form>
           <div id="tracker-result" class="hidden">
             <div class="current-status-box">
               <h3>Today: Day <span id="current-cycle-day"></span> of your cycle</h3>
+              <style>
+                #phaseIcon svg {
+                  width: 80px;
+                  height: 80px;
+                  display: block;
+                  margin: 0 auto;
+                }
+              </style>
+              <div id="phaseIcon" style="display: flex; justify-content: center; align-items: center; margin: 1.5rem 0;"></div>
               <p class="phase-name" id="current-phase-name"></p>
               <div class="cycle-progress-bar">
                 <div class="progress-fill" id="cycle-progress-fill"></div>
               </div>
               <p class="phase-insight" id="current-phase-insight"></p>
             </div>
-            
+
             <div class="tracker-grid">
               <div class="result-box">
                 <h3 data-i18n="tracker.next_period">Next Period</h3>
                 <p id="next-date" class="highlight-date"></p>
-                <p class="countdown"><span id="days-countdown"></span> <span data-i18n="tracker.days_away">days away</span></p>
+                <p class="countdown"><span id="days-countdown"></span> <span data-i18n="tracker.days_away">days
+                    away</span></p>
               </div>
               <div class="result-box">
                 <h3 data-i18n="tracker.fertile_window">Estimated Fertile Window</h3>
                 <p id="fertile-dates"></p>
+              </div>
+              <div class="result-box" id="unicef-insight-box" style="display: none; grid-column: 1 / -1; background: var(--color-surface); border-left: 4px solid var(--color-primary);">
+                <h3 id="unicef-insight-title" style="color: var(--color-primary); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;"><i data-lucide="info"></i> Health Insight (UNICEF)</h3>
+                <p id="unicef-insight-text" style="font-size: 0.95rem; margin-top: 0.5rem;"></p>
               </div>
             </div>
 
             <div class="symptom-logger">
               <h4>Quick Log Today</h4>
               <div class="symptom-tags">
-                <button class="tag-btn" data-symptom="cramps">🩸 Cramps</button>
-                <button class="tag-btn" data-symptom="headache">🤕 Headache</button>
-                <button class="tag-btn" data-symptom="bloating">🎈 Bloating</button>
-                <button class="tag-btn" data-symptom="fatigue">😴 Fatigue</button>
-                <button class="tag-btn" data-symptom="happy">😊 Happy</button>
-                <button class="tag-btn" data-symptom="sad">😢 Sad</button>
+                <button class="tag-btn" data-symptom="cramps"><i data-lucide="droplet"></i> Cramps</button>
+                <button class="tag-btn" data-symptom="headache"><i data-lucide="thermometer"></i> Headache</button>
+                <button class="tag-btn" data-symptom="bloating"><i data-lucide="wind"></i> Bloating</button>
+                <button class="tag-btn" data-symptom="fatigue"><i data-lucide="moon"></i> Fatigue</button>
+                <button class="tag-btn" data-symptom="happy"><i data-lucide="smile"></i> Happy</button>
+                <button class="tag-btn" data-symptom="sad"><i data-lucide="frown"></i> Sad</button>
               </div>
               <p class="log-msg" id="log-msg"></p>
             </div>
@@ -502,7 +724,9 @@
               <option value="Emotional">Emotional</option>
             </select>
             <button type="submit" class="btn btn-secondary" data-i18n="qa.submit_btn">Submit Anonymously</button>
-            <button type="button" id="qa-clear-btn" class="btn btn-ghost" style="margin-left: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--red-200); color: var(--color-crimson); font-weight: 600;">Clear Data</button>
+            <button type="button" id="qa-clear-btn" class="btn btn-ghost"
+              style="margin-left: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--red-200); color: var(--color-crimson); font-weight: 600;">Clear
+              Data</button>
           </div>
         </form>
         <div id="qa-list" class="qa-list"></div>
@@ -512,13 +736,14 @@
     <!-- Ministry of Women & Child Development Section -->
     <section id="schemes" class="section bg-soft fade-in-up">
       <div class="container">
-        <h2 class="section-title" data-i18n="ministry.title">Ministry of Women &amp; Child Development</h2>
-        <p class="section-subtitle" data-i18n="ministry.subtitle">Official Government of India schemes for women's health, safety, and empowerment. Access support, subsidised products, and crisis helplines.</p>
+        <h2 class="section-title">Ministry of Women &amp; Child Development</h2>
+        <p class="section-subtitle">Official Government of India schemes for women's health, safety, and empowerment.
+          Access support, subsidised products, and crisis helplines.</p>
 
         <!-- Ministry Banner -->
         <div class="ministry-banner">
           <div class="ministry-banner__left">
-            <div class="ministry-logo-icon">🏛️</div>
+            <div class="ministry-logo-icon"><i data-lucide="landmark"></i></div>
             <div>
               <h3>Government of India</h3>
               <p>Ministry of Women &amp; Child Development (MoWCD)</p>
@@ -528,12 +753,12 @@
           <div class="ministry-banner__right">
             <div class="ministry-helpline">
               <span class="helpline-label">Women Helpline</span>
-              <span class="helpline-number">📞 181</span>
+              <span class="helpline-number"><i data-lucide="phone"></i> 181</span>
               <span class="helpline-note">Free · 24×7 · All India</span>
             </div>
             <div class="ministry-helpline">
               <span class="helpline-label">Child Helpline</span>
-              <span class="helpline-number">📞 1098</span>
+              <span class="helpline-number"><i data-lucide="phone"></i> 1098</span>
               <span class="helpline-note">Free · 24×7 · All India</span>
             </div>
             <div class="ministry-helpline">
@@ -567,10 +792,10 @@
         <!-- Scheme Category Filter -->
         <div class="scheme-filters">
           <button class="scheme-filter-btn active" data-ministry="all">All Schemes</button>
-          <button class="scheme-filter-btn" data-ministry="MoWCD">🏛️ MoWCD</button>
-          <button class="scheme-filter-btn" data-ministry="MoHFW">🩺 Health Ministry</button>
-          <button class="scheme-filter-btn" data-ministry="MoE">🏫 Education</button>
-          <button class="scheme-filter-btn" data-ministry="PMBJP">📦 Jan Aushadhi</button>
+          <button class="scheme-filter-btn" data-ministry="MoWCD"><i data-lucide="landmark"></i> MoWCD</button>
+          <button class="scheme-filter-btn" data-ministry="MoHFW"><i data-lucide="stethoscope"></i> Health Ministry</button>
+          <button class="scheme-filter-btn" data-ministry="MoE"><i data-lucide="school"></i> Education</button>
+          <button class="scheme-filter-btn" data-ministry="PMBJP"><i data-lucide="package"></i> Jan Aushadhi</button>
         </div>
 
         <div id="schemes-grid" class="schemes-grid-layout"></div>
@@ -578,7 +803,7 @@
         <!-- Mission Shakti Deep-Dive -->
         <div class="mission-shakti-card">
           <div class="ms-header">
-            <span class="ms-icon">🛡️</span>
+            <span class="ms-icon" style="display: flex; align-items: center; justify-content: center;"><i data-lucide="shield"></i></span>
             <div>
               <h3>Mission Shakti — Deep Dive</h3>
               <p>India's integrated umbrella scheme for women's safety &amp; empowerment (launched 2021)</p>
@@ -586,27 +811,28 @@
           </div>
           <div class="ms-grid">
             <div class="ms-sub">
-              <h4>⚔️ Sambal — Safety Sub-scheme</h4>
+              <h4 style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="swords"></i> Sambal — Safety Sub-scheme</h4>
               <ul>
-                <li>✅ One Stop Centres (Sakhi) — 700+ centres nationwide</li>
-                <li>✅ Women Helpline <strong>181</strong> — 24×7 crisis support</li>
-                <li>✅ Beti Bachao Beti Padhao campaign</li>
-                <li>✅ Nari Adalat — local grievance courts</li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>One Stop Centres (Sakhi) — 700+ centres nationwide</span></li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>Women Helpline <strong>181</strong> — 24×7 crisis support</span></li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>Beti Bachao Beti Padhao campaign</span></li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>Nari Adalat — local grievance courts</span></li>
               </ul>
             </div>
             <div class="ms-sub">
-              <h4>💪 Samarthya — Empowerment Sub-scheme</h4>
+              <h4 style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="activity"></i> Samarthya — Empowerment Sub-scheme</h4>
               <ul>
-                <li>✅ Shakti Sadan — shelter &amp; rehabilitation homes</li>
-                <li>✅ Sakhi Niwas — working women's hostels</li>
-                <li>✅ Palna — daycare for working mothers' children</li>
-                <li>✅ PMMVY — ₹5,000 maternity benefit</li>
-                <li>✅ SANKALP Hubs — single-window scheme info</li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>Shakti Sadan — shelter &amp; rehabilitation homes</span></li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>Sakhi Niwas — working women's hostels</span></li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>Palna — daycare for working mothers' children</span></li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>PMMVY — ₹5,000 maternity benefit</span></li>
+                <li><span class="ms-check" style="color: var(--color-success); display: flex; align-items: center; justify-content: center;"><i data-lucide="check-circle-2" style="width: 1.2rem; height: 1.2rem;"></i></span> <span>SANKALP Hubs — single-window scheme info</span></li>
               </ul>
             </div>
           </div>
-          <a href="https://wcd.gov.in/mission-shakti" target="_blank" rel="noopener" class="btn btn-primary btn-sm"
-            style="margin-top:1rem;">Visit Official Portal ↗</a>
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="https://missionshakti.wcd.gov.in/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Portal <i data-lucide="arrow-up-right"></i></a>
+          </div>
         </div>
       </div>
     </section>
@@ -614,43 +840,73 @@
     <!-- School & Teacher Corner -->
     <section id="teacher-corner" class="section fade-in-up" style="background-color: var(--color-sand);">
       <div class="container">
-        <h2 class="section-title text-center" data-i18n="teacher_corner.title" style="color: var(--color-obsidian); text-align: center;">School &amp; Teacher Corner 🏫</h2>
-        <p class="section-subtitle text-center" data-i18n="teacher_corner.subtitle" style="margin-bottom: 3rem;">Empowering educators to build safe, stigma-free environments for students.</p>
+        <h2 class="section-title text-center" style="color: var(--color-obsidian); text-align: center;">School &amp;
+          Teacher Corner <i data-lucide="school"></i></h2>
+        <p class="section-subtitle text-center" style="margin-bottom: 3rem;">Empowering educators to build safe,
+          stigma-free environments for students.</p>
 
-        <div class="teacher-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          
-          <div class="teacher-card" style="background: #fff; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-left: 5px solid var(--color-crimson); transition: transform 0.3s ease;">
-            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 1rem;">🗣️ How to Talk About Periods</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">A brief guide on using inclusive, medically accurate language in the classroom to prevent shame and bullying.</p>
-            <a href="media/maa_01_how_to_talk_about_periods.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Read Guidelines</a>
+        <div class="teacher-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+          <div class="teacher-card"
+            style="background: #fff; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-left: 5px solid var(--color-crimson); transition: transform 0.3s ease;">
+            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 1rem;"><i data-lucide="megaphone"></i> How to
+              Talk About Periods</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">A
+              brief guide on using inclusive, medically accurate language in the classroom to prevent shame and
+              bullying.</p>
+            <a href="media/maa_01_how_to_talk_about_periods.pdf" target="_blank" rel="noopener"
+              class="btn btn-secondary btn-sm">Read Guidelines</a>
           </div>
 
-          <div class="teacher-card" style="background: #fff; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-left: 5px solid var(--color-secondary); transition: transform 0.3s ease;">
-            <h3 style="color: var(--color-secondary); font-family: var(--font-display); margin-bottom: 1rem;">📄 1-Page Lesson Plan</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">A downloadable, WHO-backed lesson plan tailored for 5th to 8th-grade students to safely introduce menstrual hygiene.</p>
-            <a href="media/maa_02_lesson_plan.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Download PDF</a>
+          <div class="teacher-card"
+            style="background: #fff; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-left: 5px solid var(--color-secondary); transition: transform 0.3s ease;">
+            <h3 style="color: var(--color-secondary); font-family: var(--font-display); margin-bottom: 1rem;">📄 1-Page
+              Lesson Plan</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">A
+              downloadable, WHO-backed lesson plan tailored for 5th to 8th-grade students to safely introduce menstrual
+              hygiene.</p>
+            <a href="media/maa_02_lesson_plan.pdf" target="_blank" rel="noopener"
+              class="btn btn-secondary btn-sm">Download PDF</a>
           </div>
 
-          <div class="teacher-card" style="background: #fff; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-left: 5px solid var(--red-500); transition: transform 0.3s ease;">
-            <h3 style="color: var(--red-500); font-family: var(--font-display); margin-bottom: 1rem;">🩺 Counselor Scripts</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">Pre-written, gentle scripts for school counselors or nurses to support girls experiencing their first period at school.</p>
-            <a href="media/maa_03_counselor_scripts.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">View Scripts</a>
+          <div class="teacher-card"
+            style="background: #fff; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-left: 5px solid var(--red-500); transition: transform 0.3s ease;">
+            <h3 style="color: var(--red-500); font-family: var(--font-display); margin-bottom: 1rem;"><i data-lucide="stethoscope"></i> Counselor
+              Scripts</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+              Pre-written, gentle scripts for school counselors or nurses to support girls experiencing their first
+              period at school.</p>
+            <a href="media/maa_03_counselor_scripts.pdf" target="_blank" rel="noopener"
+              class="btn btn-secondary btn-sm">View Scripts</a>
           </div>
 
         </div>
 
         <!-- Request a Seminar CTA -->
-        <div class="seminar-cta" style="margin-top: 4rem; background: var(--color-crimson); color: white; padding: 3rem 2rem; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow-lg); position: relative; overflow: hidden;">
+        <div class="seminar-cta"
+          style="margin-top: 4rem; background: var(--color-crimson); color: white; padding: 3rem 2rem; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow-lg); position: relative; overflow: hidden;">
           <div style="position: relative; z-index: 2;">
-            <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 1rem; color: white;">🏫 Invite Rigel to Your Institute</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; opacity: 0.95; line-height: 1.6;">
-              Want to break the stigma in your community? Request a menstrual health & hygiene seminar at your school or college. Our team will review the feasibility and organize an impactful, educational session for your students!
+            <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 1rem; color: white;"><i data-lucide="school"></i>
+              Invite Rigel to Your Institute</h2>
+            <p
+              style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; opacity: 0.95; line-height: 1.6;">
+              Want to break the stigma in your community? Request a menstrual health & hygiene seminar at your school or
+              college. Our team will review the feasibility and organize an impactful, educational session for your
+              students!
             </p>
-            <a href="mailto:maa@rigelfoundation.org.in?subject=Requesting a Menstrual Health Seminar at [Insert Institute Name]" class="btn btn-primary pulse" style="background: white; color: var(--color-crimson); font-weight: 800; border: none;">✉️ Request a Seminar</a>
+            <a href="#" onclick="copyEmail(event)"
+              class="btn btn-primary pulse"
+              style="background: white; color: var(--color-crimson); font-weight: 800; border: none;"><i data-lucide="mail"></i> Request a
+              Seminar</a>
           </div>
           <!-- Decorative shape -->
-          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 1;"></div>
-          <div style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 1;"></div>
+          <div
+            style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 1;">
+          </div>
+          <div
+            style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 1;">
+          </div>
         </div>
 
       </div>
@@ -659,48 +915,68 @@
     <!-- Insights / Blog -->
     <section id="insights" class="section fade-in-up">
       <div class="container">
-        <h2 class="section-title" data-i18n="insights.title">Insights &amp; Blog</h2>
+        <h2 class="section-title" data-i18n="insights.title" style="text-align: center;">Insights &amp; Blog</h2>
         <p class="section-subtitle" data-i18n="insights.subtitle">Real stories and expert advice.</p>
         <div class="grid" id="blog-grid"></div>
+        <div style="text-align: center; margin-top: var(--space-12);">
+          <a href="blog.html" class="btn btn-primary pulse">View All Articles <i data-lucide="arrow-right"></i></a>
+        </div>
       </div>
     </section>
 
     <!-- Hygiene Kit Visual Guide -->
     <section id="hygiene-kit" class="section fade-in-up">
       <div class="container">
-        <h2 class="section-title text-center" data-i18n="hygiene_kit.title" style="text-align: center;">Inside a Rigel Hygiene Kit</h2>
-        <p class="section-subtitle text-center" data-i18n="hygiene_kit.subtitle">Every kit we distribute in rural areas is carefully packed for dignity, safety, and education.</p>
-        
-        <div class="kit-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
-          
-          <div class="kit-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
-            <div style="font-size: 3.5rem; margin-bottom: 1rem;">🩸</div>
-            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Sanitary Pads</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem;">High-quality, safe sanitary napkins sufficient for a complete menstrual cycle.</p>
+        <h2 class="section-title text-center" style="text-align: center;">Inside a Rigel Hygiene Kit</h2>
+        <p class="section-subtitle text-center">Every kit we distribute in rural areas is carefully packed for dignity,
+          safety, and education.</p>
+
+        <div class="kit-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+
+          <div class="kit-item"
+            style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
+            <div style="font-size: 3.5rem; margin-bottom: 1rem;"><i data-lucide="droplet"></i></div>
+            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Sanitary
+              Pads</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">High-quality, safe sanitary napkins
+              sufficient for a complete menstrual cycle.</p>
           </div>
 
-          <div class="kit-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
-            <div style="font-size: 3.5rem; margin-bottom: 1rem;">🧼</div>
-            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Antiseptic Soap</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem;">Essential for maintaining personal hygiene and preventing infections safely.</p>
+          <div class="kit-item"
+            style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
+            <div style="font-size: 3.5rem; margin-bottom: 1rem;"><i data-lucide="shield-check"></i></div>
+            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Antiseptic
+              Soap</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">Essential for maintaining personal hygiene
+              and preventing infections safely.</p>
           </div>
 
-          <div class="kit-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
-            <div style="font-size: 3.5rem; margin-bottom: 1rem;">🗑️</div>
-            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Disposal Bags</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem;">Eco-friendly paper bags for the discreet and safe disposal of used products.</p>
+          <div class="kit-item"
+            style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
+            <div style="font-size: 3.5rem; margin-bottom: 1rem;"><i data-lucide="trash-2"></i></div>
+            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Disposal
+              Bags</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">Eco-friendly paper bags for the discreet and
+              safe disposal of used products.</p>
           </div>
 
-          <div class="kit-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
-            <div style="font-size: 3.5rem; margin-bottom: 1rem;">📖</div>
-            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Educational Booklet</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem;">An easy-to-read comic guide answering common questions in local languages.</p>
+          <div class="kit-item"
+            style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
+            <div style="font-size: 3.5rem; margin-bottom: 1rem;"><i data-lucide="book-open"></i></div>
+            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">
+              Educational Booklet</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">An easy-to-read comic guide answering common
+              questions in local languages.</p>
           </div>
 
-          <div class="kit-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
-            <div style="font-size: 3.5rem; margin-bottom: 1rem;">📅</div>
-            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Tracker Card</h3>
-            <p style="color: var(--color-text-muted); font-size: 0.95rem;">A simple, offline paper calendar to help girls predict their next cycle without stress.</p>
+          <div class="kit-item"
+            style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--red-100); transition: transform 0.3s ease;">
+            <div style="font-size: 3.5rem; margin-bottom: 1rem;"><i data-lucide="calendar"></i></div>
+            <h3 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 0.5rem;">Tracker
+              Card</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">A simple, offline paper calendar to help
+              girls predict their next cycle without stress.</p>
           </div>
 
         </div>
@@ -710,48 +986,53 @@
     <!-- Myth vs Fact Interactive Quiz -->
     <section id="myths" class="section bg-soft fade-in-up">
       <div class="container">
-        <h2 class="section-title text-center" data-i18n="myth_quiz.title" style="text-align: center;">Myth vs. Fact Quiz</h2>
-        <p class="section-subtitle text-center" data-i18n="myth_quiz.subtitle" style="margin-bottom: 3rem;">Tap the cards to reveal the truth and bust common menstrual myths!</p>
-        <div class="myth-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          
+        <h2 class="section-title text-center" style="text-align: center;">Myth vs. Fact Quiz</h2>
+        <p class="section-subtitle text-center" style="margin-bottom: 3rem;">Tap the cards to reveal the truth and bust
+          common menstrual myths!</p>
+        <div class="myth-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
           <div class="myth-card" onclick="this.classList.toggle('flipped')">
             <div class="myth-inner">
               <div class="myth-front">
-                <h3>🤔 Myth</h3>
+                <h3 style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--color-crimson);"><i data-lucide="x-circle"></i> Myth</h3>
                 <p>"You shouldn't wash your hair or exercise during your periods."</p>
-                <span class="flip-hint">Tap to reveal truth 👆</span>
+                <span class="flip-hint" style="display: flex; align-items: center; justify-content: center; gap: 0.25rem;">Tap to reveal truth <i data-lucide="pointer" style="width: 1rem; height: 1rem;"></i></span>
               </div>
               <div class="myth-back">
-                <h3>✅ Fact</h3>
-                <p>Gentle exercise and good hygiene (including washing your hair) are completely safe and can actually help reduce cramps!</p>
+                <h3 style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--color-success);"><i data-lucide="check-circle-2"></i> Fact</h3>
+                <p>Gentle exercise and good hygiene (including washing your hair) are completely safe and can actually
+                  help reduce cramps!</p>
               </div>
             </div>
           </div>
-          
+
           <div class="myth-card" onclick="this.classList.toggle('flipped')">
             <div class="myth-inner">
               <div class="myth-front">
-                <h3>🤔 Myth</h3>
+                <h3 style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--color-crimson);"><i data-lucide="x-circle"></i> Myth</h3>
                 <p>"Period pain is just in your head and you should endure it quietly."</p>
-                <span class="flip-hint">Tap to reveal truth 👆</span>
+                <span class="flip-hint" style="display: flex; align-items: center; justify-content: center; gap: 0.25rem;">Tap to reveal truth <i data-lucide="pointer" style="width: 1rem; height: 1rem;"></i></span>
               </div>
               <div class="myth-back">
-                <h3>✅ Fact</h3>
-                <p>Menstrual cramps are real medical conditions. Severe pain should not be endured—please talk to a doctor or ASHA worker.</p>
+                <h3 style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--color-success);"><i data-lucide="check-circle-2"></i> Fact</h3>
+                <p>Menstrual cramps are real medical conditions. Severe pain should not be endured—please talk to a
+                  doctor or ASHA worker.</p>
               </div>
             </div>
           </div>
-          
+
           <div class="myth-card" onclick="this.classList.toggle('flipped')">
             <div class="myth-inner">
               <div class="myth-front">
-                <h3>🤔 Myth</h3>
+                <h3 style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--color-crimson);"><i data-lucide="x-circle"></i> Myth</h3>
                 <p>"Using sanitary pads or tampons will make you lose your purity."</p>
-                <span class="flip-hint">Tap to reveal truth 👆</span>
+                <span class="flip-hint" style="display: flex; align-items: center; justify-content: center; gap: 0.25rem;">Tap to reveal truth <i data-lucide="pointer" style="width: 1rem; height: 1rem;"></i></span>
               </div>
               <div class="myth-back">
-                <h3>✅ Fact</h3>
-                <p>Pads, cups, and tampons are simply medical hygiene tools. They have absolutely nothing to do with purity or morality.</p>
+                <h3 style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--color-success);"><i data-lucide="check-circle-2"></i> Fact</h3>
+                <p>Pads, cups, and tampons are simply medical hygiene tools. They have absolutely nothing to do with
+                  purity or morality.</p>
               </div>
             </div>
           </div>
@@ -763,50 +1044,57 @@
     <!-- Impact -->
     <section id="impact" class="section bg-soft fade-in-up">
       <div class="container">
-        <h2 class="section-title" style="font-size:3rem;">Our Impact <span style="font-weight:300;">At a Glance</span></h2>
-        
+        <h2 class="section-title" style="font-size:3rem;">Our Impact <span style="font-weight:300;">At a Glance</span>
+        </h2>
+
         <div class="impact-glance-grid">
-          
+
           <div class="glance-card">
-            <div class="glance-icon">🏫</div>
+            <div class="glance-icon"><i data-lucide="school"></i></div>
             <div class="glance-num counter" data-target="15">0</div>
             <h4 class="glance-title">Schools Partnered</h4>
-            <p class="glance-desc">We've established strong partnerships with educational institutions to integrate our awareness programs.</p>
+            <p class="glance-desc">We've established strong partnerships with educational institutions to integrate our
+              awareness programs.</p>
           </div>
 
           <div class="glance-card">
-            <div class="glance-icon">🗓️</div>
+            <div class="glance-icon"><i data-lucide="calendar-days"></i></div>
             <div class="glance-num counter" data-target="6" data-no-plus="true">0</div>
             <h4 class="glance-title">Annual Editions</h4>
-            <p class="glance-desc">Held successfully every year since 2020, our event continues to grow in reach and influence.</p>
+            <p class="glance-desc">Held successfully every year since 2020, our event continues to grow in reach and
+              influence.</p>
           </div>
 
           <div class="glance-card">
-            <div class="glance-icon">🛠️</div>
+            <div class="glance-icon"><i data-lucide="package"></i></div>
             <div class="glance-num counter" data-target="2000">0</div>
             <h4 class="glance-title">Hygiene Kits Distributed</h4>
-            <p class="glance-desc">Essential sanitary products have been provided to underprivileged women, ensuring their dignity and health.</p>
+            <p class="glance-desc">Essential sanitary products have been provided to underprivileged women, ensuring
+              their dignity and health.</p>
           </div>
 
           <div class="glance-card">
-            <div class="glance-icon">🎓</div>
+            <div class="glance-icon"><i data-lucide="graduation-cap"></i></div>
             <div class="glance-num counter" data-target="1000">0</div>
             <h4 class="glance-title">Students Educated</h4>
-            <p class="glance-desc">Through our engaging debates, seminars, and quizzes, we're empowering the next generation.</p>
+            <p class="glance-desc">Through our engaging debates, seminars, and quizzes, we're empowering the next
+              generation.</p>
           </div>
 
           <div class="glance-card">
-            <div class="glance-icon">👩</div>
+            <div class="glance-icon"><i data-lucide="users"></i></div>
             <div class="glance-num counter" data-target="300">0</div>
             <h4 class="glance-title">Women Reached</h4>
-            <p class="glance-desc">Our direct field engagement and donations have provided vital support to women in need.</p>
+            <p class="glance-desc">Our direct field engagement and donations have provided vital support to women in
+              need.</p>
           </div>
 
           <div class="glance-card">
-            <div class="glance-icon">🤝</div>
+            <div class="glance-icon"><i data-lucide="handshake"></i></div>
             <div class="glance-num counter" data-target="80">0</div>
             <h4 class="glance-title">Dedicated Volunteers</h4>
-            <p class="glance-desc">The heart of our initiative, our volunteers work tirelessly to make each edition a success.</p>
+            <p class="glance-desc">The heart of our initiative, our volunteers work tirelessly to make each edition a
+              success.</p>
           </div>
 
         </div>
@@ -817,42 +1105,47 @@
     <section id="timeline" class="section fade-in-up">
       <div class="container">
         <h2 class="section-title">Our Distribution Journey</h2>
-        <p class="section-subtitle">Since 2020, we have distributed <strong>2,000+ hygiene kits</strong> and reached over <strong>300 women</strong> through direct grassroots engagement.</p>
-        
+        <p class="section-subtitle">Since 2020, we have distributed <strong>2,000+ hygiene kits</strong> and reached
+          over <strong>300 women</strong> through direct grassroots engagement.</p>
+
         <div class="timeline-container">
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content card">
-              <h3>📍 7 No Rail Gate, Michal Nagar</h3>
+              <h3><i data-lucide="map-pin"></i> 7 No Rail Gate, Michal Nagar</h3>
               <p class="timeline-date">20th October 2020</p>
-              <p>Our inaugural distribution drive, taking the first step towards menstrual equity and awareness at the grassroots level.</p>
+              <p>Our inaugural distribution drive, taking the first step towards menstrual equity and awareness at the
+                grassroots level.</p>
             </div>
           </div>
-          
+
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content card">
-              <h3>📍 Sovabazar</h3>
+              <h3><i data-lucide="map-pin"></i> Sovabazar</h3>
               <p class="timeline-date">3rd December 2023</p>
-              <p>Continued our mission by providing essential sanitary kits and educating young women in the historic district of Sovabazar.</p>
+              <p>Continued our mission by providing essential sanitary kits and educating young women in the historic
+                district of Sovabazar.</p>
             </div>
           </div>
-          
+
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content card">
-              <h3>📍 Sovabazar</h3>
+              <h3><i data-lucide="map-pin"></i> Sovabazar</h3>
               <p class="timeline-date">22nd June 2024</p>
-              <p>Returned to Sovabazar for our summer edition, expanding our reach and reinforcing the importance of menstrual hygiene.</p>
+              <p>Returned to Sovabazar for our summer edition, expanding our reach and reinforcing the importance of
+                menstrual hygiene.</p>
             </div>
           </div>
-          
+
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content card">
-              <h3>📍 Vani Vihar, Odisha</h3>
+              <h3><i data-lucide="map-pin"></i> Vani Vihar, Odisha</h3>
               <p class="timeline-date">30th October 2025</p>
-              <p>Expanded our operations into Odisha, partnering with local communities to distribute kits and spread awareness.</p>
+              <p>Expanded our operations into Odisha, partnering with local communities to distribute kits and spread
+                awareness.</p>
             </div>
           </div>
         </div>
@@ -867,7 +1160,7 @@
           menstrual health in India.</p>
         <div class="grid">
           <div class="card research-card glassmorphism-card">
-            <div class="icon-wrap">📦</div>
+            <div class="icon-wrap"><i data-lucide="package"></i></div>
             <h3>Period Poverty &amp; Access</h3>
             <p>Comprehensive dataset detailing access to menstrual hygiene products across socioeconomic brackets
               globally, including India-specific findings.</p>
@@ -875,7 +1168,7 @@
               style="margin-top:1rem;">Download PDF ↓</a>
           </div>
           <div class="card research-card glassmorphism-card">
-            <div class="icon-wrap">🎓</div>
+            <div class="icon-wrap"><i data-lucide="graduation-cap"></i></div>
             <h3>Prior Menstrual Education</h3>
             <p>Survey results highlighting the critical gap in menstrual education before a girl's first period, with
               recommendations for governments.</p>
@@ -883,7 +1176,7 @@
               target="_blank" class="btn btn-primary btn-sm" style="margin-top:1rem;">Download PDF ↓</a>
           </div>
           <div class="card research-card glassmorphism-card">
-            <div class="icon-wrap">🗣️</div>
+            <div class="icon-wrap"><i data-lucide="megaphone"></i></div>
             <h3>Stigma &amp; Menstrual Silence</h3>
             <p>Qualitative and quantitative data on the societal stigma surrounding menstruation in schools, homes,
               communities, and institutions.</p>
@@ -904,17 +1197,46 @@
     <section id="about-rigel" class="section bg-primary fade-in-up">
       <div class="container">
         <h2 class="section-title text-white text-center" style="font-size: 2.5rem; margin-bottom: 1rem;">Who We Are</h2>
-        <div class="card" style="max-width: 800px; margin: 2rem auto 0; background: var(--color-surface); padding: var(--space-8); border-radius: var(--radius-xl);">
+        <div class="card"
+          style="max-width: 800px; margin: 2rem auto 0; background: var(--color-surface); padding: var(--space-8); border-radius: var(--radius-xl);">
           <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <img src="media/Rigel%20Logo.png" alt="Rigel Logo" style="height: 80px; width: auto; object-fit: contain;">
           </div>
-          <p style="font-size: 1.25rem; line-height: 1.8; color: var(--color-obsidian); font-weight: 600; text-align: center; font-family: var(--font-display);">
-            <span style="color: var(--color-crimson);">Rigel Foundation</span> is India's first home-grown non-profit organization dedicated entirely to fighting against women's menstrual problems and period poverty.
+          <p
+            style="font-size: 1.25rem; line-height: 1.8; color: var(--color-obsidian); font-weight: 600; text-align: center; font-family: var(--font-display);">
+            <span style="color: var(--color-crimson);">Rigel Foundation</span> is India's first home-grown non-profit
+            organization dedicated entirely to fighting against women's menstrual problems and period poverty.
           </p>
           <div style="height: 2px; width: 60px; background: var(--color-sand); margin: 1.5rem auto;"></div>
           <p style="font-size: 1.05rem; line-height: 1.8; color: var(--color-text-muted); text-align: center;">
-            Born from a deeply rooted desire to shatter centuries-old stigmas, our foundation operates directly at the grassroots level. From our very first distribution drive to our expanding reach across multiple states, we operate on a simple, unwavering belief: <strong>menstrual health is a fundamental human right, not a luxury.</strong>
+            Born from a deeply rooted desire to shatter centuries-old stigmas, our foundation operates directly at the
+            grassroots level. From our very first distribution drive to our expanding reach across multiple states, we
+            operate on a simple, unwavering belief: <strong>menstrual health is a fundamental human right, not a
+              luxury.</strong>
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voices from the Street -->
+    <section id="street-voices" class="section bg-soft fade-in-up">
+      <div class="container">
+        <h2 class="section-title text-center">Voices from the Street</h2>
+        <p class="section-subtitle text-center">Real people. Real messages. Real change.</p>
+
+        <div class="street-grid">
+          <div class="street-card">
+            <img src="media/BOARD1.JPG" alt="Make fun of blood stains...">
+          </div>
+          <div class="street-card">
+            <img src="media/BOARD2.JPG" alt="Empower girls with knowledge...">
+          </div>
+          <div class="street-card">
+            <img src="media/BOARD3.JPG" alt="End Period Poverty">
+          </div>
+          <div class="street-card">
+            <img src="media/BOARD4.JPG" alt="Pure Ambubachi Impure periods">
+          </div>
         </div>
       </div>
     </section>
@@ -935,7 +1257,7 @@
                 style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
             </div>
             <div class="leader-badge-row">
-              <span class="leader-badge">🎯 Programme Director</span>
+              <span class="leader-badge"><i data-lucide="target"></i> Programme Director</span>
               <span class="leader-badge">🇮🇳 MAA by Rigel</span>
             </div>
           </div>
@@ -960,19 +1282,19 @@
 
             <div class="leader-pillars">
               <div class="pillar">
-                <span class="pillar-icon">🔬</span>
+                <span class="pillar-icon"><i data-lucide="microscope"></i></span>
                 <span class="pillar-text">Research & Evidence</span>
               </div>
               <div class="pillar">
-                <span class="pillar-icon">🤝</span>
+                <span class="pillar-icon"><i data-lucide="handshake"></i></span>
                 <span class="pillar-text">Community Outreach</span>
               </div>
               <div class="pillar">
-                <span class="pillar-icon">📱</span>
+                <span class="pillar-icon"><i data-lucide="smartphone"></i></span>
                 <span class="pillar-text">Digital Access</span>
               </div>
               <div class="pillar">
-                <span class="pillar-icon">🏛️</span>
+                <span class="pillar-icon"><i data-lucide="landmark"></i></span>
                 <span class="pillar-text">Policy Advocacy</span>
               </div>
             </div>
@@ -990,12 +1312,27 @@
         <div class="team-grid">
           <div class="team-card card">
             <div class="avatar bg-1" style="overflow: hidden;">
-              <img
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                alt="Suvaiyu Saha" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="media/Suvaiyu%20Saha.png" alt="Suvaiyu Saha"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
             </div>
             <h3>Suvaiyu Saha</h3>
-            <p class="role">Chairman Rigel Foundation</p>
+            <p class="role">Chairman</p>
+          </div>
+          <div class="team-card card">
+            <div class="avatar bg-2" style="overflow: hidden;">
+              <img src="media/Suraj%20Kumar%20Midya.png" alt="Suraj Kumar Midya"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+            <h3>Suraj Kumar Midya</h3>
+            <p class="role">COO</p>
+          </div>
+          <div class="team-card card">
+            <div class="avatar bg-3" style="overflow: hidden;">
+              <img src="media/Anushka%20Chanda.png" alt="Anushka Chanda"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+            <h3>Anushka Chanda</h3>
+            <p class="role">President Odisha Branch</p>
           </div>
         </div>
 
@@ -1006,28 +1343,35 @@
     <section id="join" class="section bg-soft fade-in-up">
       <div class="container">
         <h2 class="section-title text-center">Be the Face of Maa</h2>
-        <p class="section-subtitle text-center">Join our mission to end period poverty. Whether you love creating content, working on the ground, or diving into data, there is a place for you.</p>
-        
+        <p class="section-subtitle text-center">Join our mission to end period poverty. Whether you love creating
+          content, working on the ground, or diving into data, there is a place for you.</p>
+
         <div class="join-grid">
           <div class="join-card card">
-            <div class="join-icon">📸</div>
+            <div class="join-icon"><i data-lucide="camera"></i></div>
             <h3>Content Creator</h3>
-            <p>Help us spread awareness through engaging social media posts, videos, and storytelling. Break the stigma digitally.</p>
-            <a href="mailto:maa@rigelfoundation.org.in?subject=Content Creator Application" class="btn btn-ghost" style="margin-top: 1rem;">Apply Now →</a>
+            <p>Help us spread awareness through engaging social media posts, videos, and storytelling. Break the stigma
+              digitally.</p>
+            <a href="#" onclick="copyEmail(event)" class="btn btn-ghost"
+              style="margin-top: 1rem;">Apply Now <i data-lucide="arrow-right"></i></a>
           </div>
-          
+
           <div class="join-card card">
-            <div class="join-icon">🤝</div>
+            <div class="join-icon"><i data-lucide="handshake"></i></div>
             <h3>Volunteer</h3>
-            <p>Join our grassroots distribution drives, coordinate local events, and work directly with women in the community.</p>
-            <a href="mailto:maa@rigelfoundation.org.in?subject=Volunteer Application" class="btn btn-ghost" style="margin-top: 1rem;">Apply Now →</a>
+            <p>Join our grassroots distribution drives, coordinate local events, and work directly with women in the
+              community.</p>
+            <a href="#" onclick="copyEmail(event)" class="btn btn-ghost"
+              style="margin-top: 1rem;">Apply Now <i data-lucide="arrow-right"></i></a>
           </div>
-          
+
           <div class="join-card card">
-            <div class="join-icon">🔬</div>
+            <div class="join-icon"><i data-lucide="microscope"></i></div>
             <h3>Research</h3>
-            <p>Work with our data team to study menstrual equity, write impactful reports, and advocate for policy change.</p>
-            <a href="mailto:maa@rigelfoundation.org.in?subject=Research Application" class="btn btn-ghost" style="margin-top: 1rem;">Apply Now →</a>
+            <p>Work with our data team to study menstrual equity, write impactful reports, and advocate for policy
+              change.</p>
+            <a href="#" onclick="copyEmail(event)" class="btn btn-ghost"
+              style="margin-top: 1rem;">Apply Now <i data-lucide="arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -1047,11 +1391,11 @@
         <div class="footer-col">
           <h4>Research Reports</h4>
           <p>
-            <a href="insights%20details/stigma_menstrual_silence.pdf" target="_blank">→ Stigma &amp; Menstrual
+            <a href="insights%20details/stigma_menstrual_silence.pdf" target="_blank"><i data-lucide="arrow-right"></i> Stigma &amp; Menstrual
               Silence</a><br>
             <a href="insights%20details/Many%20girls%20lack%20prior%20menstrual%20education%20before%20their%20first%20period..pdf"
-              target="_blank">→ Education Gap Report</a><br>
-            <a href="insights%20details/period_poverty_access.pdf" target="_blank">→ Period Poverty &amp; Access</a>
+              target="_blank"><i data-lucide="arrow-right"></i> Education Gap Report</a><br>
+            <a href="insights%20details/period_poverty_access.pdf" target="_blank"><i data-lucide="arrow-right"></i> Period Poverty &amp; Access</a>
           </p>
         </div>
         <div class="footer-col">
@@ -1070,10 +1414,19 @@
           <p>Your privacy matters. We do not track or store your personal data on any servers.</p>
         </div>
         <div class="footer-col">
+          <h4>Rigel Tech Team</h4>
+          <p style="font-size: 1.05rem;">Meet the developers behind this platform.</p>
+          <a href="tech-team.html"
+            style="display: inline-block; margin-top: 0.8rem; padding: 0.6rem 1.4rem; border: 2px solid var(--color-crimson); color: var(--color-crimson); text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.05rem; transition: transform 0.3s ease;">
+            View Profiles <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+        <div class="footer-col">
           <h4>Rigel Foundation</h4>
           <p>Explore our complete mission and other grassroots initiatives.</p>
-          <a href="https://www.rigelfoundation.org.in" target="_blank" style="display: inline-block; margin-top: 0.8rem; padding: 0.5rem 1.2rem; background: var(--color-crimson); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.9rem; transition: transform 0.3s ease;">
-            www.rigelfoundation.org.in ↗
+          <a href="https://www.rigelfoundation.org.in" target="_blank"
+            style="display: inline-block; margin-top: 0.8rem; padding: 0.5rem 1.2rem; background: var(--color-crimson); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.9rem; transition: transform 0.3s ease;">
+            www.rigelfoundation.org.in <i data-lucide="arrow-up-right"></i>
           </a>
         </div>
       </div>
@@ -1081,51 +1434,105 @@
         <p class="disclaimer">This platform provides educational information and this website is only for general
           suggestion. Please consult to your nearest gynecologist. Sources: WHO, UNICEF, UNFPA, WaterAid, Plan
           International.</p>
-        <p class="copyright">&copy; 2025 Maa by Rigel. All rights reserved.</p>
+        <p class="copyright">&copy; 2026 Maa by Rigel. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
 
 
-  <!-- Floating Emergency Button -->
-  <button id="sos-btn" class="sos-btn">🆘 Get Help Now</button>
+  <!-- Info Modals for Flowcharts -->
+  <div id="cycle-modal" class="modal hidden">
+    <div class="modal-content" style="max-width: 650px; padding: var(--space-8);">
+      <button class="close-btn" data-close="cycle-modal">&times;</button>
+      <h2 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: var(--space-4);">Cycle
+        Phases Breakdown</h2>
+      <div style="text-align: left; line-height: 1.7; color: var(--color-text);">
+        <p><strong>1. Menstrual Phase (Days 1-5):</strong> The uterus sheds its lining. Estrogen and progesterone levels
+          drop, often leading to fatigue, lower basal body temperature (BBT), and cramping.</p>
+        <p><strong>2. Follicular Phase (Days 1-13):</strong> The pituitary gland releases FSH to stimulate follicles.
+          Rising estrogen levels often bring a boost in energy, improved mood, and clearer skin.</p>
+        <p><strong>3. Ovulation (Day 14):</strong> A mature egg is released. Estrogen peaks and testosterone rises
+          slightly. Energy levels are typically at their highest, and BBT dips slightly before rising.</p>
+        <p><strong>4. Luteal Phase (Days 15-28):</strong> The ruptured follicle becomes the corpus luteum, secreting
+          progesterone. This prepares the uterus for pregnancy but can also cause PMS symptoms like bloating, mood
+          swings, and a noticeable rise in BBT.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="urban-modal" class="modal hidden">
+    <div class="modal-content" style="max-width: 650px; padding: var(--space-8);">
+      <button class="close-btn" data-close="urban-modal">&times;</button>
+      <h2 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: var(--space-4);">Impact
+        of Urbanization on Menstrual Health</h2>
+      <div style="text-align: left; line-height: 1.7; color: var(--color-text);">
+        <p>Urbanization brings both positive advancements and unique challenges to menstrual health and overall
+          well-being:</p>
+        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+          <li style="margin-bottom: 1rem;">🌆 <strong>Higher Stress Levels:</strong> The fast-paced urban lifestyle,
+            career pressures, and commuting can elevate cortisol levels, which directly impacts the hypothalamus and can
+            lead to irregular cycles or amenorrhea.</li>
+          <li style="margin-bottom: 1rem;">🍔 <strong>Dietary Shifts:</strong> Urban diets often lean heavily toward
+            ultra-processed foods that are high in sugars and unhealthy fats. This can exacerbate inflammation,
+            worsening PMS and menstrual cramps.</li>
+          <li style="margin-bottom: 1rem;">🏭 <strong>Pollution & Endocrine Disruptors:</strong> Increased exposure to
+            air pollution and synthetic chemicals (found in city water or certain plastics) act as endocrine disruptors,
+            potentially affecting estrogen levels and cycle regularity.</li>
+          <li style="margin-bottom: 1rem;">🛒 <strong>Improved Access (The Positive):</strong> On the bright side,
+            urbanization vastly improves access to a variety of menstrual hygiene products, specialized healthcare, and
+            educational resources, drastically reducing period poverty in localized areas.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOS Floating Button & Modal -->
+  <button id="sos-btn" class="sos-btn" title="Emergency Helplines">🆘</button>
 
   <!-- SOS Modal -->
   <div id="sos-modal" class="modal hidden">
     <div class="modal-content" style="max-width: 500px;">
       <button class="close-btn" id="close-sos-modal">&times;</button>
-      <h2 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 1rem;">🆘 Emergency Helplines</h2>
-      <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);">You are not alone. These numbers are free and available 24/7.</p>
-      
+      <h2 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 1rem;">🆘 Emergency
+        Helplines</h2>
+      <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);">You are not alone. These numbers are free and
+        available 24/7.</p>
+
       <div class="sos-list">
-        <div class="sos-item" style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--red-200); border-radius:var(--radius-md); margin-bottom:1rem; background:var(--red-50);">
+        <div class="sos-item"
+          style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--red-200); border-radius:var(--radius-md); margin-bottom:1rem; background:var(--red-50);">
           <div>
             <h4 style="margin:0; color:var(--color-obsidian);">Childline India</h4>
             <p style="margin:0; font-size:0.85rem; color:var(--color-text-muted);">For children in distress</p>
           </div>
-          <a href="tel:1098" class="btn btn-primary btn-sm" style="padding:0.4rem 1rem;">📞 1098</a>
+          <a href="tel:1098" class="btn btn-primary btn-sm" style="padding:0.4rem 1rem;"><i data-lucide="phone"></i> 1098</a>
         </div>
-        <div class="sos-item" style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--red-200); border-radius:var(--radius-md); margin-bottom:1rem; background:var(--red-50);">
+        <div class="sos-item"
+          style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--red-200); border-radius:var(--radius-md); margin-bottom:1rem; background:var(--red-50);">
           <div>
             <h4 style="margin:0; color:var(--color-obsidian);">Women Helpline</h4>
             <p style="margin:0; font-size:0.85rem; color:var(--color-text-muted);">For abuse or violence</p>
           </div>
-          <a href="tel:181" class="btn btn-primary btn-sm" style="padding:0.4rem 1rem;">📞 181</a>
+          <a href="tel:181" class="btn btn-primary btn-sm" style="padding:0.4rem 1rem;"><i data-lucide="phone"></i> 181</a>
         </div>
-        <div class="sos-item" style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--red-200); border-radius:var(--radius-md); margin-bottom:1rem; background:var(--red-50);">
+        <div class="sos-item"
+          style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--red-200); border-radius:var(--radius-md); margin-bottom:1rem; background:var(--red-50);">
           <div>
             <h4 style="margin:0; color:var(--color-obsidian);">iCall Mental Health</h4>
             <p style="margin:0; font-size:0.85rem; color:var(--color-text-muted);">Professional counseling</p>
           </div>
-          <a href="tel:9152987821" class="btn btn-primary btn-sm" style="padding:0.4rem 1rem;">📞 Call Now</a>
+          <a href="tel:9152987821" class="btn btn-primary btn-sm" style="padding:0.4rem 1rem;"><i data-lucide="phone"></i> Call Now</a>
         </div>
-        <div class="sos-item" style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--color-sand); border-radius:var(--radius-md); background:#fff;">
+        <div class="sos-item"
+          style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--color-sand); border-radius:var(--radius-md); background:#fff;">
           <div>
             <h4 style="margin:0; color:var(--color-obsidian);">Need Cheap Pads?</h4>
-            <p style="margin:0; font-size:0.85rem; color:var(--color-text-muted);">Jan Aushadhi Kendras sell pads for ₹1</p>
+            <p style="margin:0; font-size:0.85rem; color:var(--color-text-muted);">Jan Aushadhi Kendras sell pads for ₹1
+            </p>
           </div>
-          <a href="https://janaushadhi.gov.in/near-by-kendra" target="_blank" class="btn btn-secondary btn-sm" style="padding:0.4rem 1rem;">📍 Find Nearest</a>
+          <a href="https://janaushadhi.gov.in/near-by-kendra" target="_blank" class="btn btn-secondary btn-sm"
+            style="padding:0.4rem 1rem;"><i data-lucide="map-pin"></i> Find Nearest</a>
         </div>
       </div>
     </div>
@@ -1134,14 +1541,18 @@
   <!-- Welcome Language Modal -->
   <div id="welcome-lang-modal" class="modal hidden" style="z-index: 9999; backdrop-filter: blur(10px);">
     <div class="modal-content text-center" style="max-width: 450px; padding: var(--space-8);">
-      <img src="media/Rigel%20Logo.png" alt="Maa by Rigel" style="height: 60px; margin: 0 auto var(--space-4); display: block;">
-      <h2 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: var(--space-2);">Welcome to Maa</h2>
-      <p style="color: var(--color-text-muted); margin-bottom: var(--space-6);">Please select your preferred language to continue.</p>
-      
-      <select id="welcome-lang-selector" class="form-control" style="font-size: 1.1rem; padding: 0.8rem; margin-bottom: var(--space-6);">
+      <img src="media/Rigel%20Logo.png" alt="Maa by Rigel"
+        style="height: 60px; margin: 0 auto var(--space-4); display: block;">
+      <h2 style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: var(--space-2);">Welcome
+        to Maa</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: var(--space-6);">Please select your preferred language to
+        continue.</p>
+
+      <select id="welcome-lang-selector" class="form-control"
+        style="font-size: 1.1rem; padding: 0.8rem; margin-bottom: var(--space-6);">
         <!-- Options will be populated by JS to match header -->
       </select>
-      
+
       <button id="welcome-lang-btn" class="btn btn-primary" style="width: 100%; font-size: 1.1rem;">Continue</button>
     </div>
   </div>
@@ -1149,13 +1560,35 @@
   <!-- Google Translate Widget (Hidden) -->
   <style>
     /* Hide Google Translate UI elements */
-    #google_translate_element { display: none !important; }
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    body { top: 0px !important; }
-    #goog-gt-tt { display: none !important; top: 0px !important; }
-    .goog-tooltip skiptranslate { display: none !important; }
-    .goog-tooltip:hover { display: none !important; }
-    .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+    #google_translate_element {
+      display: none !important;
+    }
+
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+
+    body {
+      top: 0px !important;
+    }
+
+    #goog-gt-tt {
+      display: none !important;
+      top: 0px !important;
+    }
+
+    .goog-tooltip skiptranslate {
+      display: none !important;
+    }
+
+    .goog-tooltip:hover {
+      display: none !important;
+    }
+
+    .goog-text-highlight {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
   </style>
   <div id="google_translate_element"></div>
   <script type="text/javascript">
@@ -1167,7 +1600,17 @@
       }, 'google_translate_element');
     }
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Disorder Modal -->
+  <div id="disorder-modal" class="modal-overlay">
+    <div class="modal-content glassmorphism-card">
+      <button class="modal-close" onclick="closeDisorderModal()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; cursor: pointer; color: var(--color-text-muted);"><i data-lucide="x"></i></button>
+      <h3 id="disorder-modal-title" style="color: var(--color-crimson); font-family: var(--font-display); margin-bottom: 1rem; padding-right: 2rem;"></h3>
+      <p id="disorder-modal-desc" style="color: var(--color-text); line-height: 1.6;"></p>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
   <script type="module">
@@ -1181,12 +1624,41 @@
         if (res.ok) {
           const banner = document.getElementById('testing-mode-banner');
           banner.style.display = 'block';
-          // Adjust navbar to not overlap the banner
-          document.querySelector('.header-container').style.marginTop = banner.offsetHeight + 'px';
+
+          // Wait a tick for banner height to compute
+          setTimeout(() => {
+            const bannerHeight = banner.offsetHeight;
+            const header = document.getElementById('site-header');
+
+            // Push the fixed header down below the banner (plus its original 20px top margin)
+            header.style.top = (20 + bannerHeight) + 'px';
+
+            // Push the entire body down so the hero isn't cut off by the banner
+            document.body.style.paddingTop = bannerHeight + 'px';
+
+            // Push the Hero content down specifically so the lowered header doesn't cover it
+            const hero = document.getElementById('home');
+            if (hero) {
+              const currentPadding = parseInt(window.getComputedStyle(hero).paddingTop);
+              hero.style.paddingTop = (currentPadding + bannerHeight + 20) + 'px';
+            }
+          }, 50);
         }
       })
       .catch(() => { /* file doesn't exist, do nothing */ });
+      
+    // Email copy fallback
+    function copyEmail(e) {
+      e.preventDefault();
+      const email = "maa@rigelfoundation.org.in";
+      navigator.clipboard.writeText(email).then(() => {
+        alert("Success! The email address has been copied to your clipboard:\n\n" + email + "\n\nPlease open your email provider (like Gmail or Yahoo) and paste this into the 'To' field.");
+      }).catch(err => {
+        alert("Our email is: " + email);
+      });
+    }
   </script>
+  <script>lucide.createIcons();</script>
 </body>
 
 </html>

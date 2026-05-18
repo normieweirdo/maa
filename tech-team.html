@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rigel Tech Team | Maa</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      background-color: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .team-hero {
+      padding-top: 120px;
+      padding-bottom: var(--space-8);
+      text-align: center;
+    }
+
+    .team-hero h1 {
+      font-size: 2.5rem;
+      color: var(--color-obsidian);
+      margin-bottom: var(--space-4);
+      font-family: var(--font-display);
+    }
+
+    .team-hero p {
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-8);
+    }
+
+    @media(max-width: 900px) {
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .developer-card {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--red-100);
+    }
+
+    .developer-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .dev-photo-container {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: var(--space-6);
+      background: var(--red-50);
+    }
+
+    .dev-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Ensuring 1080x1080 resolution holds beautifully */
+    }
+
+    .developer-card h3 {
+      font-size: 1.4rem;
+      color: var(--color-crimson);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-display);
+    }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-obsidian);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-obsidian);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .github-link:hover {
+      background: var(--color-obsidian);
+      color: #fff;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: var(--space-8);
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--color-crimson);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="media/Rigel%20Logo.png" alt="Rigel Logo" style="height: 64px; width: auto; object-fit: contain;">
+      </a>
+      <nav id="desktop-nav">
+        <ul>
+          <li><a href="index.html">← Back to Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex: 1;">
+    <section class="team-hero">
+      <div class="container">
+        <h1>Meet the Rigel Tech Team</h1>
+        <p>The developers working behind the scenes to build platforms that drive social impact, menstrual equity, and grassroots awareness.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="tech-grid">
+        
+        <!-- Developer 1 -->
+        <div class="developer-card">
+          <div class="dev-photo-container">
+            <img src="media/Udayaditya.png" alt="Udayaditya Parbat" class="dev-photo">
+          </div>
+          <h3>Udayaditya Parbat</h3>
+          <a href="https://github.com/Udayadityaparbat" target="_blank" class="github-link">
+            <i data-lucide="github"></i> GitHub Profile
+          </a>
+        </div>
+
+        <!-- Developer 2 -->
+        <div class="developer-card">
+          <div class="dev-photo-container">
+            <img src="media/dev2.jpg" alt="Developer 2" class="dev-photo">
+          </div>
+          <h3>Srijita Mandal</h3>
+          <a href="https://github.com/srijita-mandal06" target="_blank" class="github-link">
+            <i data-lucide="github"></i> GitHub Profile
+          </a>
+        </div>
+
+        <!-- Developer 3 -->
+        <div class="developer-card">
+          <div class="dev-photo-container">
+            <img src="media/dev3.jpg" alt="Developer 3" class="dev-photo">
+          </div>
+          <h3>Samir Das</h3>
+          <a href="https://github.com/normieweirdo" target="_blank" class="github-link">
+            <i data-lucide="github"></i> GitHub Profile
+          </a>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <a href="index.html" class="back-link"><i data-lucide="arrow-left"></i> Return to Homepage</a>
+      </div>
+    </section>
+  </main>
+
+  <script>lucide.createIcons();</script>
+</body>
+
+</html>

@@ -5,8 +5,12 @@
       "title": "Mission Shakti",
       "ministry": "Ministry of Women & Child Development",
       "type": "Umbrella Scheme",
-      "tags": ["MoWCD", "Safety", "Empowerment"],
-      "icon": "🛡️",
+      "tags": [
+        "MoWCD",
+        "Safety",
+        "Empowerment"
+      ],
+      "icon": "<i data-lucide='shield'></i>",
       "description": "India's flagship umbrella scheme for the safety, security, and empowerment of women across their entire life cycle. Operates through two sub-schemes: Sambal (safety) and Samarthya (empowerment).",
       "benefits": [
         "One Stop Centres (Sakhi) — integrated support for women in distress",
@@ -17,15 +21,19 @@
       ],
       "eligibility": "All women and girls across India. Priority to those facing violence, distress, or marginalisation.",
       "helpline": "181",
-      "link": "https://wcd.gov.in/mission-shakti"
+      "link": "https://missionshakti.wcd.gov.in/"
     },
     {
       "id": "sag",
       "title": "Scheme for Adolescent Girls (SAG)",
       "ministry": "Ministry of Women & Child Development",
       "type": "Nutrition & Development",
-      "tags": ["MoWCD", "Adolescent", "Nutrition"],
-      "icon": "🌱",
+      "tags": [
+        "MoWCD",
+        "Adolescent",
+        "Nutrition"
+      ],
+      "icon": "<i data-lucide='sprout'></i>",
       "description": "Focuses on multi-dimensional development of adolescent girls (11–18 years) including nutrition, health, hygiene, life skills, and mainstreaming school dropouts. Delivered through Anganwadi Centres under Mission Poshan 2.0.",
       "benefits": [
         "Supplementary nutrition for out-of-school girls",
@@ -43,8 +51,12 @@
       "title": "Beti Bachao Beti Padhao (BBBP)",
       "ministry": "Ministry of Women & Child Development",
       "type": "Awareness Campaign",
-      "tags": ["MoWCD", "Girl Child", "Education"],
-      "icon": "👧",
+      "tags": [
+        "MoWCD",
+        "Girl Child",
+        "Education"
+      ],
+      "icon": "<i data-lucide='graduation-cap'></i>",
       "description": "A national campaign under Mission Shakti to address gender discrimination, prevent female foeticide, ensure girl child education, and promote menstrual hygiene management awareness at the community level.",
       "benefits": [
         "Community campaigns against menstrual stigma",
@@ -55,15 +67,19 @@
       ],
       "eligibility": "All families with girl children. Focus on districts with low Child Sex Ratio (CSR).",
       "helpline": "181",
-      "link": "https://wcd.gov.in/beti-bachao-beti-padhao"
+      "link": "https://spniwcd.wcd.gov.in/beti-bachao-beti-padhao/documents"
     },
     {
       "id": "pmmvy",
       "title": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
       "ministry": "Ministry of Women & Child Development",
       "type": "Maternity Benefit",
-      "tags": ["MoWCD", "Maternity", "Financial Aid"],
-      "icon": "🤱",
+      "tags": [
+        "MoWCD",
+        "Maternity",
+        "Financial Aid"
+      ],
+      "icon": "<i data-lucide='heart-handshake'></i>",
       "description": "Provides ₹5,000 cash incentive in three instalments to pregnant and lactating women for the first live birth, to compensate for wage loss and improve health and nutrition outcomes.",
       "benefits": [
         "₹5,000 maternity benefit in 3 instalments",
@@ -81,8 +97,12 @@
       "title": "Menstrual Hygiene Scheme (MHS)",
       "ministry": "Ministry of Health & Family Welfare (NHM)",
       "type": "Health Programme",
-      "tags": ["MoHFW", "NHM", "Hygiene"],
-      "icon": "🩺",
+      "tags": [
+        "MoHFW",
+        "NHM",
+        "Hygiene"
+      ],
+      "icon": "<i data-lucide='stethoscope'></i>",
       "description": "Part of the National Health Mission, this scheme distributes affordable sanitary napkins (brand: 'Freedays') at ₹6 for a pack of 6 via ASHA workers to adolescent girls (10–19 years) in rural areas across India.",
       "benefits": [
         "Subsidised sanitary napkins via ASHA workers",
@@ -100,8 +120,12 @@
       "title": "Suvidha Sanitary Napkins — PMBJP",
       "ministry": "Ministry of Chemicals & Fertilizers",
       "type": "Subsidised Product",
-      "tags": ["PMBJP", "Affordable", "Access"],
-      "icon": "📦",
+      "tags": [
+        "PMBJP",
+        "Affordable",
+        "Access"
+      ],
+      "icon": "<i data-lucide='package'></i>",
       "description": "Oxo-biodegradable sanitary napkins called 'Suvidha' available at just ₹1 per pad (pack of 4 for ₹4) through 10,000+ Pradhan Mantri Bhartiya Janaushadhi Kendras (PMBJK) across India.",
       "benefits": [
         "₹1 per sanitary napkin — most affordable in India",
@@ -119,8 +143,12 @@
       "title": "Samagra Shiksha — School Sanitation",
       "ministry": "Ministry of Education",
       "type": "School Infrastructure",
-      "tags": ["MoE", "Schools", "WASH"],
-      "icon": "🏫",
+      "tags": [
+        "MoE",
+        "Schools",
+        "WASH"
+      ],
+      "icon": "<i data-lucide='school'></i>",
       "description": "Funds state-specific projects in schools including installation of sanitary pad vending machines, incinerators for safe disposal, and gender-segregated toilets with running water to support menstrual health management in schools.",
       "benefits": [
         "Sanitary pad vending machines in schools",
@@ -138,8 +166,12 @@
       "title": "One Stop Centre (Sakhi)",
       "ministry": "Ministry of Women & Child Development",
       "type": "Crisis Support",
-      "tags": ["MoWCD", "Violence", "Crisis Support"],
-      "icon": "🏥",
+      "tags": [
+        "MoWCD",
+        "Violence",
+        "Crisis Support"
+      ],
+      "icon": "<i data-lucide='hospital'></i>",
       "description": "Sakhi centres provide integrated, immediate support to women affected by violence — private, medical, legal, psychological and shelter support under one roof. Over 700+ Sakhi centres operational across India.",
       "benefits": [
         "Emergency shelter (up to 5 days)",
@@ -150,7 +182,7 @@
       ],
       "eligibility": "Any woman affected by violence, abuse, or in distress. Services are free and confidential.",
       "helpline": "181",
-      "link": "https://wcd.gov.in/one-stop-centre"
+      "link": "https://wcdhry.gov.in/schemes-for-women/onestop-centre/"
     }
   ]
 }

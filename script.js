@@ -12,6 +12,27 @@ const fetchJSON = async (url) => {
   }
 };
 
+// --- Disorder Modal Logic ---
+window.openDisorderModal = (title, description) => {
+  const modal = document.getElementById('disorder-modal');
+  if (!modal) return;
+  document.getElementById('disorder-modal-title').textContent = title;
+  document.getElementById('disorder-modal-desc').textContent = description;
+  modal.classList.add('active');
+};
+
+window.closeDisorderModal = () => {
+  const modal = document.getElementById('disorder-modal');
+  if (modal) modal.classList.remove('active');
+};
+
+document.addEventListener('click', (e) => {
+  const modal = document.getElementById('disorder-modal');
+  if (modal && e.target === modal) {
+    window.closeDisorderModal();
+  }
+});
+
 // --- Language Module ---
 const LangModule = (() => {
   let currentLang = localStorage.getItem('maa_lang') || 'en';
@@ -49,20 +70,31 @@ const LangModule = (() => {
         localStorage.setItem('maa_lang_selected', 'true');
       });
     }
-    await loadLanguage(currentLang);
+
+    // Perform initial load and trigger translation
+    await setLanguage(currentLang);
   };
 
   const setLanguage = async (lang) => {
     currentLang = lang;
     localStorage.setItem('maa_lang', lang);
     await loadLanguage(lang);
-    
-    // Trigger Google Translate hidden dropdown
-    const gtCombo = document.querySelector('.goog-te-combo');
-    if (gtCombo) {
-      gtCombo.value = lang;
-      gtCombo.dispatchEvent(new Event('change'));
-    }
+    // Robustly trigger Google Translate
+    const triggerTranslate = (retries = 10) => {
+      const gtCombo = document.querySelector('.goog-te-combo');
+      if (gtCombo) {
+        const gtMap = {
+          'mni': 'mni-Mtei', // Google translate uses specific code for Manipuri
+          'en': '' // Empty string resets to default
+        };
+        gtCombo.value = gtMap[lang] !== undefined ? gtMap[lang] : lang;
+        gtCombo.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
+      } else if (retries > 0) {
+        setTimeout(() => triggerTranslate(retries - 1), 500);
+      }
+    };
+
+    triggerTranslate();
   };
 
   const loadLanguage = async (lang) => {
@@ -81,7 +113,7 @@ const LangModule = (() => {
       const keys = key.split('.');
       let val = translations;
       keys.forEach(k => {
-        if(val) val = val[k];
+        if (val) val = val[k];
       });
       if (val) {
         el.textContent = val;
@@ -93,7 +125,7 @@ const LangModule = (() => {
       const keys = key.split('.');
       let val = translations;
       keys.forEach(k => {
-        if(val) val = val[k];
+        if (val) val = val[k];
       });
       if (val) {
         el.placeholder = val;
@@ -107,7 +139,7 @@ const LangModule = (() => {
 // --- Content Loader Module ---
 const ContentLoader = (() => {
   const init = async () => {
-    const schemesData = await fetchJSON('data/schemes.json');
+    const schemesData = await fetchJSON('data/govt_resources.json');
     if (schemesData && schemesData.schemes) {
       renderSchemeCards(schemesData.schemes);
     }
@@ -115,27 +147,27 @@ const ContentLoader = (() => {
   };
 
   const renderLearnCards = (learnData) => {
-    if(!learnData) return;
+    if (!learnData) return;
     const grid = document.getElementById('learn-grid');
     grid.innerHTML = `
       <div class="card learn-card">
-        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Basics" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
-        <h3>🩸 ${learnData.basics_title}</h3>
+        <img src="media/Cycle%20Basics.png" alt="Basics" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+        <h3><i data-lucide="droplet"></i> ${learnData.basics_title}</h3>
         <p>${learnData.basics_content}</p>
       </div>
       <div class="card learn-card">
-        <img src="https://images.unsplash.com/photo-1584820927508-ea2b737d2870?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hygiene" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
-        <h3>🧼 ${learnData.hygiene_title}</h3>
+        <img src="media/Hygine%20Practice.png" alt="Hygiene" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+        <h3 style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="shield-check"></i> ${learnData.hygiene_title}</h3>
         <p>${learnData.hygiene_content}</p>
       </div>
       <div class="card learn-card">
-        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Myths" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
-        <h3>⚖️ ${learnData.myths_title}</h3>
+        <img src="media/MYTHS_FACTS.png" alt="Myths" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+        <h3 style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="scale"></i> ${learnData.myths_title}</h3>
         <p>${learnData.myths_content}</p>
       </div>
       <div class="card learn-card">
-        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nutrition" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
-        <h3>🥗 ${learnData.nutrition_title}</h3>
+        <img src="media/Nutrition%20Tips.png" alt="Nutrition" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+        <h3 style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="apple"></i> ${learnData.nutrition_title}</h3>
         <p>${learnData.nutrition_content}</p>
       </div>
     `;
@@ -146,7 +178,7 @@ const ContentLoader = (() => {
     grid.innerHTML = schemes.map(s => `
       <div class="scheme-card-rich" data-ministry="${s.tags[0]}">
         <div class="scheme-card-header">
-          <span class="scheme-icon">${s.icon || '🏛️'}</span>
+          <span class="scheme-icon">${s.icon || '<i data-lucide="landmark"></i>'}</span>
           <div class="scheme-card-header-text">
             <h3>${s.title}</h3>
             <span class="scheme-ministry-tag">${s.ministry}</span>
@@ -155,18 +187,20 @@ const ContentLoader = (() => {
         <div class="scheme-card-body">
           <p>${s.description}</p>
           <ul class="scheme-benefits">
-            ${s.benefits.map(b => `<li>✅ ${b}</li>`).join('')}
+            ${s.benefits.map(b => `<li style="display: flex; align-items: flex-start; gap: 0.5rem;"><i data-lucide="check-circle-2" style="color: var(--color-success); flex-shrink: 0; width: 1.2rem; height: 1.2rem; margin-top: 0.2rem;"></i> <span>${b}</span></li>`).join('')}
           </ul>
           <div class="scheme-eligibility">
             <strong>Eligibility:</strong> ${s.eligibility}
           </div>
         </div>
         <div class="scheme-card-footer">
-          <span class="scheme-helpline-pill">📞 ${s.helpline}</span>
-          <a href="${s.link}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Portal ↗</a>
+          <span class="scheme-helpline-pill"><i data-lucide="phone"></i> ${s.helpline}</span>
+          <a href="${s.link}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Portal <i data-lucide="arrow-up-right"></i></a>
         </div>
       </div>
     `).join('');
+
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 
     // Filter logic
     document.querySelectorAll('.scheme-filter-btn').forEach(btn => {
@@ -189,10 +223,37 @@ const ContentLoader = (() => {
 
 // --- Tracker Module ---
 const TrackerModule = (() => {
+  const PHASES = {
+    menstrual: {
+      label: "Menstrual Phase",
+      desc: "Your period has begun. Rest when you can. Iron-rich foods and warmth help ease discomfort.",
+      icon: `<svg width="44" height="44" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="#FFF0F2" stroke="#F2C4CC" stroke-width="1"/><path d="M20 10 C16 14 12 17 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 17 24 14 20 10Z" fill="#F0635A" opacity="0.85"/><path d="M20 14 C18 17 15 19 15 22 C15 24.8 17.2 27 20 27" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.5"/></svg>`,
+      color: "var(--color-crimson)"
+    },
+    follicular: {
+      label: "Follicular Phase",
+      desc: "Energy is rising. Follicles are maturing in the ovaries. A great time for new beginnings.",
+      icon: `<svg width="44" height="44" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="#FFF0F2" stroke="#F2C4CC" stroke-width="1"/><circle cx="20" cy="20" r="7" fill="#F9B4B4" opacity="0.7"/><circle cx="20" cy="20" r="4" fill="#F0635A"/><path d="M20 8 L20 13M20 27 L20 32M8 20 L13 20M27 20 L32 20" stroke="#F0635A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
+      color: "var(--color-primary)"
+    },
+    ovulation: {
+      label: "Ovulation Phase",
+      desc: "An egg is being released. You are in your fertile window. Estrogen and testosterone peak now.",
+      icon: `<svg width="44" height="44" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="#FFF0F2" stroke="#F2C4CC" stroke-width="1"/><circle cx="20" cy="18" r="6" fill="#F0635A"/><path d="M20 24 L20 31" stroke="#F0635A" stroke-width="2" stroke-linecap="round"/><path d="M15 28 C15 28 17 25 20 25 C23 25 25 28 25 28" stroke="#F0635A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/><circle cx="20" cy="18" r="3" fill="#fff" opacity="0.5"/></svg>`,
+      color: "var(--color-peach)"
+    },
+    luteal: {
+      label: "Luteal Phase",
+      desc: "The body prepares for possible pregnancy. Progesterone rises. You may notice PMS symptoms.",
+      icon: `<svg width="44" height="44" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="#FFF0F2" stroke="#F2C4CC" stroke-width="1"/><path d="M20 11 C20 11 28 15 28 22 C28 27 24.4 30 20 30 C15.6 30 12 27 12 22 C12 15 20 11 20 11Z" fill="#F9B4B4" opacity="0.7"/><path d="M20 14 C20 14 25 17 25 22 C25 25.3 22.8 27 20 27" stroke="#F0635A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/></svg>`,
+      color: "var(--color-sand)"
+    }
+  };
+
   const init = () => {
     const form = document.getElementById('tracker-form');
     const resetBtn = document.getElementById('reset-tracker');
-    
+
     loadFromStorage();
     setupSymptomLogger();
 
@@ -200,7 +261,12 @@ const TrackerModule = (() => {
       e.preventDefault();
       const lastPeriod = document.getElementById('last-period').value;
       const cycleLength = parseInt(document.getElementById('cycle-length').value, 10);
-      calculateAndSave(lastPeriod, cycleLength);
+      const periodDuration = parseInt(document.getElementById('period-duration').value, 10) || 5;
+      const age = parseInt(document.getElementById('user-age').value, 10) || null;
+      const height = parseInt(document.getElementById('user-height').value, 10) || null;
+      const weight = parseInt(document.getElementById('user-weight').value, 10) || null;
+      
+      calculateAndSave(lastPeriod, cycleLength, periodDuration, age, height, weight);
     });
 
     resetBtn.addEventListener('click', () => {
@@ -208,7 +274,7 @@ const TrackerModule = (() => {
       localStorage.removeItem('maa_symptoms');
       document.getElementById('tracker-result').classList.add('hidden');
       form.reset();
-      
+
       document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
     });
   };
@@ -238,40 +304,44 @@ const TrackerModule = (() => {
           todaySymptoms.push(symptom);
           msg.textContent = "Logged for today! Tracking helps identify patterns.";
         }
-        
+
         symptomsLog[todayStr] = todaySymptoms;
         localStorage.setItem('maa_symptoms', JSON.stringify(symptomsLog));
-        
+
         setTimeout(() => { msg.textContent = ""; }, 3000);
       });
     });
   };
 
-  const calculateAndSave = (lastPeriodStr, cycleLength) => {
+  const calculateAndSave = (lastPeriodStr, cycleLength, periodDuration, age, height, weight) => {
     const lastDate = new Date(lastPeriodStr);
-    
+
     // Next period
     const nextDate = new Date(lastDate);
     nextDate.setDate(lastDate.getDate() + cycleLength);
-    
+
     // Fertile window (approx 14 days before next period, 5 days window)
     const ovulationDate = new Date(nextDate);
     ovulationDate.setDate(nextDate.getDate() - 14);
-    
+
     const fertileStart = new Date(ovulationDate);
     fertileStart.setDate(ovulationDate.getDate() - 2);
-    
+
     const fertileEnd = new Date(ovulationDate);
     fertileEnd.setDate(ovulationDate.getDate() + 2);
 
     const data = {
       lastPeriod: lastPeriodStr,
       cycleLength,
+      periodDuration,
+      age,
+      height,
+      weight,
       nextDate: nextDate.toISOString(),
       fertileStart: fertileStart.toISOString(),
       fertileEnd: fertileEnd.toISOString()
     };
-    
+
     localStorage.setItem('maa_tracker', JSON.stringify(data));
     displayResult(data);
   };
@@ -280,20 +350,20 @@ const TrackerModule = (() => {
     const lastDate = new Date(data.lastPeriod);
     const nextDateObj = new Date(data.nextDate);
     document.getElementById('next-date').textContent = nextDateObj.toDateString();
-    
+
     const fStart = new Date(data.fertileStart);
     const fEnd = new Date(data.fertileEnd);
     document.getElementById('fertile-dates').textContent = `${fStart.toDateString()} - ${fEnd.toDateString()}`;
-    
+
     // Calculate current cycle day
     const today = new Date();
-    today.setHours(0,0,0,0);
-    lastDate.setHours(0,0,0,0);
-    nextDateObj.setHours(0,0,0,0);
-    
+    today.setHours(0, 0, 0, 0);
+    lastDate.setHours(0, 0, 0, 0);
+    nextDateObj.setHours(0, 0, 0, 0);
+
     const diffTimeSinceLast = today - lastDate;
     let cycleDay = Math.floor(diffTimeSinceLast / (1000 * 60 * 60 * 24)) + 1;
-    
+
     // If we've passed the next expected period and user hasn't logged it
     if (cycleDay > data.cycleLength || cycleDay <= 0) {
       cycleDay = "Unknown (Please log your new period)";
@@ -303,47 +373,76 @@ const TrackerModule = (() => {
       document.getElementById('cycle-progress-fill').style.width = '0%';
     } else {
       document.getElementById('current-cycle-day').textContent = cycleDay;
-      
+
       // Determine phase
-      let phaseName = "";
-      let phaseInsight = "";
-      let phaseColor = "";
-      
+      const periodDur = data.periodDuration || 5;
       const ovulationDay = data.cycleLength - 14;
+      const fertileStart = ovulationDay - 5;
+      const fertileEnd = ovulationDay + 1;
       
-      if (cycleDay <= 5) {
-        phaseName = "Menstrual Phase";
-        phaseInsight = "Your body is shedding the uterine lining. Rest if needed, and eat iron-rich foods like spinach and lentils.";
-        phaseColor = "var(--color-crimson)";
-      } else if (cycleDay < ovulationDay - 2) {
-        phaseName = "Follicular Phase";
-        phaseInsight = "Estrogen is rising! You might feel a boost in energy and creativity. Great time for exercise and planning.";
-        phaseColor = "var(--color-primary)";
-      } else if (cycleDay >= ovulationDay - 2 && cycleDay <= ovulationDay + 2) {
-        phaseName = "Ovulation Phase";
-        phaseInsight = "An egg is being released. You are in your fertile window. Estrogen and testosterone peak now.";
-        phaseColor = "var(--color-peach)";
-      } else {
-        phaseName = "Luteal Phase";
-        phaseInsight = "Progesterone is high, which might make you feel calmer but can also trigger PMS. Gentle yoga and hydration help.";
-        phaseColor = "var(--color-sand)";
-      }
+      // Calculate active day in the current cycle iteration
+      let dayInCycle = ((cycleDay - 1) % data.cycleLength) + 1;
       
-      document.getElementById('current-phase-name').textContent = phaseName;
-      document.getElementById('current-phase-insight').textContent = phaseInsight;
-      
+      let phaseKey;
+      if (dayInCycle <= periodDur) phaseKey = 'menstrual';
+      else if (dayInCycle < fertileStart) phaseKey = 'follicular';
+      else if (dayInCycle <= fertileEnd) phaseKey = 'ovulation';
+      else phaseKey = 'luteal';
+
+      const phase = PHASES[phaseKey];
+
+      document.getElementById('phaseIcon').innerHTML = phase.icon;
+      document.getElementById('current-phase-name').textContent = phase.label;
+      document.getElementById('current-phase-insight').textContent = phase.desc;
+
       // Progress bar
-      const progressPercent = (cycleDay / data.cycleLength) * 100;
+      const progressPercent = (dayInCycle / data.cycleLength) * 100;
       const progressFill = document.getElementById('cycle-progress-fill');
       progressFill.style.width = `${progressPercent}%`;
-      progressFill.style.background = phaseColor;
+      progressFill.style.background = phase.color;
     }
-    
+
     // Calculate countdown
     const diffTime = nextDateObj - today;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
+
     document.getElementById('days-countdown').textContent = diffDays >= 0 ? diffDays : 0;
+
+    // Calculate UNICEF Health Insight based on BMI
+    const insightBox = document.getElementById('unicef-insight-box');
+    const insightText = document.getElementById('unicef-insight-text');
+    if (data.height && data.weight && insightBox && insightText) {
+      const heightInM = data.height / 100;
+      const bmi = data.weight / (heightInM * heightInM);
+      let message = "";
+      let titleHtml = "";
+      let borderColor = "";
+
+      if (bmi < 18.5) {
+        message = "According to UNICEF guidelines, low body weight (BMI < 18.5) can lead to irregular cycles or amenorrhea. Ensure a nutrient-rich diet.";
+        titleHtml = `<i data-lucide="info"></i> Health Insight (UNICEF) <span class="badge" style="background: #FFF3CD; color: #856404; margin-left: auto;">Underweight</span>`;
+        borderColor = "#FFC107";
+      } else if (bmi >= 18.5 && bmi <= 24.9) {
+        message = "According to UNICEF guidelines, maintaining a healthy weight supports regular menstrual cycles and overall reproductive health.";
+        titleHtml = `<i data-lucide="info"></i> Health Insight (UNICEF) <span class="badge" style="background: #D4EDDA; color: #155724; margin-left: auto;">Healthy Weight</span>`;
+        borderColor = "#28A745";
+      } else {
+        message = "According to UNICEF guidelines, higher weight (BMI ≥ 25) can increase the risk of cycle irregularities and hormonal imbalances like PCOS.";
+        titleHtml = `<i data-lucide="info"></i> Health Insight (UNICEF) <span class="badge" style="background: #F8D7DA; color: #721C24; margin-left: auto;">Overweight</span>`;
+        borderColor = "#DC3545";
+      }
+      
+      insightText.textContent = message;
+      document.getElementById('unicef-insight-title').innerHTML = titleHtml;
+      insightBox.style.borderLeftColor = borderColor;
+      insightBox.style.display = 'block';
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    } else if (insightBox) {
+      insightBox.style.display = 'none';
+    }
+
     document.getElementById('tracker-result').classList.remove('hidden');
   };
 
@@ -351,8 +450,14 @@ const TrackerModule = (() => {
     const saved = localStorage.getItem('maa_tracker');
     if (saved) {
       const data = JSON.parse(saved);
-      document.getElementById('last-period').value = data.lastPeriod;
-      document.getElementById('cycle-length').value = data.cycleLength;
+      document.getElementById('last-period').value = data.lastPeriod || '';
+      document.getElementById('cycle-length').value = data.cycleLength || 28;
+      
+      if(data.periodDuration) document.getElementById('period-duration').value = data.periodDuration;
+      if(data.age) document.getElementById('user-age').value = data.age;
+      if(data.height) document.getElementById('user-height').value = data.height;
+      if(data.weight) document.getElementById('user-weight').value = data.weight;
+      
       displayResult(data);
     }
   };
@@ -391,9 +496,9 @@ const QAModule = (() => {
       e.preventDefault();
       const text = document.getElementById('qa-input').value;
       const category = document.getElementById('qa-category').value;
-      
+
       const answer = generateAnswer(text, category);
-      
+
       const newQ = {
         id: Date.now(),
         text,
@@ -401,11 +506,11 @@ const QAModule = (() => {
         timestamp: new Date().toISOString(),
         answer: answer
       };
-      
+
       const questions = getQuestions();
       questions.unshift(newQ);
       localStorage.setItem('maa_qa', JSON.stringify(questions));
-      
+
       form.reset();
       loadQuestions();
     });
@@ -454,42 +559,46 @@ const QAModule = (() => {
 
     const qLower = normalizeText(question);
     const words = qLower.split(/\s+/).filter(w => w.length > 2);
-    
+
     // Score QnA base
     const scoredQnA = qnaBase.map(item => {
       let score = 0;
       const itemQ = (item.question || "").toLowerCase();
       const keywords = Array.isArray(item.keywords) ? item.keywords.map(k => k.toLowerCase()) : [];
-      
+
       keywords.forEach(kw => {
-        if (qLower.includes(kw)) score += 5;
+        if (qLower.includes(kw)) {
+          score += item.is_direct ? 1000 : 5; // Huge boost for exact direct match
+        }
       });
-      
+
       words.forEach(w => {
-        if (itemQ.includes(w)) score += 2;
+        if (itemQ.includes(w)) {
+          score += item.is_direct ? 10 : 2;
+        }
       });
-      
+
       return { type: 'qna', item, score };
     }).filter(c => c.score > 2);
 
     // Score Conditions
     const scoredConditions = knowledgeBase.map(item => {
       let score = 0;
-      
+
       const conditionName = (item.condition || "").toLowerCase();
       const keywords = Array.isArray(item.keywords) ? item.keywords.map(k => k.toLowerCase()) : [];
       const symptoms = (item.symptoms || "").toLowerCase();
-      
+
       if (conditionName && qLower.includes(conditionName)) score += 10;
-      
+
       keywords.forEach(kw => {
         if (qLower.includes(kw)) score += 5;
       });
-      
+
       words.forEach(w => {
         if (symptoms.includes(w)) score += 1;
       });
-      
+
       return { type: 'condition', item, score };
     }).filter(c => c.score > 1);
 
@@ -497,10 +606,15 @@ const QAModule = (() => {
     allMatches.sort((a, b) => b.score - a.score);
 
     if (allMatches.length > 0) {
+      // Direct Answer Logic
+      if (allMatches[0].item.is_direct && allMatches[0].score >= 1000) {
+        return allMatches[0].item.answer.replace(/\n/g, '<br>');
+      }
+
       const topMatches = allMatches.slice(0, 2);
-      
+
       let response = `Based on your question, we found ${topMatches.length > 1 ? 'these possible answers' : 'this possible answer'}:\n<br><br>\n`;
-      
+
       let highRisk = false;
       let doctorRequired = false;
 
@@ -514,7 +628,7 @@ const QAModule = (() => {
             highRisk = true;
             doctorRequired = true;
           }
-          
+
           response += `<strong>${index + 1}. ${bestMatch.condition}</strong> (${bestMatch.description || 'Condition'})\n<br>\n`;
           if (bestMatch.symptoms) response += `- <strong>Symptoms:</strong> ${bestMatch.symptoms}\n<br>\n`;
           if (bestMatch.causes) response += `- <strong>Causes:</strong> ${bestMatch.causes}\n<br>\n`;
@@ -523,13 +637,13 @@ const QAModule = (() => {
       });
 
       if (doctorRequired || highRisk) {
-        response += `⚠️ <em>This website is only for general suggestion. Please consult your nearest gynecologist or healthcare professional for an accurate diagnosis.</em>`;
+        response += `<i data-lucide="alert-triangle"></i> <em>This website is only for general suggestion. Please consult your nearest gynecologist or healthcare professional for an accurate diagnosis.</em>`;
       } else {
-        response += `💡 <em>This website is only for general suggestion. Please consult your nearest gynecologist. Tracking your symptoms daily can also help you understand your cycle better.</em>`;
+        response += `<i data-lucide="lightbulb"></i> <em>This website is only for general suggestion. Please consult your nearest gynecologist. Tracking your symptoms daily can also help you understand your cycle better.</em>`;
       }
       return response.trim();
     }
-    
+
     // Fallback if no strong match
     return DEMO_ANSWERS[category] || "Thank you for sharing. This website is only for general suggestion. Please consult your nearest gynecologist.";
   };
@@ -542,12 +656,12 @@ const QAModule = (() => {
   const loadQuestions = () => {
     const questions = getQuestions();
     const list = document.getElementById('qa-list');
-    
+
     if (questions.length === 0) {
       list.innerHTML = `<p style="text-align:center; color:var(--color-text-muted);">No questions yet. Be the first to ask!</p>`;
       return;
     }
-    
+
     list.innerHTML = questions.map(q => `
       <div class="qa-card">
         <div class="qa-meta">
@@ -569,7 +683,7 @@ const UIModule = (() => {
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     menuToggle.addEventListener('click', () => {
       const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', !isExpanded);
@@ -588,15 +702,15 @@ const UIModule = (() => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          
+
           // Counters
-          if(entry.target.id === 'impact') {
+          if (entry.target.id === 'impact') {
             startCounters();
             observer.unobserve(entry.target); // only once
           }
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.05 });
 
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
   };
@@ -608,10 +722,10 @@ const UIModule = (() => {
       const stepTime = Math.abs(Math.floor(duration / target));
       let current = 0;
       const increment = target / (duration / 30); // 30ms intervals
-      
+
       const timer = setInterval(() => {
         current += increment;
-        if(current >= target) {
+        if (current >= target) {
           counter.textContent = target.toLocaleString() + (counter.hasAttribute('data-no-plus') ? '' : '+');
           clearInterval(timer);
         } else {
@@ -648,12 +762,15 @@ const BlogsModule = (() => {
   const renderBlogs = (blogs) => {
     const grid = document.getElementById('blog-grid');
     if (!grid) return;
-    grid.innerHTML = blogs.map(blog => `
+    
+    const displayBlogs = blogs.slice(0, 3);
+    
+    grid.innerHTML = displayBlogs.map(blog => `
       <a href="blog.html#${blog.id}" class="card blog-card" style="text-align: left; text-decoration: none; display: block;">
         <img src="${blog.image}" alt="${blog.title}" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: 1rem;">
         <h3 style="color: var(--color-crimson); margin-bottom: 0.5rem; font-family: var(--font-display);">${blog.title}</h3>
         <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1rem;">${blog.excerpt}</p>
-        <span style="font-weight: 600; color: var(--color-crimson); font-size: 0.9rem;">Read More →</span>
+        <span style="font-weight: 600; color: var(--color-crimson); font-size: 0.9rem;">Read More <i data-lucide="arrow-right"></i></span>
       </a>
     `).join('');
 
@@ -681,6 +798,33 @@ const TabsModule = (() => {
   return { init };
 })();
 
+// --- Scroll Spy Module ---
+const ScrollSpyModule = (() => {
+  const init = () => {
+    const sections = document.querySelectorAll('section[id], .section[id]');
+    const navLinks = document.querySelectorAll('#desktop-nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollPos = window.scrollY + 200; // offset for fixed header
+
+      sections.forEach(section => {
+        if (scrollPos >= section.offsetTop && scrollPos < (section.offsetTop + section.offsetHeight)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active-nav-link');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active-nav-link');
+        }
+      });
+    }, { passive: true });
+  };
+  return { init };
+})();
+
 // --- App Bootstrap ---
 document.addEventListener('DOMContentLoaded', () => {
   LangModule.init();
@@ -690,7 +834,42 @@ document.addEventListener('DOMContentLoaded', () => {
   UIModule.init();
   TabsModule.init();
   BlogsModule.init();
-  
+  ScrollSpyModule.init();
+
+  // Generic Modal Logic for Flowchart Popups
+  const infoBtns = document.querySelectorAll('.info-btn');
+  const closeBtns = document.querySelectorAll('.close-btn[data-close]');
+
+  infoBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalId = btn.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalId = btn.getAttribute('data-close');
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close modals on outside click (applies to all elements with class "modal")
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+      e.target.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  });
+
   // SOS Modal Logic
   const sosBtn = document.getElementById('sos-btn');
   const sosModal = document.getElementById('sos-modal');

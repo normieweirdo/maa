@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donate | Maa by Rigel</title>
   <link rel="stylesheet" href="styles.css" />
   <!-- Razorpay Checkout Script -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <style>
-    body { background-color: var(--color-bg); }
+    body {
+      background-color: var(--color-bg);
+    }
+
     .donate-hero {
       padding-top: 120px;
       padding-bottom: var(--space-16);
     }
+
     .donate-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-8);
       align-items: start;
     }
+
     @media(max-width: 900px) {
-      .donate-grid { grid-template-columns: 1fr; }
+      .donate-grid {
+        grid-template-columns: 1fr;
+      }
     }
+
     .donate-content img {
       width: 100%;
       height: auto;
@@ -29,17 +38,20 @@
       margin-bottom: var(--space-6);
       box-shadow: var(--shadow-sm);
     }
+
     .donate-content h1 {
       font-size: 2.2rem;
       margin-bottom: var(--space-4);
       color: var(--color-obsidian);
     }
+
     .donate-content p {
       color: var(--color-text-muted);
       margin-bottom: var(--space-4);
       font-size: 1.05rem;
       line-height: 1.8;
     }
+
     .donate-card {
       background: #fff;
       border-radius: var(--radius-xl);
@@ -49,21 +61,25 @@
       position: sticky;
       top: 100px;
     }
+
     .donate-card h2 {
       font-size: 1.5rem;
       text-align: center;
       margin-bottom: var(--space-6);
     }
-    
+
     /* Amount Grid */
-    .amount-grid {
+    .amount{
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-4);
       margin-bottom: var(--space-6);
     }
-    .amount-grid.full { grid-template-columns: 1fr; }
-    
+
+    .amount-grid.full {
+      grid-template-columns: 1fr;
+    }
+
     .amount-btn {
       padding: var(--space-4) var(--space-2);
       border: 2px solid var(--red-200);
@@ -79,22 +95,28 @@
       align-items: center;
       gap: 0.25rem;
     }
+
     .amount-btn small {
       font-weight: 500;
       font-size: 0.85rem;
       color: var(--color-text-muted);
     }
+
     .amount-btn:hover {
       border-color: var(--color-crimson);
       background: var(--red-50);
     }
+
     .amount-btn.active {
       border-color: var(--color-crimson);
       background: var(--color-crimson);
       color: #fff;
     }
-    .amount-btn.active small { color: rgba(255,255,255,0.8); }
-    
+
+    .amount-btn.active small {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
     .custom-amount {
       width: 100%;
       padding: 1rem;
@@ -105,13 +127,17 @@
       transition: border-color var(--transition-fast);
       margin-bottom: var(--space-6);
     }
-    .custom-amount:focus { border-color: var(--color-crimson); }
-    
+
+    .custom-amount:focus {
+      border-color: var(--color-crimson);
+    }
+
     /* Form Fields */
     .form-group {
       margin-bottom: var(--space-4);
       text-align: left;
     }
+
     .form-group label {
       display: block;
       font-size: 0.9rem;
@@ -119,7 +145,9 @@
       margin-bottom: 0.3rem;
       color: var(--color-obsidian);
     }
-    .form-group input, .form-group select {
+
+    .form-group input,
+    .form-group select {
       width: 100%;
       padding: 0.8rem;
       background: var(--red-50);
@@ -130,19 +158,34 @@
       outline: none;
       transition: all var(--transition-fast);
     }
-    .form-group input:focus, .form-group select:focus {
+
+    .form-group input:focus,
+    .form-group select:focus {
       border-color: var(--color-crimson);
       background: #fff;
     }
-    
-    .form-step { display: none; }
-    .form-step.active { display: block; animation: fadeIn 0.4s ease; }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    .form-step {
+      display: none;
     }
-    
+
+    .form-step.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .btn-block {
       width: 100%;
       padding: 1rem;
@@ -150,7 +193,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    
+
     /* Back link */
     .back-link {
       display: inline-block;
@@ -159,9 +202,14 @@
       font-weight: 600;
       font-size: 0.95rem;
     }
-    .back-link:hover { color: var(--color-crimson); }
+
+    .back-link:hover {
+      color: var(--color-crimson);
+    }
   </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -182,26 +230,30 @@
     <section class="section donate-hero">
       <div class="container">
         <a href="index.html" class="back-link">← Return to Homepage</a>
-        
+
         <div class="donate-grid">
-          
+
           <!-- Left Content -->
           <div class="donate-content">
             <img src="media/Hero.png" alt="Women empowerment">
             <h1>Sponsor a Woman's Menstrual Health</h1>
-            <p>Since our inception, Rigel Foundation has been working extensively across multiple states in India to eliminate period poverty and build a stigma-free environment for women and girls.</p>
-            <p>We work in close coordination with local authorities, schools, and self-help groups to ensure every woman has access to safe, hygienic menstrual products and accurate biological education.</p>
-            <p>You can help us achieve this vision by choosing to donate. Your contribution directly funds hygiene kits containing sanitary pads, disposal mechanisms, and educational booklets.</p>
-            <p><strong>We urge you to play your part in gifting health and dignity. By choosing to donate online, your contributions can help us reach more women and support their fundamental needs.</strong></p>
+            <p>Since our inception, Rigel Foundation has been working extensively across multiple states in India to
+              eliminate period poverty and build a stigma-free environment for women and girls.</p>
+            <p>We work in close coordination with local authorities, schools, and self-help groups to ensure every woman
+              has access to safe, hygienic menstrual products and accurate biological education.</p>
+            <p>You can help us achieve this vision by choosing to donate. Your contribution directly funds hygiene kits
+              containing sanitary pads, disposal mechanisms, and educational booklets.</p>
+            <p><strong>We urge you to play your part in gifting health and dignity. By choosing to donate online, your
+                contributions can help us reach more women and support their fundamental needs.</strong></p>
           </div>
-          
+
           <!-- Right Form Card -->
           <div class="donate-card">
-            
+
             <!-- Step 1: Amount Selection -->
             <div id="step-1" class="form-step active">
               <h2>I pledge to sponsor pads for</h2>
-              
+
               <div class="amount-grid">
                 <button type="button" class="amount-btn" data-amount="500">
                   ₹ 500
@@ -218,37 +270,37 @@
                   <small>1 Year Supply for multiple women</small>
                 </button>
               </div>
-              
+
               <input type="number" id="custom-amount" class="custom-amount" placeholder="Or enter custom amount (₹)">
-              
+
               <button type="button" class="btn btn-primary btn-block" id="btn-proceed">Proceed to Donate</button>
             </div>
-            
+
             <!-- Step 2: User Details -->
             <div id="step-2" class="form-step">
               <h2>Kindly fill your details</h2>
-              
+
               <form id="donation-form">
                 <div class="form-group">
                   <label>Full Name *</label>
                   <input type="text" id="donor-name" required placeholder="Enter your name">
                 </div>
-                
+
                 <div class="form-group">
                   <label>Contact Number *</label>
                   <input type="tel" id="donor-phone" required placeholder="Enter your phone number">
                 </div>
-                
+
                 <div class="form-group">
                   <label>Email Address *</label>
                   <input type="email" id="donor-email" required placeholder="Enter your email address">
                 </div>
-                
+
                 <div class="form-group">
                   <label>Address *</label>
                   <input type="text" id="donor-address" required placeholder="Enter your full address">
                 </div>
-                
+
                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                   <div class="form-group">
                     <label>City *</label>
@@ -259,25 +311,36 @@
                     <input type="text" id="donor-pincode" required placeholder="Pincode">
                   </div>
                 </div>
-                
+
                 <div class="form-group">
-                  <label>PAN Number * <span style="font-weight:400; font-size:0.8rem; color:var(--color-crimson);">(Mandatory for tax exemption)</span></label>
+                  <label>PAN Number * <span
+                      style="font-weight:400; font-size:0.8rem; color:var(--color-crimson);">(Mandatory for tax
+                      exemption)</span></label>
                   <input type="text" id="donor-pan" required placeholder="Enter PAN Number">
                 </div>
-                
-                <div class="form-group" style="display:flex; align-items:center; gap:0.5rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+
+                <div class="form-group"
+                  style="display:flex; align-items:center; gap:0.5rem; margin-top: 1rem; margin-bottom: 1.5rem;">
                   <input type="checkbox" id="tax-exempt" checked style="width:18px; height:18px; cursor:pointer;">
-                  <label for="tax-exempt" style="margin:0; font-weight:500; cursor:pointer;">I wish to claim 80G tax exemption against this donation.</label>
+                  <label for="tax-exempt" style="margin:0; font-weight:500; cursor:pointer;">I wish to claim 80G tax
+                    exemption against this donation.</label>
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary btn-block pulse">Pay Now</button>
-                <button type="button" class="btn btn-ghost btn-block" id="btn-back" style="margin-top: 1rem;">← Back</button>
+                <button type="button" class="btn btn-ghost btn-block" id="btn-back" style="margin-top: 1rem;">←
+                  Back</button>
               </form>
             </div>
-            
+
           </div>
-          
+
         </div>
+      </div>
+      <div style="text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
+        <p class="copyright" style="font-size: 1.1rem; color: var(--color-text-muted);">
+          &copy; 2025 Maa by Rigel. 
+          <a href="tech-team.html" style="color: var(--color-crimson); text-decoration: none; font-weight: 800; margin-left: 10px; border-bottom: 2px solid var(--color-crimson); padding-bottom: 2px;">Made by Rigel Tech Team</a>
+        </p>
       </div>
     </section>
   </main>
@@ -289,24 +352,24 @@
       const step2 = document.getElementById('step-2');
       const customInput = document.getElementById('custom-amount');
       const amountBtns = document.querySelectorAll('.amount-btn');
-      
+
       // Select amount
       amountBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           // Clear active states
           amountBtns.forEach(b => b.classList.remove('active'));
           customInput.value = ''; // clear custom
-          
+
           btn.classList.add('active');
           selectedAmount = parseInt(btn.getAttribute('data-amount'));
         });
       });
-      
+
       customInput.addEventListener('input', (e) => {
         amountBtns.forEach(b => b.classList.remove('active'));
         selectedAmount = parseInt(e.target.value) || 0;
       });
-      
+
       // Proceed to Step 2
       document.getElementById('btn-proceed').addEventListener('click', () => {
         if (selectedAmount < 10) {
@@ -316,23 +379,23 @@
         step1.classList.remove('active');
         step2.classList.add('active');
       });
-      
+
       // Go back to Step 1
       document.getElementById('btn-back').addEventListener('click', () => {
         step2.classList.remove('active');
         step1.classList.add('active');
       });
-      
+
       // Form Submission (Trigger Razorpay)
-      document.getElementById('donation-form').addEventListener('submit', function(e) {
+      document.getElementById('donation-form').addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Get user details
         const name = document.getElementById('donor-name').value;
         const email = document.getElementById('donor-email').value;
         const phone = document.getElementById('donor-phone').value;
         const address = document.getElementById('donor-address').value;
-        
+
         /* 
           NOTE: In a real production environment, you MUST generate an `order_id` 
           from your Node/PHP/Python backend using the Razorpay API and pass it here.
@@ -340,44 +403,46 @@
           the checkout with the amount directly (which Razorpay allows for simple payments,
           but Order ID is highly recommended for security).
         */
-        
+
         var options = {
-            "key": "YOUR_RAZORPAY_KEY_ID", // Enter the Key ID generated from the Dashboard
-            "amount": selectedAmount * 100, // Amount is in currency subunits (paise). ₹500 = 50000 paise.
-            "currency": "INR",
-            "name": "Rigel Foundation",
-            "description": "Donation for Menstrual Health Awareness",
-            "image": "media/Rigel%20Logo.png",
-            "handler": function (response){
-                // On payment success
-                alert("Thank you for your generous donation! Payment ID: " + response.razorpay_payment_id);
-                // Redirect or show success message
-                window.location.href = "index.html";
-            },
-            "prefill": {
-                "name": name,
-                "email": email,
-                "contact": phone
-            },
-            "notes": {
-                "address": address,
-                "pan_number": document.getElementById('donor-pan').value,
-                "tax_exemption_requested": document.getElementById('tax-exempt').checked ? "Yes" : "No"
-            },
-            "theme": {
-                "color": "#710014" // Matches --color-crimson
-            }
+          "key": "YOUR_RAZORPAY_KEY_ID", // Enter the Key ID generated from the Dashboard
+          "amount": selectedAmount * 100, // Amount is in currency subunits (paise). ₹500 = 50000 paise.
+          "currency": "INR",
+          "name": "Rigel Foundation",
+          "description": "Donation for Menstrual Health Awareness",
+          "image": "media/Rigel%20Logo.png",
+          "handler": function (response) {
+            // On payment success
+            alert("Thank you for your generous donation! Payment ID: " + response.razorpay_payment_id);
+            // Redirect or show success message
+            window.location.href = "index.html";
+          },
+          "prefill": {
+            "name": name,
+            "email": email,
+            "contact": phone
+          },
+          "notes": {
+            "address": address,
+            "pan_number": document.getElementById('donor-pan').value,
+            "tax_exemption_requested": document.getElementById('tax-exempt').checked ? "Yes" : "No"
+          },
+          "theme": {
+            "color": "#710014" // Matches --color-crimson
+          }
         };
-        
+
         var rzp1 = new Razorpay(options);
-        
-        rzp1.on('payment.failed', function (response){
-                alert("Payment Failed. Reason: " + response.error.description);
+
+        rzp1.on('payment.failed', function (response) {
+          alert("Payment Failed. Reason: " + response.error.description);
         });
-        
+
         rzp1.open();
       });
     });
   </script>
+  <script>lucide.createIcons();</script>
 </body>
+
 </html>

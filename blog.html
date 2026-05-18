@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
       background-color: var(--color-bg);
       font-family: var(--font-family);
     }
+
     .blog-article {
       max-width: 800px;
       margin: 120px auto var(--space-16) auto;
@@ -19,6 +21,7 @@
       box-shadow: var(--shadow-md);
       border: 1px solid var(--red-200);
     }
+
     .back-link {
       display: inline-block;
       margin-bottom: var(--space-6);
@@ -27,7 +30,11 @@
       font-size: 0.95rem;
       text-decoration: none;
     }
-    .back-link:hover { color: var(--color-crimson); }
+
+    .back-link:hover {
+      color: var(--color-crimson);
+    }
+
     #blog-image {
       width: 100%;
       height: auto;
@@ -36,6 +43,7 @@
       border-radius: var(--radius-lg);
       margin-bottom: var(--space-6);
     }
+
     #blog-title {
       color: var(--color-crimson);
       font-family: var(--font-display);
@@ -43,20 +51,68 @@
       margin-bottom: var(--space-6);
       line-height: 1.2;
     }
+
     #blog-content {
       line-height: 1.8;
       color: var(--color-text);
       font-size: 1.1rem;
     }
-    .loading-state, .error-state {
+
+    #blog-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    #blog-content h3 {
+      color: var(--color-crimson);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-display);
+    }
+
+    #blog-content blockquote {
+      border-left: 4px solid var(--color-crimson);
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--red-900);
+      font-size: 1.25rem;
+      background: var(--red-50);
+      padding: 1.5rem;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+
+    #blog-content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+    }
+
+    #blog-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 3.5rem;
+      line-height: 0.8;
+      font-weight: 700;
+      color: var(--color-crimson);
+      margin-right: 0.5rem;
+      margin-top: 0.2rem;
+      font-family: var(--font-display);
+    }
+
+    .loading-state,
+    .error-state {
       text-align: center;
       padding: var(--space-16) 0;
     }
+
     .error-state {
       display: none;
     }
   </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -68,7 +124,7 @@
       <nav id="desktop-nav">
         <ul>
           <li><a href="index.html">← Back to Home</a></li>
-          <li><a href="donate.html" style="color: var(--color-crimson); font-weight: 800;">❤️ Donate</a></li>
+          <li><a href="donate.html" style="color: var(--color-crimson); font-weight: 800;"><i data-lucide="heart"></i> Donate</a></li>
         </ul>
       </nav>
     </div>
@@ -76,8 +132,8 @@
 
   <main>
     <article class="blog-article container">
-      <a href="index.html" id="back-to-home-link" class="back-link">← Back to Home</a>
-      
+      <a href="blog.html" id="back-to-home-link" class="back-link">← Back to All Blogs</a>
+
       <div id="loading" class="loading-state">
         <h2>Loading...</h2>
       </div>
@@ -96,10 +152,18 @@
       </div>
 
       <!-- All Blogs List View -->
-      <div id="all-blogs-container" style="display: none;">
-        <h1 style="color: var(--color-crimson); font-family: var(--font-display); font-size: 2.5rem; margin-bottom: var(--space-2); text-align: center;">All Research & Blogs</h1>
-        <p style="text-align: center; color: var(--color-text-muted); margin-bottom: var(--space-8);">Explore our latest insights and stories from the field.</p>
-        <div id="all-blogs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+      <div id="all-blogs-container" style="display: none; padding-top: 2rem;">
+        <div style="background: var(--gradient-hero); border-radius: var(--radius-xl); padding: var(--space-12) var(--space-6); text-align: center; margin-bottom: var(--space-12); position: relative; overflow: hidden; box-shadow: var(--shadow-sm);">
+          <div style="position: relative; z-index: 2;">
+            <span class="hero__badge"><i data-lucide="book-open"></i> Knowledge Hub</span>
+            <h1 style="color: var(--red-800); font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: var(--space-3); line-height: 1.1;">Research &amp; Stories</h1>
+            <p style="color: var(--color-text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Explore deep dives, fieldwork insights, and expert advice on menstrual health, hygiene, and policy.</p>
+          </div>
+          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 71, 87, 0.05); border-radius: 50%; z-index: 1;"></div>
+          <div style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; background: rgba(255, 160, 122, 0.05); border-radius: 50%; z-index: 1;"></div>
+        </div>
+        
+        <div id="all-blogs-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-8);">
         </div>
       </div>
     </article>
@@ -129,19 +193,23 @@
       try {
         const response = await fetch('data/blog.json');
         if (!response.ok) throw new Error('Failed to fetch blogs');
-        
+
         const blogs = await response.json();
 
         // If no ID is provided, show ALL blogs
         if (!blogId || isNaN(blogId)) {
           backLink.style.display = 'none'; // Hide back link on main listing
-          
+
           allBlogsGrid.innerHTML = blogs.map(blog => `
-            <a href="blog.html#${blog.id}" onclick="setTimeout(() => window.location.reload(), 50)" class="card blog-card" style="text-align: left; text-decoration: none; display: block; border: 1px solid var(--red-200); border-radius: var(--radius-lg); padding: var(--space-4); transition: transform 0.3s ease;">
-              <img src="${blog.image}" alt="${blog.title}" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1rem;">
-              <h3 style="color: var(--color-crimson); margin-bottom: 0.5rem; font-family: var(--font-display);">${blog.title}</h3>
-              <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1rem;">${blog.excerpt}</p>
-              <span style="font-weight: 600; color: var(--color-crimson); font-size: 0.9rem;">Read More →</span>
+            <a href="blog.html#${blog.id}" onclick="setTimeout(() => window.location.reload(), 50)" class="card glassmorphism-card" style="text-align: left; text-decoration: none; display: flex; flex-direction: column; padding: var(--space-5);">
+              <div style="overflow: hidden; border-radius: var(--radius-md); margin-bottom: var(--space-4);">
+                <img src="${blog.image}" alt="${blog.title}" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <h3 style="color: var(--red-800); margin-bottom: 0.8rem; font-family: var(--font-display); font-size: 1.3rem; line-height: 1.3;">${blog.title}</h3>
+              <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.6;">${blog.excerpt}</p>
+              <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-crimson); font-size: 0.9rem; margin-top: auto;">
+                Read Article <span style="font-size: 1.2rem;"><i data-lucide="arrow-right"></i></span>
+              </div>
             </a>
           `).join('');
 
@@ -164,7 +232,7 @@
         document.getElementById('blog-image').src = blog.image;
         document.getElementById('blog-image').alt = blog.title;
         document.getElementById('blog-title').textContent = blog.title;
-        document.getElementById('blog-content').innerHTML = blog.content.replace(/\n\n/g, '<br><br>');
+        document.getElementById('blog-content').innerHTML = blog.content;
 
         loadingDiv.style.display = 'none';
         containerDiv.style.display = 'block';
@@ -175,5 +243,7 @@
       }
     });
   </script>
+  <script>lucide.createIcons();</script>
 </body>
+
 </html>
