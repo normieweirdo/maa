@@ -1,5 +1,37 @@
 [
   {
+    "answer": "Menstruation, also called a \"period,\" is the monthly shedding of the inner lining of the uterus (called the endometrium) through the vagina. It happens when an egg released from the ovary is not fertilized. The shed lining, along with some blood and mucus, flows out of the body over a few days. It is a completely normal and healthy process in females.",
+    "keywords": [
+      "bleeding",
+      "time of the month",
+      "aunt flo",
+      "monthly visitor",
+      "ovary",
+      "what is menstruation",
+      "cycle",
+      "chums",
+      "define period",
+      "uterine lining",
+      "menses",
+      "explain menstruation",
+      "what is period",
+      "monthly cycle",
+      "vagina",
+      "menstruation",
+      "uterus",
+      "routine",
+      "egg",
+      "endometrium",
+      "periods",
+      "period"
+    ],
+    "category": "General",
+    "is_direct": true,
+    "questions": [
+      "What is menstruation?"
+    ]
+  },
+  {
     "answer": "Yes! Traveling can definitely cause your periods to become irregular. Changes in your daily routine, sleep patterns (especially crossing time zones), diet, and the stress of travel can temporarily disrupt your body's hormone levels, delaying ovulation and your period. Your cycle should return to normal once you settle back into a routine.",
     "keywords": [
       "holiday",
@@ -494,38 +526,6 @@
     "is_direct": true,
     "questions": [
       "Is PCOS and PMOS different?"
-    ]
-  },
-  {
-    "answer": "Menstruation, also called a \"period,\" is the monthly shedding of the inner lining of the uterus (called the endometrium) through the vagina. It happens when an egg released from the ovary is not fertilized. The shed lining, along with some blood and mucus, flows out of the body over a few days. It is a completely normal and healthy process in females.",
-    "keywords": [
-      "bleeding",
-      "time of the month",
-      "aunt flo",
-      "monthly visitor",
-      "ovary",
-      "what is menstruation",
-      "cycle",
-      "chums",
-      "define period",
-      "uterine lining",
-      "menses",
-      "explain menstruation",
-      "what is period",
-      "monthly cycle",
-      "vagina",
-      "menstruation",
-      "uterus",
-      "routine",
-      "egg",
-      "endometrium",
-      "periods",
-      "period"
-    ],
-    "category": "General",
-    "is_direct": true,
-    "questions": [
-      "What is menstruation?"
     ]
   },
   {
