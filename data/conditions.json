@@ -1,12 +1,12 @@
 [
   {
-    "condition": "PCOD / PCOS",
+    "condition": "PMOS",
     "keywords": [
-      "pcod",
+      "pmos",
       "pcos",
       "irregular periods"
     ],
-    "description": "Hormonal disorder affecting ovulation",
+    "description": "Hormonal disorder affecting ovulation (Note: PCOS and PMOS are the same condition)",
     "symptoms": "irregular periods, acne, weight gain",
     "causes": "insulin resistance, hormones",
     "recommendation": "exercise, diet, doctor",
@@ -152,7 +152,7 @@
     ],
     "description": "Difficulty pregnancy",
     "symptoms": "irregular ovulation",
-    "causes": "PCOS",
+    "causes": "PMOS",
     "recommendation": "specialist",
     "risk_level": "high"
   },
@@ -218,7 +218,7 @@
     ],
     "description": "Hormonal weight gain",
     "symptoms": "fat gain",
-    "causes": "PCOS",
+    "causes": "PMOS",
     "recommendation": "diet",
     "risk_level": "medium"
   },
@@ -384,24 +384,24 @@
     "description": "OVULATION PAIN"
   },
   {
-    "condition": "LOW LIBIDO",
+    "condition": "LOW ENERGY LEVELS",
     "keywords": [
-      "low sex drive"
+      "low energy levels"
     ],
     "causes": "hormones",
     "recommendation": "lifestyle",
     "risk_level": "low",
-    "description": "LOW LIBIDO"
+    "description": "LOW ENERGY LEVELS"
   },
   {
-    "condition": "HIGH LIBIDO",
+    "condition": "HIGH ENERGY LEVELS",
     "keywords": [
       "high drive"
     ],
     "causes": "hormones",
     "recommendation": "normal",
     "risk_level": "low",
-    "description": "HIGH LIBIDO"
+    "description": "HIGH ENERGY LEVELS"
   },
   {
     "condition": "NIGHT SWEATS",
@@ -668,7 +668,7 @@
     "keywords": [
       "anovulation"
     ],
-    "causes": "PCOS",
+    "causes": "PMOS",
     "recommendation": "doctor",
     "risk_level": "high",
     "description": "NO OVULATION"
@@ -788,7 +788,7 @@
     "keywords": [
       "metabolism"
     ],
-    "causes": "PCOS",
+    "causes": "PMOS",
     "recommendation": "diet",
     "risk_level": "high",
     "description": "INSULIN RESISTANCE"
@@ -1042,5 +1042,185 @@
     "recommendation": "awareness",
     "risk_level": "low",
     "description": "SOCIAL STIGMA"
+  },
+  {
+    "condition": "ADENOMYOSIS",
+    "keywords": [
+      "adenomyosis",
+      "heavy flow",
+      "severe cramps",
+      "enlarged uterus",
+      "pelvic pressure"
+    ],
+    "description": "Inner lining of the uterus breaks through the muscle wall.",
+    "symptoms": "Heavy bleeding, severe cramping, pelvic pressure, painful intercourse",
+    "causes": "Unknown, potential hormonal links",
+    "recommendation": "Consult a gynecologist for imaging and pain management",
+    "risk_level": "medium",
+    "doctor_required": true
+  },
+  {
+    "condition": "TOXIC SHOCK SYNDROME",
+    "keywords": [
+      "tss",
+      "toxic shock",
+      "sudden fever",
+      "tampon fever",
+      "rash on palms"
+    ],
+    "description": "Rare, life-threatening complication of certain bacterial infections, often associated with tampon use.",
+    "symptoms": "Sudden high fever, low blood pressure, vomiting, rash resembling sunburn",
+    "causes": "Staphylococcus aureus or group A streptococcus bacteria",
+    "recommendation": "Seek EMERGENCY medical attention immediately. Remove tampon if present.",
+    "risk_level": "high",
+    "doctor_required": true
+  },
+  {
+    "condition": "PREMATURE OVARIAN INSUFFICIENCY",
+    "keywords": [
+      "poi",
+      "premature menopause",
+      "early menopause",
+      "ovary failure"
+    ],
+    "description": "Ovaries stop functioning normally before age 40.",
+    "symptoms": "Irregular or missed periods, hot flashes, night sweats, vaginal dryness",
+    "causes": "Genetics, autoimmune diseases, chemotherapy, or unknown",
+    "recommendation": "Consult an endocrinologist or gynecologist for hormone therapy",
+    "risk_level": "medium",
+    "doctor_required": true
+  },
+  {
+    "condition": "VAGINISMUS",
+    "keywords": [
+      "vaginismus",
+      "pelvic pain",
+      "pain during physical exertion",
+      "spasms",
+      "cannot insert tampon"
+    ],
+    "description": "Involuntary muscle spasms in the pelvic floor muscles, making vaginal penetration painful or impossible.",
+    "symptoms": "Pain or burning during penetration, inability to use tampons",
+    "causes": "Anxiety, past trauma, fear of pain, or physical conditions",
+    "recommendation": "Pelvic floor physical therapy, counseling, vaginal dilators",
+    "risk_level": "medium",
+    "doctor_required": true
+  },
+  {
+    "condition": "VULVODYNIA",
+    "keywords": [
+      "vulvodynia",
+      "vulva pain",
+      "burning vulva",
+      "unexplained vaginal pain"
+    ],
+    "description": "Chronic, unexplained pain in the area around the opening of the vagina (vulva).",
+    "symptoms": "Burning, stinging, irritation, or rawness in the vulvar area",
+    "causes": "Nerve injury, past infections, allergies, or unknown",
+    "recommendation": "Consult a specialist for topical medications, nerve blocks, or pelvic therapy",
+    "risk_level": "medium",
+    "doctor_required": true
+  },
+  {
+    "condition": "ECTOPIC PREGNANCY",
+    "keywords": [
+      "ectopic",
+      "tubal pregnancy",
+      "sharp pelvic pain",
+      "shoulder pain"
+    ],
+    "description": "A fertilized egg implants and grows outside the main cavity of the uterus, usually in a fallopian tube.",
+    "symptoms": "Sharp abdominal or pelvic pain, vaginal bleeding, extreme lightheadedness, shoulder pain",
+    "causes": "Damaged fallopian tubes, hormonal imbalances, abnormal development",
+    "recommendation": "Seek EMERGENCY medical attention. This is a life-threatening condition.",
+    "risk_level": "high",
+    "doctor_required": true
+  },
+  {
+    "condition": "OVARIAN HYPERSTIMULATION SYNDROME",
+    "keywords": [
+      "ohss",
+      "ivf pain",
+      "swollen ovaries",
+      "fertility meds pain"
+    ],
+    "description": "An exaggerated response to excess hormones, usually occurring in women taking injectable hormone medications for fertility.",
+    "symptoms": "Rapid weight gain, severe abdominal pain, severe persistent nausea and vomiting, decreased urination",
+    "causes": "High levels of human chorionic gonadotropin (hCG) from fertility treatments",
+    "recommendation": "Contact your fertility specialist immediately or go to the ER.",
+    "risk_level": "high",
+    "doctor_required": true
+  },
+  {
+    "condition": "ASHERMAN'S SYNDROME",
+    "keywords": [
+      "asherman",
+      "ashermans",
+      "uterine scarring",
+      "scar tissue uterus"
+    ],
+    "description": "A rare, acquired condition characterized by the formation of scar tissue (adhesions) inside the uterus.",
+    "symptoms": "Very light periods (hypomenorrhea) or no periods (amenorrhea), infertility, recurrent miscarriages",
+    "causes": "Severe pelvic infection, complicated D&C procedures, pelvic surgery",
+    "recommendation": "Consult a gynecologist for hysteroscopy and surgical removal of adhesions",
+    "risk_level": "high",
+    "doctor_required": true
+  },
+  {
+    "condition": "UTERINE PROLAPSE",
+    "keywords": [
+      "prolapse",
+      "uterus falling",
+      "bulge in vagina",
+      "pelvic heaviness"
+    ],
+    "description": "The uterus slips down into or protrudes out of the vagina due to weakened pelvic floor muscles and ligaments.",
+    "symptoms": "Sensation of heaviness or pulling in your pelvis, tissue protruding from your vagina, urinary leakage",
+    "causes": "Pregnancy, difficult labor, age, obesity, chronic coughing",
+    "recommendation": "Kegel exercises, vaginal pessary, or surgical repair. Consult doctor.",
+    "risk_level": "medium",
+    "doctor_required": true
+  },
+  {
+    "condition": "BARTHOLIN'S CYST",
+    "keywords": [
+      "bartholin",
+      "vaginal cyst",
+      "lump near vagina",
+      "painful vaginal bump"
+    ],
+    "description": "Fluid buildup in the Bartholin's glands (located on each side of the vaginal opening).",
+    "symptoms": "A painless or painful lump near the vaginal opening, discomfort while walking or sitting",
+    "causes": "Backup of fluid due to a blocked gland opening, sometimes infected",
+    "recommendation": "Warm sitz baths. If infected or very painful, a doctor can drain it.",
+    "risk_level": "low",
+    "doctor_required": false
+  },
+  {
+    "condition": "GYNECOLOGIC CANCERS",
+    "description": "Cancers of the female reproductive system",
+    "symptoms": "Abnormal vaginal bleeding (especially after menopause or after physical exertion), unusual vaginal discharge, pelvic pain or pressure, persistent abdominal bloating, feeling full quickly, or changes in bathroom habits.",
+    "prevalence": "Varies by type (Cervical and Uterine are most common)",
+    "risk_factors": "HPV infection (cervical, vaginal, vulvar), age, family history, obesity (uterine), smoking.",
+    "diagnosis_and_treatment": "Diagnosis via Pap smears, HPV testing, biopsies, and imaging. Treatment depends on the stage and type, and may include surgery, chemotherapy, and radiation therapy. PLEASE SEE A DOCTOR IMMEDIATELY.",
+    "myth_vs_fact": [
+      "Myth: Pap smears test for all gynecologic cancers.\nFact: Pap smears ONLY screen for Cervical Cancer. There are no routine screening tests for ovarian, uterine, vaginal, or vulvar cancers.",
+      "Myth: If I have HPV, I will definitely get cancer.\nFact: HPV is very common, and most infections clear up on their own without causing cancer."
+    ],
+    "keywords": [
+      "cancer",
+      "cervical cancer",
+      "ovarian cancer",
+      "uterine cancer",
+      "endometrial cancer",
+      "vaginal cancer",
+      "vulvar cancer",
+      "tumor",
+      "carcinoma",
+      "malignancy",
+      "chemo",
+      "oncology"
+    ],
+    "category": "High Risk"
   }
 ]

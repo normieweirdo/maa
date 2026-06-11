@@ -11,13 +11,13 @@
     "team": "Team"
   },
   "hero": {
-    "badge": "🌸 Safe · Private · Empowering",
+    "badge": "\ud83c\udf38 Safe \u00b7 Private \u00b7 Empowering",
     "headline": "\"Empowering Women Through Awareness & Care\"",
     "subtext": "A safe, private space to learn, track, and connect. Backed by WHO guidelines and Government of India resources.",
     "cta_track": "Track Period",
     "cta_ask": "Ask a Question",
     "cta_learn": "Learn More",
-    "tagline": "💜 You're not alone."
+    "tagline": "\ud83d\udc9c You're not alone."
   },
   "learn": {
     "title": "Menstrual Health Education",
@@ -55,7 +55,7 @@
     "import_btn": "Import Data",
     "export_btn": "Export Data",
     "print_title": "Maa Menstrual Health Report",
-    "print_subtitle": "Generated Clinical Patient Report • Confidentially Prepared Client-Side",
+    "print_subtitle": "Generated Clinical Patient Report \u2022 Confidentially Prepared Client-Side",
     "cycle_history_title": "Cycle Length History",
     "cycle_history_subtitle": "Track your menstrual cycle consistency and lengths over time.",
     "cycle_history_empty": "Please log at least two periods in the calendar above to see your cycle history chart.",

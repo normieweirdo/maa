@@ -13,11 +13,11 @@
       "icon": "<i data-lucide='shield'></i>",
       "description": "India's flagship umbrella scheme for the safety, security, and empowerment of women across their entire life cycle. Operates through two sub-schemes: Sambal (safety) and Samarthya (empowerment).",
       "benefits": [
-        "One Stop Centres (Sakhi) — integrated support for women in distress",
-        "Women Helpline 181 — 24×7 toll-free emergency response",
-        "Beti Bachao Beti Padhao — awareness & girl-child protection",
-        "Nari Adalat — community-level grievance redressal",
-        "SANKALP Hubs — single-window information access"
+        "One Stop Centres (Sakhi) \u2014 integrated support for women in distress",
+        "Women Helpline 181 \u2014 24\u00d77 toll-free emergency response",
+        "Beti Bachao Beti Padhao \u2014 awareness & girl-child protection",
+        "Nari Adalat \u2014 community-level grievance redressal",
+        "SANKALP Hubs \u2014 single-window information access"
       ],
       "eligibility": "All women and girls across India. Priority to those facing violence, distress, or marginalisation.",
       "helpline": "181",
@@ -34,7 +34,7 @@
         "Nutrition"
       ],
       "icon": "<i data-lucide='sprout'></i>",
-      "description": "Focuses on multi-dimensional development of adolescent girls (11–18 years) including nutrition, health, hygiene, life skills, and mainstreaming school dropouts. Delivered through Anganwadi Centres under Mission Poshan 2.0.",
+      "description": "Focuses on multi-dimensional development of adolescent girls (11\u201318 years) including nutrition, health, hygiene, life skills, and mainstreaming school dropouts. Delivered through Anganwadi Centres under Mission Poshan 2.0.",
       "benefits": [
         "Supplementary nutrition for out-of-school girls",
         "Iron & folic acid supplementation",
@@ -42,7 +42,7 @@
         "Life skills and vocational guidance",
         "Health check-ups and referral services"
       ],
-      "eligibility": "Girls aged 11–18 years, especially out-of-school girls in select districts.",
+      "eligibility": "Girls aged 11\u201318 years, especially out-of-school girls in select districts.",
       "helpline": "011-23388074",
       "link": "https://wcd.gov.in"
     },
@@ -65,7 +65,7 @@
         "District-level awareness programmes",
         "Convergence with MoHFW and MoE"
       ],
-      "eligibility": "All families with girl children. Focus on districts with low Child Sex Ratio (CSR).",
+      "eligibility": "All families with girl children. Focus on districts with low Child Intimacy Ratio (CSR).",
       "helpline": "181",
       "link": "https://spniwcd.wcd.gov.in/beti-bachao-beti-padhao/documents"
     },
@@ -80,9 +80,9 @@
         "Financial Aid"
       ],
       "icon": "<i data-lucide='heart-handshake'></i>",
-      "description": "Provides ₹5,000 cash incentive in three instalments to pregnant and lactating women for the first live birth, to compensate for wage loss and improve health and nutrition outcomes.",
+      "description": "Provides \u20b95,000 cash incentive in three instalments to pregnant and lactating women for the first live birth, to compensate for wage loss and improve health and nutrition outcomes.",
       "benefits": [
-        "₹5,000 maternity benefit in 3 instalments",
+        "\u20b95,000 maternity benefit in 3 instalments",
         "Encourages institutional delivery",
         "Improves maternal and infant nutrition",
         "Facilitates rest before and after delivery",
@@ -103,7 +103,7 @@
         "Hygiene"
       ],
       "icon": "<i data-lucide='stethoscope'></i>",
-      "description": "Part of the National Health Mission, this scheme distributes affordable sanitary napkins (brand: 'Freedays') at ₹6 for a pack of 6 via ASHA workers to adolescent girls (10–19 years) in rural areas across India.",
+      "description": "Part of the National Health Mission, this scheme distributes affordable sanitary napkins (brand: 'Freedays') at \u20b96 for a pack of 6 via ASHA workers to adolescent girls (10\u201319 years) in rural areas across India.",
       "benefits": [
         "Subsidised sanitary napkins via ASHA workers",
         "Menstrual hygiene education sessions",
@@ -111,13 +111,13 @@
         "Reduced school absenteeism",
         "Covers all 29 States + UTs"
       ],
-      "eligibility": "Adolescent girls aged 10–19 years in rural areas. Free/subsidised through ASHA workers.",
+      "eligibility": "Adolescent girls aged 10\u201319 years in rural areas. Free/subsidised through ASHA workers.",
       "helpline": "104",
       "link": "https://nhm.gov.in"
     },
     {
       "id": "pmbjp-suvidha",
-      "title": "Suvidha Sanitary Napkins — PMBJP",
+      "title": "Suvidha Sanitary Napkins \u2014 PMBJP",
       "ministry": "Ministry of Chemicals & Fertilizers",
       "type": "Subsidised Product",
       "tags": [
@@ -126,21 +126,21 @@
         "Access"
       ],
       "icon": "<i data-lucide='package'></i>",
-      "description": "Oxo-biodegradable sanitary napkins called 'Suvidha' available at just ₹1 per pad (pack of 4 for ₹4) through 10,000+ Pradhan Mantri Bhartiya Janaushadhi Kendras (PMBJK) across India.",
+      "description": "Oxo-biodegradable sanitary napkins called 'Suvidha' available at just \u20b91 per pad (pack of 4 for \u20b94) through 10,000+ Pradhan Mantri Bhartiya Janaushadhi Kendras (PMBJK) across India.",
       "benefits": [
-        "₹1 per sanitary napkin — most affordable in India",
+        "\u20b91 per sanitary napkin \u2014 most affordable in India",
         "Available at 10,000+ Janaushadhi Kendras",
         "Eco-friendly oxo-biodegradable material",
         "No prescription required",
         "Accessible in rural & semi-urban areas"
       ],
-      "eligibility": "Any woman or girl. No eligibility restriction — walk-in purchase at Janaushadhi Kendra.",
+      "eligibility": "Any woman or girl. No eligibility restriction \u2014 walk-in purchase at Janaushadhi Kendra.",
       "helpline": "1800-180-8080",
       "link": "https://janaushadhi.gov.in"
     },
     {
       "id": "samagra-shiksha",
-      "title": "Samagra Shiksha — School Sanitation",
+      "title": "Samagra Shiksha \u2014 School Sanitation",
       "ministry": "Ministry of Education",
       "type": "School Infrastructure",
       "tags": [
@@ -172,7 +172,7 @@
         "Crisis Support"
       ],
       "icon": "<i data-lucide='hospital'></i>",
-      "description": "Sakhi centres provide integrated, immediate support to women affected by violence — private, medical, legal, psychological and shelter support under one roof. Over 700+ Sakhi centres operational across India.",
+      "description": "Sakhi centres provide integrated, immediate support to women affected by violence \u2014 private, medical, legal, psychological and shelter support under one roof. Over 700+ Sakhi centres operational across India.",
       "benefits": [
         "Emergency shelter (up to 5 days)",
         "Medical aid and referral",

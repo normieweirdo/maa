@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maa - Admin Dashboard</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-primary: #e11d48;
+      --color-primary-light: #fda4af;
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-text: #0f172a;
+      --color-text-muted: #64748b;
+      --color-border: #e2e8f0;
+      --color-success: #10b981;
+      --font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin: 0;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--color-text-muted);
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab.active {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .details {
+      flex: 1;
+    }
+
+    .text-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+      color: var(--color-text);
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .badge.downvote { background: #fee2e2; color: #991b1b; }
+    .badge.fallback { background: #ffedd5; color: #9a3412; }
+    .badge.pending { background: #fef08a; color: #854d0e; }
+    .badge.approved { background: #dcfce7; color: #166534; }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.9; }
+    .btn-danger { background: var(--color-primary); color: white; }
+    .btn-success { background: var(--color-success); color: white; }
+    .btn-outline { background: transparent; border: 1px solid var(--color-border); color: var(--color-text); }
+    .btn-outline:hover { background: var(--color-bg); }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      background: var(--color-surface);
+      border: 1px dashed var(--color-border);
+      border-radius: 12px;
+      color: var(--color-text-muted);
+    }
+    
+    .nav-link {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+    
+    .nav-link:hover { text-decoration: underline; }
+
+    #login-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    #login-card {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid var(--color-border);
+    }
+    #login-input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 1.5rem 0;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    #login-input:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+
+    /* Form Styles */
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+    .form-control { width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: 10px; font-family: inherit; font-size: 1rem; box-sizing: border-box; }
+    .form-control:focus { outline: none; border-color: var(--color-primary); }
+    textarea.form-control { resize: vertical; min-height: 120px; }
+  </style>
+</head>
+<body>
+
+  <!-- Login Overlay -->
+  <div id="login-overlay">
+    <div id="login-card">
+      <h2 style="color: var(--color-primary); margin-top: 0; font-size: 1.8rem;">Admin Login</h2>
+      <p style="color: var(--color-text-muted);">Please enter the admin password to access the dashboard.</p>
+      <input type="password" id="login-input" placeholder="Password" onkeypress="if(event.key === 'Enter') checkLogin()" />
+      <button class="btn btn-danger" style="width: 100%; padding: 0.8rem; font-size: 1.1rem;" onclick="checkLogin()">Login</button>
+      <p id="login-error" style="color: #e11d48; display: none; margin-top: 1rem; font-weight: 500;">Incorrect password.</p>
+      <a href="index.html" style="display: block; margin-top: 1.5rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.9rem;">&larr; Back to Home</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <div>
+        <h1>Maa Admin</h1>
+      </div>
+      <div>
+        <a href="index.html" class="nav-link">Back to Site</a>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('pending')">Pending Stories</div>
+      <div class="tab" onclick="switchTab('approved')">Approved Stories</div>
+      <div class="tab" onclick="switchTab('add')">Add Story</div>
+      <div class="tab" onclick="switchTab('queries')">Failed Queries</div>
+    </div>
+
+    <!-- Pending Stories Tab -->
+    <div id="tab-pending" class="tab-content active">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <div class="stats" id="pending-counter">0 pending stories</div>
+        <button class="btn btn-outline" onclick="window.loadPendingStories()">Refresh</button>
+      </div>
+      <div id="pending-container"></div>
+    </div>
+
+    <!-- Approved Stories Tab -->
+    <div id="tab-approved" class="tab-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <div class="stats" id="approved-counter">0 approved stories</div>
+        <button class="btn btn-outline" onclick="window.loadApprovedStories()">Refresh</button>
+      </div>
+      <div id="approved-container"></div>
+    </div>
+
+    <!-- Add Story Tab -->
+    <div id="tab-add" class="tab-content">
+      <div class="card" style="display: block;">
+        <h2 style="margin-top: 0; color: var(--color-primary);">Add a Story</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">Stories added here are instantly approved and visible on the public community page.</p>
+        
+        <form id="addStoryForm">
+          <div class="form-group">
+            <label>Author Name</label>
+            <input type="text" id="addAuthor" class="form-control" placeholder="Admin/Organization" required>
+          </div>
+          <div class="form-group">
+            <label>Story Text</label>
+            <textarea id="addText" class="form-control" placeholder="Write the story here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success" style="width: 100%; padding: 1rem;" id="addSubmitBtn">Add Approved Story</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Queries Tab -->
+    <div id="tab-queries" class="tab-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <div class="stats" id="queries-counter">0 pending queries</div>
+        <button class="btn btn-outline" id="clear-btn">Clear All Logs</button>
+      </div>
+      <div id="logs-container"></div>
+    </div>
+
+  </div>
+
+  <!-- Regular JS Logic -->
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      
+      event.target.classList.add('active');
+      document.getElementById(`tab-${tabId}`).classList.add('active');
+      
+      if(tabId === 'pending' && window.loadPendingStories) window.loadPendingStories();
+      if(tabId === 'approved' && window.loadApprovedStories) window.loadApprovedStories();
+    }
+
+    function checkLogin() {
+      const pwd = document.getElementById('login-input').value;
+      if (pwd === 'admin123') { 
+        document.getElementById('login-overlay').style.display = 'none';
+        sessionStorage.setItem('admin_logged_in', 'true');
+      } else {
+        document.getElementById('login-error').style.display = 'block';
+      }
+    }
+
+    function loadLogs() {
+      const container = document.getElementById('logs-container');
+      const counter = document.getElementById('queries-counter');
+      const logs = JSON.parse(localStorage.getItem('maa_failed_queries') || '[]');
+      
+      counter.textContent = `${logs.length} pending quer${logs.length === 1 ? 'y' : 'ies'} to review`;
+
+      if (logs.length === 0) {
+        container.innerHTML = `<div class="empty-state"><h2>🎉 All caught up!</h2><p>Your chatbot is answering everything perfectly right now.</p></div>`;
+        return;
+      }
+
+      container.innerHTML = logs.map(log => {
+        const date = new Date(log.timestamp).toLocaleString();
+        const badgeClass = log.reason === 'downvote' ? 'downvote' : 'fallback';
+        const badgeText = log.reason === 'downvote' ? 'User Disliked' : 'No Answer';
+        return `
+          <div class="card">
+            <div class="details">
+              <p class="text-title">"${log.text}"</p>
+              <div class="meta">
+                <span class="badge ${badgeClass}">${badgeText}</span>
+                <span>Logged at: ${date}</span>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-outline" onclick="copyToClipboard('${log.text.replace(/'/g, "\\'")}')">Copy</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    document.getElementById('clear-btn').addEventListener('click', () => {
+      if(confirm("Are you sure you want to clear all logged queries?")) {
+        localStorage.removeItem('maa_failed_queries');
+        loadLogs();
+      }
+    });
+
+    window.copyToClipboard = (text) => navigator.clipboard.writeText(text).then(() => alert('Copied!'));
+  </script>
+
+  <!-- PHP/MySQL Modular Scripts -->
+  <script>
+    window.loadPendingStories = async function() {
+      const container = document.getElementById('pending-container');
+      const counter = document.getElementById('pending-counter');
+      
+      try {
+        const response = await fetch('api/admin_get_stories.php?status=pending');
+        if (!response.ok) throw new Error('Network error');
+        const stories = await response.json();
+        
+        counter.textContent = `${stories.length} pending stor${stories.length === 1 ? 'y' : 'ies'}`;
+
+        if (stories.length === 0) {
+          container.innerHTML = `<div class="empty-state"><h2>🎉 All caught up!</h2><p>No new stories to review.</p></div>`;
+          return;
+        }
+
+        container.innerHTML = stories.map(story => {
+          const date = new Date(story.timestamp).toLocaleString();
+          return `
+            <div class="card">
+              <div class="details">
+                <p class="text-title">"${story.text}"</p>
+                <div class="meta">
+                  <span class="badge pending">Pending</span>
+                  <span>By: <strong>${story.name}</strong></span>
+                  <span>Submitted: ${date}</span>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-success" onclick="window.reviewStory('${story.id}', 'approve')">Approve</button>
+                <button class="btn btn-danger" onclick="window.reviewStory('${story.id}', 'reject')">Reject</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `<div class="empty-state"><h3>Failed to load from backend.</h3></div>`;
+      }
+    };
+
+    window.loadApprovedStories = async function() {
+      const container = document.getElementById('approved-container');
+      const counter = document.getElementById('approved-counter');
+      
+      try {
+        const response = await fetch('api/admin_get_stories.php?status=approved');
+        if (!response.ok) throw new Error('Network error');
+        const stories = await response.json();
+        
+        counter.textContent = `${stories.length} approved stor${stories.length === 1 ? 'y' : 'ies'}`;
+
+        if (stories.length === 0) {
+          container.innerHTML = `<div class="empty-state"><h3>No approved stories yet.</h3></div>`;
+          return;
+        }
+
+        container.innerHTML = stories.map(story => {
+          const date = new Date(story.timestamp).toLocaleString();
+          return `
+            <div class="card">
+              <div class="details">
+                <p class="text-title">"${story.text}"</p>
+                <div class="meta">
+                  <span class="badge approved">Approved</span>
+                  <span>By: <strong>${story.name}</strong></span>
+                  <span>Added: ${date}</span>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-danger" onclick="window.deleteStory('${story.id}')">Remove</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `<div class="empty-state"><h3>Failed to load from backend.</h3></div>`;
+      }
+    };
+
+    window.reviewStory = async function(id, action) {
+      try {
+        const response = await fetch('api/admin_action.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, action })
+        });
+        if (!response.ok) throw new Error('Network error');
+        window.loadPendingStories();
+      } catch (err) {
+        console.error(err);
+        alert('Server Error');
+      }
+    };
+
+    window.deleteStory = async function(id) {
+      if(!confirm("Are you sure you want to permanently delete this approved story?")) return;
+      try {
+        const response = await fetch('api/admin_action.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, action: 'delete' })
+        });
+        if (!response.ok) throw new Error('Network error');
+        window.loadApprovedStories();
+      } catch (err) {
+        console.error(err);
+        alert('Server Error');
+      }
+    };
+
+    document.getElementById('addStoryForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('addSubmitBtn');
+      btn.textContent = 'Adding...';
+      btn.disabled = true;
+
+      const newStory = {
+        name: document.getElementById('addAuthor').value,
+        text: document.getElementById('addText').value
+      };
+
+      try {
+        const response = await fetch('api/admin_add_approved.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newStory)
+        });
+        if (!response.ok) throw new Error('Network error');
+        
+        alert('Story added and instantly approved!');
+        document.getElementById('addStoryForm').reset();
+        document.querySelector('.tab:nth-child(2)').click();
+      } catch (err) {
+        console.error(err);
+        alert('Server Error');
+      } finally {
+        btn.textContent = 'Add Approved Story';
+        btn.disabled = false;
+      }
+    });
+
+    // Run Initial Data Fetches
+    if (sessionStorage.getItem('admin_logged_in') === 'true') {
+      document.getElementById('login-overlay').style.display = 'none';
+    }
+    window.loadPendingStories();
+    loadLogs();
+  </script>
+</body>
+</html>

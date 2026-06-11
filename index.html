@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="styles.css?v=28">
+  <link rel="stylesheet" href="styles.css?v=31">
   <!-- Tailwind CSS v3 Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -92,6 +92,8 @@
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <!-- VanillaTilt for 3D card tilt effect -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <!-- Fuse.js for fuzzy search matching in Q&A -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -120,6 +122,7 @@
           <li><a href="#impact" data-i18n="nav.impact">Impact</a></li>
           <li><a href="#research" data-i18n="nav.research">Data &amp; Reports</a></li>
           <li><a href="#team" data-i18n="nav.team">Team</a></li>
+          <li><a href="#community">Community</a></li>
           <li style="display: flex; align-items: center; margin-left: 1rem;"><a href="https://rigelfoundation.org.in/category/blog/" target="_blank" class="btn btn-ghost" style="padding: 0.5rem 1.2rem; font-size: 1rem; font-weight: 800; white-space: nowrap;"><i data-lucide="book-open" style="width:18px; height:18px;"></i> Blog</a></li>
           <li style="display: flex; align-items: center; margin-left: 1rem;"><a href="https://rzp.io/rzp/maa-donation" target="_blank" class="btn btn-primary pulse" style="padding: 0.5rem 1.2rem; font-size: 1rem; font-weight: 800; white-space: nowrap;"><i data-lucide="heart" style="width:18px; height:18px;"></i> Donate</a></li>
         </ul>
@@ -167,6 +170,7 @@
         <li><a href="#impact" class="mobile-link">Impact</a></li>
         <li><a href="#research" class="mobile-link">Data &amp; Reports</a></li>
         <li><a href="#team" class="mobile-link">Team</a></li>
+        <li><a href="#community" class="mobile-link">Community</a></li>
         <li><a href="https://rigelfoundation.org.in/category/blog/" target="_blank" class="mobile-link"><i data-lucide="book-open" style="display: inline-block; vertical-align: middle; margin-right: 0.25rem; width: 18px; height: 18px;"></i> Blog</a></li>
         <li style="margin-top: 1rem;"><a href="https://rzp.io/rzp/maa-donation" target="_blank" class="btn btn-primary pulse" style="display: flex; justify-content: center; font-weight: 800; text-align: center;"><i data-lucide="heart"></i>
             Donate</a></li>
@@ -268,7 +272,7 @@
       <div class="container">
         <h2 class="section-title" data-i18n="learn.title">Menstrual Health Education</h2>
         <p class="section-subtitle" data-i18n="learn.subtitle">According to the World Health Organization (WHO),
-          menstrual health is an integral part of sexual and reproductive health and rights.</p>
+          menstrual health is an integral part of overall reproductive health and rights.</p>
         <a href="https://www.unicef.org/press-releases/fact-sheet-menstrual-health-and-hygiene-management-still-out-reach-many" target="_blank" rel="noopener"
           class="link-source">Source: UNICEF Fact Sheets <i data-lucide="arrow-up-right"></i></a>
         <div class="grid" id="learn-grid">
@@ -305,10 +309,10 @@
 
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
 
-          <!-- 1. PCOS -->
-          <div class="card disorder-card" onclick="openDisorderModal('Polycystic Ovary Syndrome (PCOS/PCOD)', 'A hormonal disorder causing enlarged ovaries with small cysts on the outer edges, leading to irregular periods, excess hair growth, and sometimes fertility issues.')">
+          <!-- 1. PMOS -->
+          <div class="card disorder-card" onclick="openDisorderModal('Polyendocrine Metabolic Ovarian Syndrome (PMOS)', 'A hormonal disorder causing enlarged ovaries with small cysts on the outer edges, leading to irregular periods, excess hair growth, and sometimes fertility issues.')">
             <span class="disorder-tag">Hormonal</span>
-            <h3>Polycystic Ovary Syndrome (PCOS/PCOD)</h3>
+            <h3>Polyendocrine Metabolic Ovarian Syndrome (PMOS)</h3>
             <ul>
               <li>Irregular periods</li>
               <li>Weight gain & Acne</li>
@@ -369,7 +373,7 @@
               <li>Never getting periods</li>
               <li>Periods suddenly stopping</li>
               <li>Caused by stress, malnutrition, or hormonal imbalance</li>
-              <li>Can result from excessive exercise or PCOS</li>
+              <li>Can result from excessive exercise or PMOS</li>
             </ul>
             <p class="disorder-note"><strong>Why It Matters:</strong> Absence of menstruation is a critical health indicator
               that requires medical attention.</p>
@@ -431,11 +435,11 @@
           </div>
 
           <!-- 10. Irregular Cycles -->
-          <div class="card disorder-card" onclick="openDisorderModal('Irregular Menstrual Cycles', 'Menstrual cycles where the length of the cycle varies significantly from month to month. Can be caused by various factors including stress, diet, extreme exercise, or underlying conditions like PCOS or thyroid issues.')">
+          <div class="card disorder-card" onclick="openDisorderModal('Irregular Menstrual Cycles', 'Menstrual cycles where the length of the cycle varies significantly from month to month. Can be caused by various factors including stress, diet, extreme exercise, or underlying conditions like PMOS or thyroid issues.')">
             <span class="disorder-tag">Symptom</span>
             <h3>Irregular Menstrual Cycles</h3>
             <ul>
-              <li>Often a sign of PCOS</li>
+              <li>Often a sign of PMOS</li>
               <li>Can indicate thyroid disorders</li>
               <li>Triggered by stress or malnutrition</li>
               <li>Hormonal imbalances</li>
@@ -521,7 +525,7 @@
             </div>
             <div class="insight-card">
               <h4><i data-lucide="stethoscope"></i> On Health</h4>
-              <p>Untreated dysmenorrhea, PCOS, endometriosis and poor menstrual hygiene increase infection risk. Girls
+              <p>Untreated dysmenorrhea, PMOS, endometriosis and poor menstrual hygiene increase infection risk. Girls
                 delay seeking reproductive care due to shame enforced by stigma.</p>
             </div>
           </div>
@@ -575,7 +579,7 @@
             </div>
             <div class="insight-card">
               <h4><i data-lucide="hospital"></i> Health Consequences</h4>
-              <p>Uninformed girls rarely recognise severe dysmenorrhea, PCOS, or endometriosis. They don't seek care and
+              <p>Uninformed girls rarely recognise severe dysmenorrhea, PMOS, or endometriosis. They don't seek care and
                 don't practice adequate hygiene, increasing infection risk.</p>
             </div>
             <div class="insight-card">
@@ -1833,6 +1837,64 @@
 
   </main>
 
+  <!-- Community Stories Section -->
+  <section id="community" class="section bg-soft fade-in-up">
+    <div class="container text-center">
+      <h2 class="section-title text-center">Community Stories</h2>
+      <p class="section-subtitle text-center">A safe space to share your experiences, struggles, and triumphs. Swipe through stories from our community.</p>
+      
+      <!-- Horizontal Scrolling Container -->
+      <div id="stories-row" style="display: flex; overflow-x: auto; gap: 1.5rem; padding-bottom: 2rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--color-primary-light) transparent;">
+        <!-- Loading State -->
+        <div style="min-width: 250px; padding: 2rem; border-radius: 20px; background: white; border: 1px dashed var(--color-border); color: var(--color-text-muted);">
+          Loading stories...
+        </div>
+      </div>
+      
+      <button class="btn btn-primary mt-8" onclick="document.getElementById('submitModal').classList.add('active')" style="border-radius: 999px; padding: 1rem 2rem; font-weight: 600; box-shadow: 0 4px 15px rgba(225, 29, 72, 0.2);">
+        Share Your Story
+      </button>
+    </div>
+  </section>
+
+  <!-- Submit Story Modal (For Homepage) -->
+  <style>
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .modal-overlay.active { opacity: 1; pointer-events: all; }
+    .modal-content { background: white; border-radius: 20px; padding: 2rem; width: 90%; max-width: 500px; transform: translateY(20px); transition: transform 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .modal-overlay.active .modal-content { transform: translateY(0); }
+    .story-card-sm { min-width: 280px; max-width: 320px; background: white; border-radius: 20px; padding: 1.5rem; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--color-border); scroll-snap-align: start; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between; }
+    .story-card-sm p { font-size: 0.95rem; color: var(--color-text); line-height: 1.5; margin-bottom: 1rem; }
+    .story-card-sm .author { font-weight: 600; color: var(--color-primary); font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; }
+    .story-card-sm .author::before { content: ''; display: inline-block; width: 24px; height: 24px; background: var(--color-primary-light); border-radius: 50%; }
+  </style>
+
+  <div class="modal-overlay" id="submitModal">
+    <div class="modal-content text-left">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2 style="margin: 0; color: var(--color-primary); font-size: 1.5rem; font-weight: 700;">Share Your Journey</h2>
+        <button onclick="document.getElementById('submitModal').classList.remove('active')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-text-muted);">&times;</button>
+      </div>
+      
+      <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem; font-size: 0.9rem; color: #991b1b;">
+        <strong>Want to share a video?</strong><br>
+        Please email your video to <b>maa@rigelfoundation.org.in</b> and we will feature it!
+      </div>
+
+      <form id="storyForm">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Name (or Anonymous)</label>
+          <input type="text" id="authorName" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: 8px; font-family: inherit;" placeholder="Jane Doe" required>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Story</label>
+          <textarea id="storyText" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: 8px; font-family: inherit; resize: vertical; min-height: 100px;" placeholder="Share your experience..." required></textarea>
+        </div>
+        <button type="submit" id="submitBtn" style="background: var(--color-primary); color: white; width: 100%; padding: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer;">Submit for Review</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer id="site-footer">
     <div class="container">
@@ -1892,6 +1954,7 @@
       </div>
     </div>
   </footer>
+
 
 
 
@@ -2066,29 +2129,9 @@
     </div>
   </div>
 
-  <!-- Chatbot UI -->
-  <button id="chatbot-toggle-btn" class="chatbot-btn" aria-label="Toggle Support Chat">
-    <i data-lucide="message-circle" style="color: white; width: 28px; height: 28px;"></i>
-  </button>
-  <div id="chatbot-window" class="chatbot-window hidden glassmorphism-card">
-    <div class="chatbot-header">
-      <h4><i data-lucide="heart-pulse"></i> Maa AI Companion</h4>
-      <button id="chatbot-close-btn" class="chatbot-close" aria-label="Close Chat">
-        <i data-lucide="x"></i>
-      </button>
-    </div>
-    <div id="chatbot-messages" class="chatbot-messages">
-      <div class="chat-message bot-message">
-        Hi! I'm here to listen. Tell me how you're feeling physically or emotionally today, and I'll give you personalized insights based on your cycle!
-      </div>
-    </div>
-    <div class="chatbot-input-area">
-      <input type="text" id="chatbot-input" placeholder="e.g. I am feeling sad..." aria-label="Type your message" autocomplete="off" />
-      <button id="chatbot-send-btn" class="btn btn-primary" aria-label="Send Message"><i data-lucide="send"></i></button>
-    </div>
-  </div>
 
-  <script src="script.js?v=28" defer></script>
+
+  <script src="script.js?v=32" defer></script>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { primaryColor: '#FCE1E5', lineColor: '#C26B74', fontColor: '#4A3B3C' } });
@@ -2161,6 +2204,72 @@
       });
     }
   </script>
+
+  <!-- PHP/MySQL Community Stories Logic -->
+  <script>
+    async function loadStories() {
+      const row = document.getElementById('stories-row');
+      try {
+        const response = await fetch('api/get_stories.php');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const stories = await response.json();
+
+        if(stories.length === 0) {
+          row.innerHTML = `<div style="min-width: 250px; padding: 2rem; border-radius: 20px; background: white; border: 1px dashed var(--color-border); color: var(--color-text-muted);">No stories yet. Be the first!</div>`;
+          return;
+        }
+
+        row.innerHTML = stories.map(story => `
+          <div class="story-card-sm">
+            <p>"${story.text}"</p>
+            <div class="author">${story.name}</div>
+          </div>
+        `).join('');
+      } catch (err) {
+        console.error(err);
+        row.innerHTML = `<div style="min-width: 250px; padding: 2rem; border-radius: 20px; background: white; border: 1px dashed #fca5a5; color: #b91c1c;">Failed to load stories.</div>`;
+      }
+    }
+
+    document.getElementById('storyForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const newStory = {
+        name: document.getElementById('authorName').value,
+        text: document.getElementById('storyText').value
+      };
+
+      try {
+        const response = await fetch('api/add_story.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newStory)
+        });
+        
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        alert('Your story has been submitted and is awaiting review!');
+        document.getElementById('submitModal').classList.remove('active');
+        document.getElementById('storyForm').reset();
+      } catch (err) {
+        console.error(err);
+        alert('Error submitting story.');
+      } finally {
+        btn.textContent = 'Submit for Review';
+        btn.disabled = false;
+      }
+    });
+
+    // Load stories once DOM is ready
+    document.addEventListener('DOMContentLoaded', loadStories);
+  </script>
+  
+  <!-- Subtle Admin Link -->
+  <a href="admin.html" style="position: fixed; bottom: 10px; left: 10px; font-size: 0.75rem; color: #9ca3af; text-decoration: none; z-index: 9999; opacity: 0.6; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Admin</a>
+
 </body>
 
 </html>

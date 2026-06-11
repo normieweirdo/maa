@@ -1,0 +1,1002 @@
+{
+  "metadata": {
+    "title": "Comprehensive Menstrual Pain Dataset",
+    "version": "1.0",
+    "description": "A detailed medical reference dataset covering all pain types, symptoms, precautions, and conditions related to menstruation",
+    "total_pain_entries": 24,
+    "total_symptoms": 22,
+    "total_precautions": 23,
+    "total_conditions": 9
+  },
+  "pain_types_and_body_parts": [
+    {
+      "id": "P001",
+      "pain_category": "Uterine / Pelvic Pain",
+      "body_part": "Lower Abdomen / Uterus",
+      "description": "Cramping, throbbing or aching caused by uterine contractions driven by prostaglandins",
+      "severity_scale": "6\u20139",
+      "onset_timing": "1\u20132 days before or on Day 1",
+      "duration": "2\u20133 days",
+      "prevalence": "80%",
+      "pain_type": "Cramping / Throbbing"
+    },
+    {
+      "id": "P002",
+      "pain_category": "Uterine / Pelvic Pain",
+      "body_part": "Pelvic Floor",
+      "description": "Deep pelvic pressure or heaviness; may feel like something bearing down",
+      "severity_scale": "4\u20137",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20132 days",
+      "prevalence": "45%",
+      "pain_type": "Pressure / Aching"
+    },
+    {
+      "id": "P003",
+      "pain_category": "Uterine / Pelvic Pain",
+      "body_part": "Ovaries",
+      "description": "Mittelschmerz-like ache if ovulation pain continues into period onset",
+      "severity_scale": "3\u20135",
+      "onset_timing": "Around Day 1",
+      "duration": "Few hours",
+      "prevalence": "20%",
+      "pain_type": "Sharp / Dull Ache"
+    },
+    {
+      "id": "P004",
+      "pain_category": "Back Pain",
+      "body_part": "Lower Back (Lumbar)",
+      "description": "Dull, continuous ache from uterine prostaglandins radiating to lumbar nerves",
+      "severity_scale": "5\u20138",
+      "onset_timing": "Day 1\u20133",
+      "duration": "2\u20134 days",
+      "prevalence": "70%",
+      "pain_type": "Dull Ache / Radiating"
+    },
+    {
+      "id": "P005",
+      "pain_category": "Back Pain",
+      "body_part": "Mid Back (Thoracic)",
+      "description": "Muscle tension and stiffness between shoulder blades; less common than lumbar pain",
+      "severity_scale": "3\u20135",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20132 days",
+      "prevalence": "25%",
+      "pain_type": "Tension / Stiffness"
+    },
+    {
+      "id": "P006",
+      "pain_category": "Back Pain",
+      "body_part": "Upper Back / Shoulders",
+      "description": "Referred pain from pelvic congestion travelling upward through fascial lines",
+      "severity_scale": "3\u20135",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20132 days",
+      "prevalence": "15%",
+      "pain_type": "Tension / Referred"
+    },
+    {
+      "id": "P007",
+      "pain_category": "Head & Neck Pain",
+      "body_part": "Head \u2013 Frontal Region",
+      "description": "Hormonal-drop headache; throbbing behind forehead, often bilateral",
+      "severity_scale": "4\u20137",
+      "onset_timing": "1\u20132 days before period",
+      "duration": "1\u20133 days",
+      "prevalence": "55%",
+      "pain_type": "Throbbing / Pressure"
+    },
+    {
+      "id": "P008",
+      "pain_category": "Head & Neck Pain",
+      "body_part": "Head \u2013 Temporal Region",
+      "description": "Tension-type headache at temples triggered by oestrogen withdrawal",
+      "severity_scale": "4\u20137",
+      "onset_timing": "Day 1\u20132",
+      "duration": "Few hours \u2013 2 days",
+      "prevalence": "50%",
+      "pain_type": "Throbbing / Band-like"
+    },
+    {
+      "id": "P009",
+      "pain_category": "Head & Neck Pain",
+      "body_part": "Head \u2013 Full Migraine",
+      "description": "Full menstrual migraine with aura; nausea, light and sound sensitivity, visual disturbances",
+      "severity_scale": "7\u201310",
+      "onset_timing": "2 days before to Day 2",
+      "duration": "4\u201372 hours",
+      "prevalence": "20%",
+      "pain_type": "Severe Throbbing"
+    },
+    {
+      "id": "P010",
+      "pain_category": "Head & Neck Pain",
+      "body_part": "Neck",
+      "description": "Stiffness and aching in cervical spine; worsened by tension headache",
+      "severity_scale": "3\u20135",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20132 days",
+      "prevalence": "30%",
+      "pain_type": "Stiffness / Aching"
+    },
+    {
+      "id": "P011",
+      "pain_category": "Leg & Hip Pain",
+      "body_part": "Hips",
+      "description": "Aching in hip joints from pelvic inflammatory response and ligament laxity",
+      "severity_scale": "4\u20136",
+      "onset_timing": "Day 1\u20133",
+      "duration": "2\u20133 days",
+      "prevalence": "40%",
+      "pain_type": "Aching / Pressure"
+    },
+    {
+      "id": "P012",
+      "pain_category": "Leg & Hip Pain",
+      "body_part": "Thighs (Inner / Anterior)",
+      "description": "Referred pain from uterine nerve pathways into inner and front thighs",
+      "severity_scale": "3\u20136",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20133 days",
+      "prevalence": "35%",
+      "pain_type": "Radiating / Aching"
+    },
+    {
+      "id": "P013",
+      "pain_category": "Leg & Hip Pain",
+      "body_part": "Thighs (Posterior / Sciatic)",
+      "description": "Sciatic nerve irritation from pelvic congestion; shooting pain down back of leg",
+      "severity_scale": "4\u20137",
+      "onset_timing": "Day 1\u20133",
+      "duration": "1\u20133 days",
+      "prevalence": "20%",
+      "pain_type": "Shooting / Radiating"
+    },
+    {
+      "id": "P014",
+      "pain_category": "Leg & Hip Pain",
+      "body_part": "Knees",
+      "description": "Joint ache due to prostaglandin-related inflammation; worsened by water retention",
+      "severity_scale": "2\u20134",
+      "onset_timing": "Day 1\u20133",
+      "duration": "1\u20132 days",
+      "prevalence": "15%",
+      "pain_type": "Dull Ache"
+    },
+    {
+      "id": "P015",
+      "pain_category": "Leg & Hip Pain",
+      "body_part": "Calves & Ankles",
+      "description": "Cramping and oedema in lower legs from water retention and circulation changes",
+      "severity_scale": "2\u20134",
+      "onset_timing": "Day 1\u20134",
+      "duration": "2\u20134 days",
+      "prevalence": "20%",
+      "pain_type": "Cramping / Heaviness"
+    },
+    {
+      "id": "P016",
+      "pain_category": "Chest & Breast Pain",
+      "body_part": "Breasts (Bilateral)",
+      "description": "Cyclic mastalgia \u2013 tenderness, swelling and lumpiness from oestrogen and progesterone peaks",
+      "severity_scale": "4\u20137",
+      "onset_timing": "7\u201310 days before period",
+      "duration": "Resolves Day 1\u20132",
+      "prevalence": "70%",
+      "pain_type": "Tenderness / Fullness"
+    },
+    {
+      "id": "P017",
+      "pain_category": "Chest & Breast Pain",
+      "body_part": "Nipples",
+      "description": "Hypersensitivity and soreness due to hormonal changes in oestrogen and progesterone",
+      "severity_scale": "3\u20135",
+      "onset_timing": "Premenstrual phase",
+      "duration": "Until Day 1\u20132",
+      "prevalence": "40%",
+      "pain_type": "Sensitivity / Soreness"
+    },
+    {
+      "id": "P018",
+      "pain_category": "Chest & Breast Pain",
+      "body_part": "Chest Wall / Ribs",
+      "description": "Costochondral tenderness or tightness; worsened by deep breathing during bloating",
+      "severity_scale": "2\u20134",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20132 days",
+      "prevalence": "10%",
+      "pain_type": "Tightness / Aching"
+    },
+    {
+      "id": "P019",
+      "pain_category": "Abdominal & GI Pain",
+      "body_part": "Upper Abdomen",
+      "description": "Nausea and cramping in upper GI from prostaglandin effect on smooth muscle",
+      "severity_scale": "3\u20136",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20132 days",
+      "prevalence": "50%",
+      "pain_type": "Cramping / Nausea"
+    },
+    {
+      "id": "P020",
+      "pain_category": "Abdominal & GI Pain",
+      "body_part": "Intestines / Bowel",
+      "description": "Diarrhoea, cramping and bloating from prostaglandins stimulating bowel motility",
+      "severity_scale": "3\u20137",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20133 days",
+      "prevalence": "65%",
+      "pain_type": "Cramping / Spasms"
+    },
+    {
+      "id": "P021",
+      "pain_category": "Abdominal & GI Pain",
+      "body_part": "Rectum",
+      "description": "Rectal pressure and tenesmus (urge to defecate) from uterine proximity and pelvic congestion",
+      "severity_scale": "3\u20135",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20132 days",
+      "prevalence": "20%",
+      "pain_type": "Pressure / Urge"
+    },
+    {
+      "id": "P022",
+      "pain_category": "General Body Pain",
+      "body_part": "Whole Body / Muscles",
+      "description": "Flu-like myalgia and fatigue from systemic prostaglandin and cytokine release",
+      "severity_scale": "3\u20136",
+      "onset_timing": "Day 1\u20132",
+      "duration": "1\u20133 days",
+      "prevalence": "45%",
+      "pain_type": "Myalgia / Fatigue"
+    },
+    {
+      "id": "P023",
+      "pain_category": "General Body Pain",
+      "body_part": "Joints (General)",
+      "description": "Inflammatory joint aches across multiple joints due to hormonal immune modulation",
+      "severity_scale": "2\u20135",
+      "onset_timing": "Premenstrual & Day 1\u20132",
+      "duration": "2\u20133 days",
+      "prevalence": "25%",
+      "pain_type": "Aching / Stiffness"
+    },
+    {
+      "id": "P024",
+      "pain_category": "General Body Pain",
+      "body_part": "Vulva / Vaginal Area",
+      "description": "External pelvic pain and vulvodynia flares; burning or rawness worsened during flow",
+      "severity_scale": "3\u20136",
+      "onset_timing": "Day 1\u20133",
+      "duration": "2\u20134 days",
+      "prevalence": "15%",
+      "pain_type": "Burning / Aching"
+    }
+  ],
+  "symptoms": {
+    "physical": [
+      {
+        "id": "S001",
+        "name": "Bloating",
+        "description": "Abdominal distension and fullness from water retention and GI motility changes",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Luteal & Menstrual",
+        "duration": "3\u20137 days",
+        "prevalence": "75%",
+        "associated_condition": "Normal / PMS"
+      },
+      {
+        "id": "S002",
+        "name": "Fatigue & Exhaustion",
+        "description": "Profound tiredness from blood loss, hormonal fluctuation and poor sleep quality",
+        "severity": "Moderate \u2013 Severe",
+        "cycle_phase": "Menstrual Days 1\u20133",
+        "duration": "2\u20135 days",
+        "prevalence": "80%",
+        "associated_condition": "Normal / Anaemia"
+      },
+      {
+        "id": "S003",
+        "name": "Nausea & Vomiting",
+        "description": "Nausea from prostaglandins acting on GI tract; vomiting in severe dysmenorrhoea",
+        "severity": "Mild \u2013 Severe",
+        "cycle_phase": "Day 1\u20132",
+        "duration": "1\u20132 days",
+        "prevalence": "50%",
+        "associated_condition": "Normal / Dysmenorrhoea"
+      },
+      {
+        "id": "S004",
+        "name": "Diarrhoea",
+        "description": "Loose stools triggered by prostaglandin-induced bowel hypermotility",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Day 1\u20132",
+        "duration": "1\u20132 days",
+        "prevalence": "65%",
+        "associated_condition": "Normal"
+      },
+      {
+        "id": "S005",
+        "name": "Constipation",
+        "description": "Slowed bowel transit in luteal phase from elevated progesterone levels",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Luteal Phase",
+        "duration": "3\u20137 days",
+        "prevalence": "40%",
+        "associated_condition": "Normal / PMS"
+      },
+      {
+        "id": "S006",
+        "name": "Dizziness / Lightheadedness",
+        "description": "Drop in blood pressure from blood loss and prostaglandin-induced vasodilation",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Day 1\u20133",
+        "duration": "1\u20133 days",
+        "prevalence": "30%",
+        "associated_condition": "Normal / Anaemia"
+      },
+      {
+        "id": "S007",
+        "name": "Fainting (Vasovagal)",
+        "description": "Vagal nerve response to intense pain causing transient loss of consciousness",
+        "severity": "Severe",
+        "cycle_phase": "Day 1",
+        "duration": "Minutes",
+        "prevalence": "5%",
+        "associated_condition": "Severe Dysmenorrhoea"
+      },
+      {
+        "id": "S008",
+        "name": "Hot Flushes / Sweating",
+        "description": "Hormonal thermoregulation disruption causing sudden heat surges and night sweats",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Premenstrual",
+        "duration": "2\u20134 days",
+        "prevalence": "20%",
+        "associated_condition": "PMS / PMDD"
+      },
+      {
+        "id": "S009",
+        "name": "Chills",
+        "description": "Cold sensations and shivering linked to prostaglandin-induced temperature dysregulation",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Day 1\u20132",
+        "duration": "Hours \u2013 1 day",
+        "prevalence": "25%",
+        "associated_condition": "Normal"
+      },
+      {
+        "id": "S010",
+        "name": "Acne Breakouts",
+        "description": "Androgen surge before period triggers increased sebum production and pore blockage",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "7\u201310 days before period",
+        "duration": "1\u20132 weeks",
+        "prevalence": "65%",
+        "associated_condition": "Hormonal Acne"
+      },
+      {
+        "id": "S011",
+        "name": "Water Retention / Oedema",
+        "description": "Fluid retention in limbs and face from oestrogen and aldosterone interaction",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Luteal & Day 1\u20132",
+        "duration": "3\u20137 days",
+        "prevalence": "60%",
+        "associated_condition": "PMS"
+      },
+      {
+        "id": "S012",
+        "name": "Heavy Menstrual Bleeding",
+        "description": "Excessive flow over 80 ml per cycle requiring hourly pad changes; iron-depleting",
+        "severity": "Moderate \u2013 Severe",
+        "cycle_phase": "Menstrual Days 1\u20133",
+        "duration": "2\u20134 days",
+        "prevalence": "25%",
+        "associated_condition": "Menorrhagia / Fibroids"
+      },
+      {
+        "id": "S013",
+        "name": "Passage of Blood Clots",
+        "description": "Large blood clots over 2.5 cm indicating heavy flow or possible fibroid shedding",
+        "severity": "Moderate",
+        "cycle_phase": "Day 1\u20133",
+        "duration": "1\u20133 days",
+        "prevalence": "30%",
+        "associated_condition": "Menorrhagia"
+      },
+      {
+        "id": "S014",
+        "name": "Insomnia / Poor Sleep",
+        "description": "Difficulty falling or staying asleep from pain, temperature dysregulation and cramps",
+        "severity": "Mild \u2013 Severe",
+        "cycle_phase": "Premenstrual & Day 1\u20132",
+        "duration": "3\u20135 days",
+        "prevalence": "50%",
+        "associated_condition": "PMS / PMDD"
+      }
+    ],
+    "emotional_psychological": [
+      {
+        "id": "S015",
+        "name": "Mood Swings",
+        "description": "Rapid shifts between irritability, sadness and euphoria from oestrogen fluctuation",
+        "severity": "Mild \u2013 Severe",
+        "cycle_phase": "Luteal Phase",
+        "duration": "5\u201310 days",
+        "prevalence": "75%",
+        "associated_condition": "PMS / PMDD"
+      },
+      {
+        "id": "S016",
+        "name": "Anxiety",
+        "description": "Heightened worry or panic linked to progesterone and GABA receptor interaction",
+        "severity": "Mild \u2013 Severe",
+        "cycle_phase": "Luteal Phase",
+        "duration": "5\u20137 days",
+        "prevalence": "55%",
+        "associated_condition": "PMS / PMDD"
+      },
+      {
+        "id": "S017",
+        "name": "Depression / Low Mood",
+        "description": "Persistent low mood from serotonin drop associated with falling oestrogen levels",
+        "severity": "Mild \u2013 Severe",
+        "cycle_phase": "Luteal & Menstrual",
+        "duration": "3\u20137 days",
+        "prevalence": "40%",
+        "associated_condition": "PMDD"
+      },
+      {
+        "id": "S018",
+        "name": "Irritability",
+        "description": "Low frustration threshold and snapping at minor triggers from neurochemical changes",
+        "severity": "Mild \u2013 Severe",
+        "cycle_phase": "7\u201310 days before period",
+        "duration": "5\u20137 days",
+        "prevalence": "70%",
+        "associated_condition": "PMS"
+      },
+      {
+        "id": "S019",
+        "name": "Brain Fog",
+        "description": "Difficulty concentrating, poor short-term memory and mental fatigue from hormonal shifts",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Luteal & Day 1\u20132",
+        "duration": "3\u20135 days",
+        "prevalence": "55%",
+        "associated_condition": "PMS"
+      },
+      {
+        "id": "S020",
+        "name": "Tearfulness / Crying",
+        "description": "Increased emotional sensitivity and tearfulness without a clear external trigger",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Luteal Phase",
+        "duration": "3\u20135 days",
+        "prevalence": "45%",
+        "associated_condition": "PMS / PMDD"
+      },
+      {
+        "id": "S021",
+        "name": "Food Cravings",
+        "description": "Strong cravings for carbohydrates, sugar and salt from serotonin and blood sugar dips",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Luteal Phase",
+        "duration": "3\u20137 days",
+        "prevalence": "80%",
+        "associated_condition": "PMS"
+      },
+      {
+        "id": "S022",
+        "name": "Low Energy Levels",
+        "description": "Reduced sexual interest from fatigue, pain and hormonal low point during menstruation",
+        "severity": "Mild \u2013 Moderate",
+        "cycle_phase": "Menstrual Phase",
+        "duration": "3\u20135 days",
+        "prevalence": "50%",
+        "associated_condition": "Normal"
+      }
+    ]
+  },
+  "precautions_and_remedies": [
+    {
+      "id": "R001",
+      "category": "Heat Therapy",
+      "remedy": "Heating Pad / Hot Water Bottle",
+      "instructions": "Apply 40\u201342\u00b0C pad to lower abdomen or back for 20 minutes every 1\u20132 hours",
+      "addresses_pain": [
+        "Pelvic Pain",
+        "Lower Back Pain"
+      ],
+      "timing": "Day 1 onwards",
+      "evidence_level": "High (RCT evidence)",
+      "caution": "Avoid on broken skin; do not sleep with electric pad on"
+    },
+    {
+      "id": "R002",
+      "category": "Heat Therapy",
+      "remedy": "Warm Bath / Shower",
+      "instructions": "Soak in warm (not hot) bath for 15\u201320 minutes; add Epsom salts for muscle relaxation",
+      "addresses_pain": [
+        "Full Body Ache",
+        "Muscle Tension"
+      ],
+      "timing": "Any time during period",
+      "evidence_level": "Moderate",
+      "caution": "Avoid very hot water if prone to fainting or low blood pressure"
+    },
+    {
+      "id": "R003",
+      "category": "Physical Activity",
+      "remedy": "Light Walking",
+      "instructions": "10\u201320 minute gentle walk increases endorphins and reduces prostaglandin sensitivity",
+      "addresses_pain": [
+        "Pelvic Pain",
+        "Leg Pain",
+        "Back Pain"
+      ],
+      "timing": "Day 1\u20133",
+      "evidence_level": "High",
+      "caution": "Skip if flow is very heavy or fainting risk is present"
+    },
+    {
+      "id": "R004",
+      "category": "Physical Activity",
+      "remedy": "Yoga \u2013 Restorative Poses",
+      "instructions": "Child's Pose, Supine Twist, Cat-Cow \u2013 hold each pose 30\u201360 seconds, repeat 3\u20135 times",
+      "addresses_pain": [
+        "Pelvic Pain",
+        "Back Pain",
+        "Hip Pain"
+      ],
+      "timing": "Any day, especially Day 1\u20133",
+      "evidence_level": "High",
+      "caution": "Avoid inversions during very heavy bleeding"
+    },
+    {
+      "id": "R005",
+      "category": "Physical Activity",
+      "remedy": "Hip Flexor Stretching",
+      "instructions": "Butterfly stretch, pigeon pose, hip circles \u2013 10 minutes daily during menstruation",
+      "addresses_pain": [
+        "Pelvic Pain",
+        "Hip Pain",
+        "Thigh Pain"
+      ],
+      "timing": "Daily during period",
+      "evidence_level": "Moderate",
+      "caution": "Stop immediately if pain increases sharply"
+    },
+    {
+      "id": "R006",
+      "category": "Diet & Nutrition",
+      "remedy": "Anti-Inflammatory Diet",
+      "instructions": "Increase omega-3 (salmon, flaxseed), leafy greens, berries; reduce red meat and refined sugar",
+      "addresses_pain": [
+        "Pelvic Pain",
+        "Joint Pain",
+        "GI Pain"
+      ],
+      "timing": "Start 2 weeks before period",
+      "evidence_level": "High",
+      "caution": "Consult GP if on blood thinners due to omega-3 anticoagulant effect"
+    },
+    {
+      "id": "R007",
+      "category": "Diet & Nutrition",
+      "remedy": "Magnesium-Rich Foods & Supplements",
+      "instructions": "Dark chocolate 85%+, spinach, almonds, pumpkin seeds; 200\u2013400 mg/day supplement option",
+      "addresses_pain": [
+        "Cramps",
+        "Headache",
+        "Mood"
+      ],
+      "timing": "Throughout cycle",
+      "evidence_level": "High",
+      "caution": "Excess supplementation may cause loose stools; stay at or below 350 mg/day"
+    },
+    {
+      "id": "R008",
+      "category": "Diet & Nutrition",
+      "remedy": "Hydration \u2013 Water & Herbal Tea",
+      "instructions": "2\u20132.5 litres water daily; ginger or chamomile tea reduces prostaglandins and GI cramping",
+      "addresses_pain": [
+        "Bloating",
+        "GI Pain",
+        "Headache"
+      ],
+      "timing": "Daily",
+      "evidence_level": "Moderate",
+      "caution": "Avoid excessive caffeine which worsens cramps and anxiety"
+    },
+    {
+      "id": "R009",
+      "category": "Diet & Nutrition",
+      "remedy": "Reduce Salt & Processed Foods",
+      "instructions": "Cut sodium to under 1500 mg/day in luteal phase to minimise water retention and bloating",
+      "addresses_pain": [
+        "Bloating",
+        "Breast Pain"
+      ],
+      "timing": "7\u201310 days before period",
+      "evidence_level": "Moderate",
+      "caution": "Essential if taking diuretics \u2013 monitor electrolytes closely"
+    },
+    {
+      "id": "R010",
+      "category": "Diet & Nutrition",
+      "remedy": "Iron-Rich Foods",
+      "instructions": "Red meat, lentils, spinach, tofu paired with Vitamin C for better absorption",
+      "addresses_pain": [
+        "Fatigue from Anaemia"
+      ],
+      "timing": "During and after period",
+      "evidence_level": "High",
+      "caution": "Avoid excess iron supplements without a blood test"
+    },
+    {
+      "id": "R011",
+      "category": "Diet & Nutrition",
+      "remedy": "Calcium-Rich Foods",
+      "instructions": "Dairy, fortified plant milk, kale \u2013 1200 mg/day may reduce PMS symptoms by up to 48%",
+      "addresses_pain": [
+        "Cramps",
+        "Mood",
+        "Fatigue"
+      ],
+      "timing": "Throughout cycle",
+      "evidence_level": "High (clinical trial)",
+      "caution": "Excess calcium supplements may increase kidney stone risk"
+    },
+    {
+      "id": "R012",
+      "category": "Medications (OTC)",
+      "remedy": "Ibuprofen / NSAIDs",
+      "instructions": "400\u2013600 mg every 6\u20138 hours with food; start 1 day before expected period for best effect",
+      "addresses_pain": [
+        "All Pain Types"
+      ],
+      "timing": "Day \u22121 to Day 3",
+      "evidence_level": "Very High",
+      "caution": "Avoid with stomach ulcers, kidney disease or blood thinners"
+    },
+    {
+      "id": "R013",
+      "category": "Medications (OTC)",
+      "remedy": "Paracetamol / Acetaminophen",
+      "instructions": "500\u20131000 mg every 4\u20136 hours (maximum 4 g per day); safer for stomach than NSAIDs",
+      "addresses_pain": [
+        "Mild to Moderate Pain"
+      ],
+      "timing": "As needed",
+      "evidence_level": "High",
+      "caution": "Avoid alcohol; do not exceed 4 g/day; caution in liver disease"
+    },
+    {
+      "id": "R014",
+      "category": "Medications (OTC)",
+      "remedy": "Naproxen Sodium",
+      "instructions": "220\u2013440 mg every 8\u201312 hours; longer-acting NSAID suitable for full-day relief",
+      "addresses_pain": [
+        "Pelvic Pain",
+        "Back Pain"
+      ],
+      "timing": "Day 1\u20133",
+      "evidence_level": "High",
+      "caution": "Same cautions as ibuprofen; avoid in last trimester of pregnancy"
+    },
+    {
+      "id": "R015",
+      "category": "Medications (OTC)",
+      "remedy": "Antispasmodics (Hyoscine)",
+      "instructions": "Reduces uterine spasm; 10\u201320 mg up to 3 times per day (check local brand availability)",
+      "addresses_pain": [
+        "Uterine Cramping"
+      ],
+      "timing": "Day 1\u20132",
+      "evidence_level": "Moderate",
+      "caution": "Can cause dry mouth, blurred vision and urinary retention"
+    },
+    {
+      "id": "R016",
+      "category": "Lifestyle",
+      "remedy": "Adequate Sleep (7\u20139 hours)",
+      "instructions": "Prioritise consistent sleep schedule; pain is significantly amplified by sleep deprivation",
+      "addresses_pain": [
+        "All Pain Types"
+      ],
+      "timing": "Throughout cycle",
+      "evidence_level": "High",
+      "caution": "Avoid screens 1 hour before bed; use eye mask if light is an issue"
+    },
+    {
+      "id": "R017",
+      "category": "Lifestyle",
+      "remedy": "Stress Management",
+      "instructions": "Mindfulness 10 min/day, deep breathing (4-7-8 technique), journaling to reduce cortisol",
+      "addresses_pain": [
+        "Mood",
+        "Headache",
+        "Cramps"
+      ],
+      "timing": "Ongoing",
+      "evidence_level": "High",
+      "caution": "Seek professional help if anxiety or depression persists beyond period"
+    },
+    {
+      "id": "R018",
+      "category": "Lifestyle",
+      "remedy": "TENS Machine",
+      "instructions": "Transcutaneous electrical nerve stimulation applied to abdomen or back; rent or purchase device",
+      "addresses_pain": [
+        "Pelvic Pain",
+        "Back Pain"
+      ],
+      "timing": "Day 1\u20133",
+      "evidence_level": "Moderate \u2013 High",
+      "caution": "Avoid over heart, head; do not use during pregnancy; consult if pacemaker present"
+    },
+    {
+      "id": "R019",
+      "category": "Lifestyle",
+      "remedy": "Limit Caffeine & Alcohol",
+      "instructions": "Caffeine constricts blood vessels worsening headaches; alcohol increases prostaglandin production",
+      "addresses_pain": [
+        "Headache",
+        "Cramps",
+        "Mood"
+      ],
+      "timing": "5 days before period",
+      "evidence_level": "Moderate",
+      "caution": "Gradual reduction recommended to prevent caffeine-withdrawal headache"
+    },
+    {
+      "id": "R020",
+      "category": "Medical Attention",
+      "remedy": "See GP / Gynaecologist",
+      "instructions": "Seek medical advice if pain score is 8 or above, fever over 38\u00b0C, passing large clots, soaking more than 1 pad per hour, or pain occurs between periods",
+      "addresses_pain": [
+        "Severe or Atypical Pain"
+      ],
+      "timing": "Any time these symptoms occur",
+      "evidence_level": "Essential",
+      "caution": "Could indicate endometriosis, fibroids, PMOS or pelvic infection",
+      "red_flag": true
+    },
+    {
+      "id": "R021",
+      "category": "Medical Attention",
+      "remedy": "Emergency (A&E / ER)",
+      "instructions": "Go to emergency immediately for sudden severe pelvic pain, fainting, suspected ectopic pregnancy, or abnormal discharge with high fever",
+      "addresses_pain": [
+        "Severe Acute Pain"
+      ],
+      "timing": "Immediately",
+      "evidence_level": "Essential",
+      "caution": "Do not wait \u2013 these are potential medical emergencies",
+      "red_flag": true
+    }
+  ],
+  "conditions": [
+    {
+      "id": "C001",
+      "name": "Primary Dysmenorrhoea",
+      "key_symptoms": [
+        "Pelvic cramps",
+        "Lower back pain",
+        "Nausea",
+        "Diarrhoea"
+      ],
+      "distinguishing_feature": "No underlying pathology; caused entirely by prostaglandins",
+      "prevalence": "50\u201380% of menstruating women",
+      "diagnosis_method": "Clinical history",
+      "treatment_approaches": [
+        "NSAIDs",
+        "Hormonal contraception",
+        "Heat therapy",
+        "Exercise"
+      ],
+      "prognosis": "Often improves with age or after childbirth"
+    },
+    {
+      "id": "C002",
+      "name": "Secondary Dysmenorrhoea",
+      "key_symptoms": [
+        "Severe pelvic pain",
+        "Pain between periods",
+        "Dyspareunia (pelvic pain)"
+      ],
+      "distinguishing_feature": "Pain caused by an underlying gynaecological condition; tends to worsen over time",
+      "prevalence": "10\u201315% of women",
+      "diagnosis_method": "Pelvic exam, ultrasound, laparoscopy",
+      "treatment_approaches": [
+        "Treat underlying cause",
+        "Hormonal therapy",
+        "Surgery"
+      ],
+      "prognosis": "Depends on underlying condition"
+    },
+    {
+      "id": "C003",
+      "name": "Endometriosis",
+      "key_symptoms": [
+        "Severe cramps",
+        "Deep pelvic pain",
+        "pelvic pain",
+        "Infertility",
+        "Fatigue"
+      ],
+      "distinguishing_feature": "Endometrial-like tissue grows outside the uterus causing chronic inflammation",
+      "prevalence": "~10% of women of reproductive age",
+      "diagnosis_method": "Laparoscopy (gold standard)",
+      "treatment_approaches": [
+        "Excision surgery",
+        "Hormonal therapy",
+        "Pain management",
+        "Lifestyle"
+      ],
+      "prognosis": "Chronic condition; managed but not cured; symptoms can improve with treatment"
+    },
+    {
+      "id": "C004",
+      "name": "PMOS (Polyendocrine Metabolic Ovarian Syndrome)",
+      "key_symptoms": [
+        "Irregular periods",
+        "Pelvic pain",
+        "Acne",
+        "Weight gain",
+        "Excess hair growth"
+      ],
+      "distinguishing_feature": "Multiple ovarian cysts with underlying hormonal imbalance (elevated androgens)",
+      "prevalence": "~10% of women",
+      "diagnosis_method": "Blood tests (hormones), pelvic ultrasound",
+      "treatment_approaches": [
+        "Lifestyle changes",
+        "Metformin",
+        "Hormonal therapy",
+        "Fertility treatment"
+      ],
+      "prognosis": "Lifelong management; fertility is treatable"
+    },
+    {
+      "id": "C005",
+      "name": "Uterine Fibroids",
+      "key_symptoms": [
+        "Heavy bleeding",
+        "Blood clots",
+        "Pelvic pressure",
+        "Back pain",
+        "Bloating"
+      ],
+      "distinguishing_feature": "Non-cancerous smooth muscle tumours within or on the uterine wall",
+      "prevalence": "~30% of women under 50",
+      "diagnosis_method": "Ultrasound or MRI",
+      "treatment_approaches": [
+        "Watchful waiting",
+        "Medications",
+        "Myomectomy",
+        "Uterine artery embolisation"
+      ],
+      "prognosis": "Typically shrink after menopause"
+    },
+    {
+      "id": "C006",
+      "name": "Adenomyosis",
+      "key_symptoms": [
+        "Heavy bleeding",
+        "Severe cramps",
+        "Enlarged uterus",
+        "Pelvic pressure"
+      ],
+      "distinguishing_feature": "Endometrial glands embedded within the uterine muscle (myometrium)",
+      "prevalence": "~20% of women",
+      "diagnosis_method": "MRI or specialist ultrasound",
+      "treatment_approaches": [
+        "Hormonal therapy",
+        "Endometrial ablation",
+        "Hysterectomy"
+      ],
+      "prognosis": "Resolves naturally after menopause"
+    },
+    {
+      "id": "C007",
+      "name": "PMS (Premenstrual Syndrome)",
+      "key_symptoms": [
+        "Mood swings",
+        "Bloating",
+        "Breast pain",
+        "Headache",
+        "Fatigue"
+      ],
+      "distinguishing_feature": "Symptoms occur only in luteal phase and fully resolve with period onset",
+      "prevalence": "75% of women experience some PMS",
+      "diagnosis_method": "Symptom diary tracked over 2 or more cycles",
+      "treatment_approaches": [
+        "Lifestyle changes",
+        "Supplements (magnesium, calcium)",
+        "SSRIs",
+        "Hormonal therapy"
+      ],
+      "prognosis": "Manageable; improves significantly with treatment"
+    },
+    {
+      "id": "C008",
+      "name": "PMDD (Premenstrual Dysphoric Disorder)",
+      "key_symptoms": [
+        "Severe mood changes",
+        "Clinical depression",
+        "Severe anxiety",
+        "Debilitating irritability"
+      ],
+      "distinguishing_feature": "Severe psychiatric symptoms that significantly impair daily functioning",
+      "prevalence": "3\u20138% of women",
+      "diagnosis_method": "DSM-5 diagnostic criteria; prospective symptom diary",
+      "treatment_approaches": [
+        "SSRIs (luteal phase dosing)",
+        "Hormonal therapy",
+        "CBT",
+        "Lifestyle"
+      ],
+      "prognosis": "Treatable; significant improvement with appropriate therapy"
+    },
+    {
+      "id": "C009",
+      "name": "Menstrual Anaemia",
+      "key_symptoms": [
+        "Extreme fatigue",
+        "Pallor",
+        "Breathlessness",
+        "Dizziness",
+        "Heart palpitations"
+      ],
+      "distinguishing_feature": "Iron depletion caused by heavy or prolonged menstrual blood loss",
+      "prevalence": "~30% of women with heavy menstrual bleeding",
+      "diagnosis_method": "Full blood count (FBC) and ferritin blood test",
+      "treatment_approaches": [
+        "Iron supplementation",
+        "Dietary iron increase",
+        "Treat underlying heavy bleeding"
+      ],
+      "prognosis": "Fully reversible with appropriate treatment"
+    }
+  ],
+  "pain_severity_scale": [
+    {
+      "score_range": "1\u20132",
+      "category": "Minimal",
+      "physical_experience": "Barely noticeable discomfort; easily ignored",
+      "functional_impact": "No impact on daily activities",
+      "recommended_action": "Monitor; no medication needed"
+    },
+    {
+      "score_range": "3\u20134",
+      "category": "Mild",
+      "physical_experience": "Noticeable dull ache; background awareness throughout the day",
+      "functional_impact": "Minor distraction; can work and study normally",
+      "recommended_action": "OTC paracetamol if desired; heat therapy"
+    },
+    {
+      "score_range": "5\u20136",
+      "category": "Moderate",
+      "physical_experience": "Persistent cramping or aching; cannot fully ignore",
+      "functional_impact": "Reduced productivity; avoids physical exertion",
+      "recommended_action": "NSAIDs (ibuprofen 400\u2013600 mg), heat therapy, rest"
+    },
+    {
+      "score_range": "7\u20138",
+      "category": "Severe",
+      "physical_experience": "Intense cramping, throbbing or shooting pain",
+      "functional_impact": "Cannot concentrate; misses work or school; bed rest needed",
+      "recommended_action": "Prescription-strength NSAIDs; see GP if recurring"
+    },
+    {
+      "score_range": "9\u201310",
+      "category": "Debilitating",
+      "physical_experience": "Excruciating pain; may cause vomiting, fainting or inability to move",
+      "functional_impact": "Completely incapacitating; requires immediate medical care",
+      "recommended_action": "Seek emergency medical attention; rule out serious causes"
+    }
+  ]
+}
